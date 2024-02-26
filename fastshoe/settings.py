@@ -25,8 +25,12 @@ SECRET_KEY = 'django-insecure-wljxbfm_ovay225h(9$@oms0ol6jf4$_xmepky2l893@lwxv+b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'https://8000-balennouri-pp5-5oy58itgibp.ws-eu108.gitpod.io',
+    '8000-balennouri-pp5-5oy58itgibp.ws-eu108.gitpod.io']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-balennouri-pp5-5oy58itgibp.ws-eu108.gitpod.io']
 
 # Application definition
 
@@ -37,6 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
@@ -47,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware'
 ]
 
 ROOT_URLCONF = 'fastshoe.urls'
@@ -59,6 +68,7 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
+                # Required by alluth
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
@@ -66,6 +76,16 @@ TEMPLATES = [
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by email
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+SITES_ID = 1
 
 WSGI_APPLICATION = 'fastshoe.wsgi.application'
 
