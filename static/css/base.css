@@ -10,6 +10,10 @@ body {
     font-family: 'Lato';
 }
 
+.navbar-light .navbar-toggler {
+    border-color: rgb(255, 255, 255);
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
