@@ -1,0 +1,26 @@
+[
+    {
+        "pk": 1,
+        "model": "products.category",
+        "fields": {
+            "name": "nike",
+            "web_name": "Nike"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.category",
+        "fields": {
+            "name": "adidas",
+            "web_name": "Adidas"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "products.category",
+        "fields": {
+            "name": "puma",
+            "web_name": "Puma"
+        }
+    }
+]
