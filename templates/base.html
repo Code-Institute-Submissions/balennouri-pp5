@@ -49,6 +49,7 @@
     {% endblock %}
 
     <title>FastShoes{% block extra_title %}{% endblock %}</title>
+
 </head>
 
 <body>
@@ -128,6 +129,11 @@
                 {% include 'includes/main-nav.html' %}
 
             </nav>
+        </div>
+        <div class="row text-center" id="delivery-banner">
+            <div class="col bg-dark text-white">
+                <p class="logo-font my-1">Free delivery on orders over ${{ free_shipping_threshold }}!</p>
+            </div>
         </div>
     </header>
 
