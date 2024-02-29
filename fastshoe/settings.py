@@ -35,8 +35,6 @@ ALLOWED_HOSTS = [
     '8000-balennouri-pp5-5oy58itgibp.ws-eu108.gitpod.io',
     '.herokuapp.com']
 
-CSRF_TRUSTED_ORIGINS = [
-    'https://8000-balennouri-pp5-5oy58itgibp.ws-eu108.gitpod.io']
 
 # Application definition
 
@@ -48,13 +46,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cloudinary_storage',
+    'cloudinary',
 
     'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-
-    'cloudinary',
 
     'home',
     'products',
@@ -123,6 +120,14 @@ WSGI_APPLICATION = 'fastshoe.wsgi.application'
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://*",
+    "https://*",
+    "https://*.herokuapp.com",
+    'https://8000-balennouri-pp5-5oy58itgibp.ws-eu108.gitpod.io']
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
