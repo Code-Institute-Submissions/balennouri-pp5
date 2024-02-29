@@ -25,7 +25,10 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     rating = models.DecimalField(
         max_digits=6, decimal_places=2, null=True, blank=True)
-    image = CloudinaryField(null=True, blank=True)
+    image = CloudinaryField("image", default="placeholder")
+    is_sales = models.BooleanField(default=False)
+    sales_price = models.DecimalField(
+        default=0, decimal_places=2, max_digits=6)
 
     def __str__(self):
         return self.name
