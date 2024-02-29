@@ -31,7 +31,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     'https://8000-balennouri-pp5-5oy58itgibp.ws-eu108.gitpod.io',
-    '8000-balennouri-pp5-5oy58itgibp.ws-eu108.gitpod.io']
+    '8000-balennouri-pp5-5oy58itgibp.ws-eu108.gitpod.io',
+    '.herokuapp.com']
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-balennouri-pp5-5oy58itgibp.ws-eu108.gitpod.io']
