@@ -4,27 +4,28 @@
             <a href="#" class="logo-font font-weight-bold nav-link text-white mr-5" id="all-products-link"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Discover The Shoes</a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">Nike</a>
-                <a href="" class="dropdown-item">Adidas</a>
-                <a href="" class="dropdown-item">Puma</a>
-                <a href="{% url 'products' %}" class="dropdown-item">All Shoes</a>
+                <a href="{% url 'products' %}?category=nike" class="dropdown-item">Nike</a>
+                <a href="{% url 'products' %}?category=adidas" class="dropdown-item">Adidas</a>
+                <a href="{% url 'products' %}?category=puma" class="dropdown-item">Puma</a>
+                <a href="{% url 'products' %}?category=all_shoes,nike,adidas,puma" class="dropdown-item">All Shoes</a>
             </div>
         </li>
         <li class="nav-item dropdown">
             <a href="#" class="logo-font font-weight-bold nav-link text-white mr-5" id="all-products-link"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Explore</a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">On Sale</a>
+                <a href="{% url 'products' %}?category=on_sale" class="dropdown-item">On Sale</a>
             </div>
         </li>
         <li class="nav-item dropdown">
             <a href="#" class="logo-font font-weight-bold nav-link text-white mr-5" id="all-products-link"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort Products</a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item">By Rating</a>
-                <a href="" class="dropdown-item">By Category</a>
-                <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
+                <a href="{% url 'products' %}?category=by_price" class="dropdown-item">By Price</a>
+                <a href="{% url 'products' %}?category=by_rating" class="dropdown-item">By Rating</a>
+                <a href="{% url 'products' %}?category=by_category" class="dropdown-item">By Category</a>
+                <a href="{% url 'products' %}?category=all_shoes,nike,adidas,puma" class="dropdown-item">All
+                    Products</a>
             </div>
         </li>
     </ul>
