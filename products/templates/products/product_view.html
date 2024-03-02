@@ -68,6 +68,19 @@
                     {% csrf_token %}
                     <div class="form-row">
                         <div class="col-12">
+                            <p><strong>Size:</strong></p>
+                            <select class="form-control rounded-0 w-50" name="product-size" id="id_product_size">
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                                <option value="44">44</option>
+                                <option value="45">45</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
                             <p class="mt-3"><strong>Quantity:</strong></p>
                             <div class="form-group w-50">
                                 <div class="input-group">
@@ -83,7 +96,8 @@
                                 </span>
                                 <span class="text-uppercase">Keep Shopping</span>
                             </a>
-                            <input type="submit" class="btn btn-secondary rounded-0 text-uppercase mt-5" value="Add to Bag">
+                            <input type="submit" class="btn btn-secondary rounded-0 text-uppercase mt-5"
+                                value="Add to Bag">
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </div>

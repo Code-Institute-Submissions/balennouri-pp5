@@ -1,7 +1,7 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
         <li class="nav-item dropdown">
-            <a href="#" class="logo-font font-weight-bold nav-link text-white mr-5" id="all-products-link"
+            <a href="#" class="logo-font nav-link text-white mr-5" id="all-products-link"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Discover The Shoes</a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
                 <a href="{% url 'products' %}?category=nike" class="dropdown-item">Nike</a>
@@ -11,7 +11,7 @@
             </div>
         </li>
         <li class="nav-item dropdown">
-            <a href="#" class="logo-font font-weight-bold nav-link text-white mr-5" id="all-products-link"
+            <a href="#" class="logo-font nav-link text-white mr-5" id="all-products-link"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort Products</a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
                 <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
@@ -22,4 +22,8 @@
             </div>
         </li>
     </ul>
+    <form class="form-inline my-2 my-lg-0 ml-auto" action="{% url 'products' %}" method="GET">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q">
+        <button class="btn btn-light my-2 my-sm-0 text-black" type="submit">Search</button>
+    </form>
 </div>
