@@ -7,23 +7,25 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('products', '0002_alter_product_image'),
+        ("products", "0002_alter_product_image"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='product',
-            name='is_sales',
+            model_name="product",
+            name="is_sales",
             field=models.BooleanField(default=False),
         ),
         migrations.AddField(
-            model_name='product',
-            name='sales_price',
+            model_name="product",
+            name="sales_price",
             field=models.DecimalField(decimal_places=2, default=0, max_digits=6),
         ),
         migrations.AlterField(
-            model_name='product',
-            name='image',
-            field=cloudinary.models.CloudinaryField(default='placeholder', max_length=255, verbose_name='image'),
+            model_name="product",
+            name="image",
+            field=cloudinary.models.CloudinaryField(
+                default="placeholder", max_length=255, verbose_name="image"
+            ),
         ),
     ]

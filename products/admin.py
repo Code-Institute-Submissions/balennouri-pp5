@@ -5,20 +5,20 @@ from .models import Product, Category
 # Register your models here.
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
-        'name',
-        'sku',
-        'category',
-        'price',
-        'rating',
+        "name",
+        "sku",
+        "category",
+        "price",
+        "rating",
     )
 
-    ordering = ('name',)
+    ordering = ("name",)
 
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
-        'web_name',
-        'name',
+        "web_name",
+        "name",
     )
 
 
