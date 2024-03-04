@@ -1,4 +1,6 @@
-<li class="list-inline-item">
+<!--Mobile Header-->
+
+<div class="list-inline-item">
     <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
         <form class="form" method="GET" action="{% url 'products' %}">
             <div class="input-group w-100">
@@ -14,16 +16,16 @@
             </div>
         </form>
     </div>
-</li>
-<li class="list-inline-item dropdown">
-    <a class="text-white nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown"
+</div>
+<div class="list-inline-item dropdown">
+    <a class="text-white nav-link d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
             <div><i class="fas fa-user"></i></div>
             <p class="my-0">My Account</p>
         </div>
     </a>
-    <div class="dropdown-menu border-0" aria-labelledby="user-options">
+    <div class="dropdown-menu border-0" aria-labelledby="mobile-search">
 
         {% if request.user.is_authenticated %}
 
@@ -44,8 +46,8 @@
         {% endif %}
 
     </div>
-</li>
-<li class="list-inline-item">
+</div>
+<div class="list-inline-item">
     <a class="{% if grand_total %}text-success font-weight-bold{% else %}text-white{% endif %} nav-link d-block d-lg-none"
         href="{% url 'view_bag' %}">
         <div class="text-center">
@@ -63,4 +65,4 @@
             </p>
         </div>
     </a>
-</li>
+</div>
