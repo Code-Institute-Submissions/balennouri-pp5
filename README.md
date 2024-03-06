@@ -158,7 +158,7 @@ The color palette image was generated from [coolers.](https://coolors.co/)
 
 ### Project Management
 
-I used agile methodology throughout the development of this project utilizing GitHub projects and issues. You can read more about this in the AGILE.md file [here.](https://github.com/balennouri/pp4/blob/main/AGILE.md)
+I used agile methodology throughout the development of this project utilizing GitHub projects and issues. You can read more about this in the AGILE.md file [here.](https://github.com/balennouri/pp5/blob/main/AGILE.md)
 
 [Back to top](#contents)
 
