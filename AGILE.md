@@ -13,7 +13,7 @@
     
 ## Overview
 
-I utilized agile methodologies in managing this project. The GitHub project board served as my primary tool for organizing user stories. Opting for the GitHub board was a deliberate choice due to its simplicity and alignment with my learning path from the LMS course.
+This was my second project and second time I used the agile methodologies. The GitHub project board served as my primary tool for organizing user stories. Opting for the GitHub board was a deliberate choice due to its simplicity and alignment with my learning path from the LMS course.
 
 Initially, grappling with user stories posed a challenge, but after a day's immersion, I found myself growing more adept at handling them. I began by crafting detailed features for each task and those indispensable for the overall project. Categorizing issues into relevant groups and subsequently into their respective epics helped streamline the development process.
 
