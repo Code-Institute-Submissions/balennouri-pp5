@@ -11,7 +11,8 @@ import stripe
 
 
 def checkout(request):
-    """ """
+    """
+    """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -43,7 +44,8 @@ def checkout(request):
                         )
                         order_line_item.save()
                     else:
-                        for size, quantity in item_data["items_by_size"].items():
+                        for size, quantity in item_data[
+                                "items_by_size"].items():
                             order_line_item = OrderLineItem(
                                 order=order,
                                 product=product,
@@ -64,7 +66,8 @@ def checkout(request):
                     return redirect(reverse("view_bag"))
 
             request.session["save_info"] = "save-info" in request.POST
-            return redirect(reverse("checkout_success", args=[order.order_number]))
+            return redirect(
+                reverse("checkout_success", args=[order.order_number]))
         else:
             messages.error(
                 request,
@@ -75,7 +78,8 @@ def checkout(request):
 
         bag = request.session.get("bag", {})
     if not bag:
-        messages.error(request, "There's nothing in your shopping cart at the moment")
+        messages.error(
+            request, "There's nothing in your shopping cart at the moment")
         return redirect(reverse("products"))
 
     current_bag = bag_contents(request)
@@ -125,6 +129,6 @@ def checkout_success(request, order_number):
     template = "checkout/checkout_success.html"
     context = {
         "order": order,
-    }
+        }
 
     return render(request, template, context)
