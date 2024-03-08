@@ -6,13 +6,16 @@ from products.models import Product
 
 def view_bag(request):
     """
-    View that renders the bag/cart content page
+    Renders the shopping cart content page using the "bag/bag.html" template.
     """
     return render(request, "bag/bag.html")
 
 
 def remove_from_bag(request, item_id):
-    """Remove the item from the shopping bag"""
+    """
+    Removes an item from the shopping bag based on the provided item_id.
+    Handles removal based on size and updates the session.
+    """
 
     try:
         product = get_object_or_404(Product, pk=item_id)
@@ -42,8 +45,8 @@ def remove_from_bag(request, item_id):
 
 def adjust_bag(request, item_id):
     """
-    Adjust the quantity of the products of the products the user have
-    chosen
+    Adjusts the quantity of products in the shopping bag based on user input.
+    Handles adjustments based on size and updates the session.
     """
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get("quantity"))
@@ -79,7 +82,9 @@ def adjust_bag(request, item_id):
 
 def add_to_bag(request, item_id):
     """
-    Add product to the cart, The quantity the user choice.
+    Adds a product to the shopping bag based on user input,
+    including quantity and optional size.
+    Handles addition based on size and updates the session.
     """
     product = Product.objects.get(pk=item_id)
     quantity = int(request.POST.get("quantity"))

@@ -12,6 +12,10 @@ import stripe
 
 def checkout(request):
     """
+    * Handling both GET and POST requests.
+    * Retrieving Stripe public and secret keys from Django settings.
+    * Processing form submission (POST request)
+    * Processing initial load (GET request)
     """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
@@ -112,7 +116,13 @@ def checkout(request):
 
 def checkout_success(request, order_number):
     """
-    Handle successful checkouts
+    Handle successful checkouts:
+    * Retrieving the saved information flag from the session.
+    * Getting the order details based on the order number.
+    * Displaying a success message with the order number and notifying 
+    about the confirmation email.
+    * Deleting the bag from the session.
+    * Rendering the checkout success template with relevant context.
     """
     save_info = request.session.get("save_info")
     order = get_object_or_404(Order, order_number=order_number)
@@ -129,6 +139,7 @@ def checkout_success(request, order_number):
     template = "checkout/checkout_success.html"
     context = {
         "order": order,
+        "save_info": save_info
         }
 
     return render(request, template, context)
