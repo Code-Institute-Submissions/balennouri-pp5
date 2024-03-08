@@ -83,7 +83,6 @@ class OrderLineItem(models.Model):
     Model for the infromation fo the product in the cart.
     inspired from the Boutiqe Ado
     """
-
     order = models.ForeignKey(
         Order,
         null=False,
