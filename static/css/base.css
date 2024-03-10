@@ -171,6 +171,34 @@ input[name='q']::placeholder {
     overflow-y: auto;
 }
 
+/* Product Form */
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-checkbox .custom-control-label::before {
+    border-radius: 0;
+    border-color: #dc3545;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    border-radius: 0;
+}
+
 /* Allauth form formatting */
 
 .allauth-form-inner-content p {
@@ -237,35 +265,6 @@ input[name='q']::placeholder {
     }
 }
 
-/* Product Form */
-
-.btn-file {
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-file input[type="file"] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.custom-checkbox .custom-control-label::before {
-    border-radius: 0;
-    border-color: #dc3545;
-}
-
-.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-    background-color: #dc3545;
-    border-color: #dc3545;
-    border-radius: 0;
-}
-
-
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
@@ -304,14 +303,13 @@ input[name='q']::placeholder {
         font-size: 1rem;
     }
 
-    #delivery-banner h4 {
+    #delivery-banner p {
         font-size: .9rem;
     }
 
     .btn.btn-outline-black.rounded-0,
     .btn.btn-secondary.rounded-0 {
         padding: .375rem .375rem;
-        font-size: .7rem;
     }
 
     .btn.btn-outline-black.rounded-0.btn-lg,
@@ -324,4 +322,14 @@ input[name='q']::placeholder {
     .decrement-qty {
         padding: .25rem .5rem !important;
     }
+}
+
+/* Button fix on smaller screen */
+@media (max-width: 336px) {
+
+    .btn.btn-outline-black.rounded-0.product-btn,
+    .btn.btn-secondary.rounded-0.product-btn {
+        padding: .150rem .124rem;
+    }
+
 }
