@@ -1,0 +1,14 @@
+<p class="my-0 small">
+    <strong>{{ item.product.name }}</strong>
+</p>
+<hr>
+<p class="my-0 small">
+    <strong>Size:</strong>
+
+    {% if item.product.sizes %}
+
+    {{ item.size|upper }}
+
+    {% else %}N/A{% endif %}
+
+</p>
