@@ -9,7 +9,15 @@ from checkout.models import Order
 @login_required
 def profile(request):
     """
-    Display the user's profile
+    * Display the user's profile
+
+    * Retrieves the user's profile from the UserProfile model
+    using get_object_or_404.
+
+    * For POST requests, it initializes the UserProfileForm with the
+    provided POST data and the user's profile instance.
+
+    * Retrieves all orders associated with the user's profile.
     """
     profile = get_object_or_404(UserProfile, user=request.user)
 
@@ -36,6 +44,12 @@ def profile(request):
 
 
 def order_history(request, order_number):
+    """
+    * Retrieve the order with the given order_number or
+    return a 404 page if not found
+
+    * Display an informational message using Django's messages framework
+    """
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (
