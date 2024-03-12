@@ -34,6 +34,8 @@ ALLOWED_HOSTS = [
     "https://8000-balennouri-pp5-5oy58itgibp.ws-eu108.gitpod.io",
     "8000-balennouri-pp5-5oy58itgibp.ws-eu108.gitpod.io",
     ".herokuapp.com",
+    "8000-balennouri-pp5-5oy58itgibp.ws-us108.gitpod.io",
+    "8000-balennouri-pp5-5oy58itgibp.ws-us108.gitpod.io",
 ]
 
 
@@ -147,6 +149,8 @@ CSRF_TRUSTED_ORIGINS = [
     "https://*",
     "https://*.herokuapp.com",
     "https://8000-balennouri-pp5-5oy58itgibp.ws-eu108.gitpod.io",
+    "https://8000-balennouri-pp5-5oy58itgibp.ws-us108.gitpod.io",
+    "https://8000-balennouri-pp5-5oy58itgibp.ws-us108.gitpod.io",
 ]
 
 

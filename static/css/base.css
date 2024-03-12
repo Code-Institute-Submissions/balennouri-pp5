@@ -14,6 +14,12 @@ body {
     border-color: rgb(255, 255, 255);
 }
 
+/* Product view and product details */
+
+.rea {
+    text-decoration: line-through;
+  }
+
 /* from Bulma */
 .icon {
     align-items: center;
