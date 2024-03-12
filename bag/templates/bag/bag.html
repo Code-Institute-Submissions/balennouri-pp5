@@ -104,7 +104,17 @@
 
                         </td>
                         <td class="py-3">
+
+                            {% if item.product.is_sales %}
+
+                            <p class="my-0">${{ item.product.sales_price }}</p>
+
+                            {% else %}
+
                             <p class="my-0">${{ item.product.price }}</p>
+
+                            {% endif %}
+
                         </td>
                         <td class="py-3 w-25">
 
@@ -112,7 +122,17 @@
 
                         </td>
                         <td class="py-3">
+
+                            {% if item.product.is_sales %}
+
+                            <p class="my-0">${{ item.product.sales_price | calc_subtotal:item.quantity }}</p>
+
+                            {% else %}
+
                             <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
+
+                            {% endif %}
+
                         </td>
                     </tr>
 

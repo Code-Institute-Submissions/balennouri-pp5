@@ -44,8 +44,13 @@
 
                 {% if product.is_sales %}
 
+                <p class="font-weight-bold text-success mt-2">ON SALE!</p>
                 <p class="rea lead mb-0 text-left">${{ product.price }}</p>
-                <p class="lead mb-0 text-left font-weight-bold">${{ product.sales_price }}</p>
+                <p class="lead mb-0 text-left font-weight-bold text-success">
+
+                    ${{ product.sales_price }}
+
+                </p>
 
                 {% else %}
 

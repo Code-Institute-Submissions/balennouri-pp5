@@ -95,16 +95,21 @@
                         <div class="card-footer bg-white pt-0 border-0 text-left">
                             <div class="row">
                                 <div class="col">
-                                    
+
                                     {% if product.is_sales %}
 
+                                    <p class="font-weight-bold text-success mt-2">ON SALE!</p>
                                     <p class="rea lead mb-0 text-left">${{ product.price }}</p>
-                                    <p class="lead mb-0 text-left font-weight-bold">${{ product.sales_price }}</p>
-                    
+                                    <p class="lead mb-0 text-left font-weight-bold text-success">
+
+                                        ${{ product.sales_price }}
+
+                                    </p>
+
                                     {% else %}
-                    
+
                                     <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
-                    
+
                                     {% endif %}
 
                                     {% if product.category %}
