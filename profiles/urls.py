@@ -10,4 +10,5 @@ urlpatterns = [
         'wishlist/add_to_wishlist/<int:id>',
         views.add_to_wishlist, name='add_to_wishlist'),
     path('wishlist/', views.wishlist, name='wishlist'),
+    path('add_review/<int:product_id>/', views.add_review, name='add_review'),
 ]

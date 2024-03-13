@@ -3,9 +3,50 @@ from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import UserProfile
-from products.models import Wishlist, Product
+from products.models import Wishlist, Product, Review
 from .forms import UserProfileForm
 from checkout.models import Order
+
+
+def view_reviews(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    reviews = Review.objects.filter(product=product)
+
+    template = 'profiles/reviews.html'
+    context = {
+        'product': product,
+        'reviews': reviews,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def add_review(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+
+    if request.method == 'POST':
+        rating = request.POST.get('rating')
+        comment = request.POST.get('comment')
+
+        if not rating or not rating.isdigit() or not (0 <= int(rating) <= 5):
+            messages.error(
+                request,
+                'Invalid rating. Please provide a rating between 0 and 5.')
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
+        review = Review.objects.create(
+            product=product,
+            user=request.user,
+            rating=int(rating),
+            comment=comment,
+        )
+
+        messages.success(request, 'Review added successfully!')
+    else:
+        messages.error(request, 'Invalid request. Please try again.')
+
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
 
 @login_required

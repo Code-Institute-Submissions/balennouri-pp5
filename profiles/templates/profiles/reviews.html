@@ -1,0 +1,44 @@
+<!--Inspired By Boutiqe Ado project-->
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block page_header %}
+
+<!--First Page View-->
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="overlay"></div>
+<div class="container mb-3">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="logo-font">Reviews</h2>
+            <hr>
+        </div>
+    </div>
+    <div class="card mb-3">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="" alt="">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h3 class="card-title">tittel</h3>
+                    <p class="card-text"><small>review</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="card-text">No reviews yet....</p>
+</div>
+
+{% endblock %}
