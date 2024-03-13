@@ -80,10 +80,23 @@
 
                 {% if request.user.is_superuser %}
 
+                <hr>
                 <small class="ml-3">
-                    <a href="{% url 'update_product' product.id %}" class="text-primary">Edit</a>
-                    <a href="{% url 'delete_product' product.id %}" class="text-danger">Delete</a>
+                    <a href="{% url 'update_product' product.id %}" class="btn btn-sm btn-primary">Edit</a>
+                    <a href="{% url 'delete_product' product.id %}" class="btn btn-sm btn-danger">Delete</a>
                 </small>
+                <hr>
+                <a href="{% url 'add_to_wishlist' product.id  %}" class="btn btn-success btn-sm ml-2"><i
+                        class="fa-solid fa-plus "></i> Wishlist</a>
+
+                {% else %}
+
+                <hr>
+                <a href="{% url 'add_to_wishlist' product.id %}"
+                    class="btn btn-sm ml-2 {% if in_wishlist %}btn-danger{% else %}btn-success{% endif %}">
+                    <i class="fa-solid {% if in_wishlist %}fa-minus{% else %}fa-plus{% endif %}"></i>
+                    {% if in_wishlist %}Remove from Wishlist{% else %}Add to Wishlist{% endif %}
+                </a>
 
                 {% endif %}
 

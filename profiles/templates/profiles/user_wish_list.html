@@ -1,0 +1,73 @@
+<!--Inspired By Boutiqe Ado project-->
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block page_header %}
+
+<!--First Page View-->
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="overlay"></div>
+<div class="container mb-3">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="logo-font">View And Edit Wishlist</h2>
+            <hr>
+        </div>
+    </div>
+
+    {% if wishlist %}
+
+    <div class="card mb-3">
+        <div class="row g-0">
+            <div class="col-md-4">
+
+                {% for product in wishlist.products.all %}
+
+                {% if product.image %}
+
+                <a href="{% url 'product_view' product.id %}">
+                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                </a>
+
+                {% else %}
+
+                <a href="{% url 'product_view' product.id %}">
+                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                </a>
+
+                {% endif %}
+
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h3 class="card-title">{{ product.name }}</h3>
+                    <p class="card-text"><small>{{ product.description }}</small></p>
+                </div>
+                <a href="{% url 'add_to_wishlist' product.id  %}" class="btn btn-danger btn-sm ml-2"><i
+                        class="fa-solid fa-minus"></i> Wishlist</a>
+
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    {% else %}
+
+    <p class="card-text">No products have been added to your wishlist yet</p>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}
