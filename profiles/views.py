@@ -8,45 +8,14 @@ from .forms import UserProfileForm
 from checkout.models import Order
 
 
-def view_reviews(request, product_id):
-    product = get_object_or_404(Product, id=product_id)
-    reviews = Review.objects.filter(product=product)
-
-    template = 'profiles/reviews.html'
+def product_reviews(request):
+    # Retrieve all reviews
+    all_reviews = Review.objects.all()
+    # Pass the reviews to the template
     context = {
-        'product': product,
-        'reviews': reviews,
+        'reviews': all_reviews
     }
-
-    return render(request, template, context)
-
-
-@login_required
-def add_review(request, product_id):
-    product = get_object_or_404(Product, id=product_id)
-
-    if request.method == 'POST':
-        rating = request.POST.get('rating')
-        comment = request.POST.get('comment')
-
-        if not rating or not rating.isdigit() or not (0 <= int(rating) <= 5):
-            messages.error(
-                request,
-                'Invalid rating. Please provide a rating between 0 and 5.')
-            return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
-
-        review = Review.objects.create(
-            product=product,
-            user=request.user,
-            rating=int(rating),
-            comment=comment,
-        )
-
-        messages.success(request, 'Review added successfully!')
-    else:
-        messages.error(request, 'Invalid request. Please try again.')
-
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+    return render(request, 'profiles/product_reviews.html', context)
 
 
 @login_required
