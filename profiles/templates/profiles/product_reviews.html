@@ -30,7 +30,7 @@
 
     {% for review in reviews %}
 
-    <div class="card mb-2">
+    <div class="card mb-3 mb-3 border-dark ">
         <div class="row g-0">
             <div class="col-md-4">
 
@@ -49,10 +49,12 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h2 class="card-title h3">User: {{ review.user }}</h2>
-                    <p class="card-text">Product: {{ review.product }}</p>
-                    <p>Rating: {{ review.rating }}</p>
-                    <p class="card-text"><small>{{ review.comment }}</small></p>
+                    <p class="card-text"> {{ review.product }}</p>
+                    <hr>
+                    <p class="card-text mb-2"><small>Comment:</small> {{ review.comment }}</p>
+                    <p class="card-text">Rating: {{ review.rating }}</p>
+                    <hr>
+                    <h2 class="card-title h3 text-muted"><small>- {{ review.user }}</small></h2>
                 </div>
             </div>
         </div>
