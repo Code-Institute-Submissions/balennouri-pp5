@@ -21,29 +21,32 @@
     <div class="row">
         <div class="col">
             <hr>
-            <h2 class="logo-font">View And Edit Wishlist</h2>
+            <h1 class="logo-font h2">wishlist for {{ user.username }}</h1>
             <hr>
         </div>
     </div>
 
     {% if wishlist %}
 
-    <div class="card mb-3">
-        <div class="row g-0">
-            <div class="col-md-4">
+    <div class="card mb-2">
+        <div class="row g-0 mb-2">
 
-                {% for product in wishlist.products.all %}
+            {% for product in wishlist.products.all %}
+
+            <div class="col-md-4">
 
                 {% if product.image %}
 
                 <a href="{% url 'product_view' product.id %}">
-                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                    <img class="card-img-top img-fluid" style="object-fit: cover;" src="{{ product.image.url }}"
+                        alt="{{ product.name }}">
                 </a>
 
                 {% else %}
 
                 <a href="{% url 'product_view' product.id %}">
-                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                    <img class="card-img-top img-fluid" style="object-fit: cover;" src="{{ MEDIA_URL }}noimage.png"
+                        alt="{{ product.name }}">
                 </a>
 
                 {% endif %}
@@ -51,17 +54,18 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h3 class="card-title">{{ product.name }}</h3>
+                    <h2 class="card-title h4">{{ product.name }}</h2>
                     <p class="card-text"><small>{{ product.description }}</small></p>
                 </div>
                 <a href="{% url 'add_to_wishlist' product.id  %}" class="btn btn-danger btn-sm ml-2"><i
-                        class="fa-solid fa-minus"></i> Wishlist</a>
-
-                {% endfor %}
-                
+                        class="fa-solid fa-minus"></i> Remove</a>
             </div>
+
+            {% endfor %}
+
         </div>
     </div>
+    <hr>
 
     {% else %}
 

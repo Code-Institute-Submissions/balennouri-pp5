@@ -9,7 +9,7 @@
 {% block inner_content %}
 
 <hr>
-<h2 class="logo-font mb-4">{% trans "Sign In" %}</h2>
+<h1 class="logo-font h2 mb-4">{% trans "Sign In" %}</h1>
 <hr>
 
 {% get_providers as socialaccount_providers %}
@@ -17,7 +17,7 @@
 {% if socialaccount_providers %}
 
 <p>{% blocktrans with site.name as site_name %}Please sign in with one
-    of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
+    of your existing third party accounts. Or, <a href="{{ signup_url }}" class="text-dark">sign up</a>
     for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 
 <div class="socialaccount_ballot">
@@ -37,7 +37,7 @@
 {% else %}
 
 <p>{% blocktrans %}If you have not created an account yet, then please
-    <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+    <a href="{{ signup_url }}" class="text-dark font-weight-bold">sign up</a> first.{% endblocktrans %}</p>
 
 {% endif %}
 
