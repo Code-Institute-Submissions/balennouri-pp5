@@ -115,6 +115,7 @@ def profile(request):
     return render(request, template, context)
 
 
+@login_required
 def order_history(request, order_number):
     """
     * Retrieve the order with the given order_number or
