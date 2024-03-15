@@ -11,6 +11,11 @@ def all_products(request):
     """
     View to return all the products, including sorting on the page
     and searching.
+
+    Retrieves all products from the database and performs sorting and
+    filtering based on user input.
+    Sorting can be done by product name, category, or in ascending/descending
+    order. Filtering can be done by category and search query.
     """
     products = Product.objects.all()
     query = None
@@ -63,6 +68,13 @@ def all_products(request):
 def product_view(request, product_id):
     """
     View to return the product page for each one of the products
+    - If the product exists, renders the product view page with details about
+    the product
+    - If the product does not exist, returns a 404 error page
+
+    If the user is authenticated, checks if the product is in the user's
+    wishlist and sets a flag accordingly. Passes the product and wishlist flag
+    to the template context.
     """
     product = get_object_or_404(Product, pk=product_id)
     in_wishlist = False
@@ -87,6 +99,12 @@ def product_view(request, product_id):
 def add_product(request):
     """
     Add a product to the store thorug the product management
+    - request: HttpRequest object containing metadata about the request
+    - If the request method is POST and the form is valid, redirects to the
+    product view page after adding the product
+    - If the request method is POST and the form is invalid, displays an error
+    message and renders the add product form again
+    - If the request method is GET, renders the add product form
     """
     if not request.user.is_superuser:
         messages.error(
@@ -119,6 +137,14 @@ def add_product(request):
 def update_product(request, product_id):
     """
     Update a product in the store page
+    - request: HttpRequest object containing metadata about the request
+    - product_id: The ID of the product to be updated
+    - If the request method is POST and the form is valid, redirects to the
+    product view page after updating the product
+    - If the request method is POST and the form is invalid, displays an error
+    message and renders the update form again
+    - If the request method is GET, renders the update form with the current
+    product data
     """
     if not request.user.is_superuser:
         messages.error(
@@ -153,7 +179,10 @@ def update_product(request, product_id):
 @login_required
 def delete_product(request, product_id):
     """
-    Delete a product from the store page
+    Delete a product from the store page.
+    - request: HttpRequest object containing metadata about the request
+    - product_id: The ID of the product to be deleted
+    - Redirects to the store page after deleting the product
     """
     if not request.user.is_superuser:
         messages.error(

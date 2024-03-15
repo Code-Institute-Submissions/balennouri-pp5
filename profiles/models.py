@@ -54,6 +54,19 @@ class UserProfile(models.Model):
         return self.user.username
 
 
+class ContactForm(models.Model):
+    user = models.ForeignKey(
+        User, on_delete=models.SET_NULL, null=True, blank=True)
+    name = models.CharField(max_length=100, blank=False)
+    email = models.EmailField(max_length=254, blank=False)
+    subject = models.CharField(max_length=200, blank=True)
+    message = models.TextField(blank=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.subject
+
+
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
     """

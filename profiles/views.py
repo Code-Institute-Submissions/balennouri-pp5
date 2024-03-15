@@ -3,8 +3,35 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import UserProfile
 from products.models import Wishlist, Product, Review
-from .forms import UserProfileForm, ReviewForm
+from .forms import UserProfileForm, ReviewForm, ContactFormForm
 from checkout.models import Order
+
+
+def contact_view(request):
+    if request.method == 'POST':
+        form = ContactFormForm(request.POST)
+        if form.is_valid():
+            form.instance.user = (
+                request.user if request.user.is_authenticated else None)
+            form.save()
+            messages.success(
+                request, 'Your message has been sent successfully!')
+            return redirect('products')
+        else:
+            messages.error(request, 'Please correct the errors below.')
+    else:
+        initial_data = {}
+        if request.user.is_authenticated:
+            user_profile = request.user.userprofile
+            initial_data = {
+                'name': request.user.get_full_name(),
+                'email': request.user.email,
+            }
+        form = ContactFormForm(initial=initial_data)
+
+    template = 'profiles/contact.html'
+    context = {'form': form}
+    return render(request, template, context)
 
 
 @login_required
@@ -14,31 +41,29 @@ def add_review(request, id):
     if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
-            # Save the review
             review = form.save(commit=False)
             review.product = product
             review.user = request.user
             review.save()
-            # Redirect back to the product view page
             return redirect(reverse('product_view', args=[product.id]))
     else:
         form = ReviewForm()
 
+    template = 'profiles/add_review.html'
     context = {
         'form': form,
         'product': product,
     }
-    return render(request, 'profiles/add_review.html', context)
+    return render(request, template, context)
 
 
 def product_reviews(request):
-    # Retrieve all reviews
     all_reviews = Review.objects.all()
-    # Pass the reviews to the template
+    template = 'profiles/product_reviews.html'
     context = {
         'reviews': all_reviews
     }
-    return render(request, 'profiles/product_reviews.html', context)
+    return render(request, template, context)
 
 
 @login_required
