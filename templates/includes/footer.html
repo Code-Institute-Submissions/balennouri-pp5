@@ -1,0 +1,42 @@
+<footer class="footer text-white mt-3">
+    <div class="container-fluid mb-2 bg-dark">
+        <div class="row py-3">
+            <!-- Social Links -->
+            <div class="col-md-4 mb-3">
+                <h5>Social Media</h5>
+                <a href="" target="_blank" rel="noopener" class="text-white d-block mb-2">
+                    <i class="fab fa-facebook"></i> Facebook
+                </a>
+            </div>
+            <!-- Additional Links -->
+            <div class="col-md-4 mb-3">
+                <h5>More Information</h5>
+                <a href="" class="text-white d-block mb-2">FAQ</a>
+                <a href="{% url 'contact_view' %}" class="text-white d-block mb-2">Contact Us</a>
+                <a href="" class="text-white d-block mb-2">About Us</a>
+            </div>
+            <!-- Newsletter Signup -->
+            <div class="col-md-4 text-center">
+                <h5>Subscribe to Our Newsletter</h5>
+                <form action="" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                    class="validate" target="_blank">
+                    <div class="mc-field-group">
+                        <input type="email" name="EMAIL" class="required email form-control mb-2" id="mce-EMAIL"
+                            placeholder="Email Address">
+                    </div>
+                    <div id="mce-responses" class="clear">
+                        <div class="response" id="mce-error-response" style="display:none;"></div>
+                        <div class="response" id="mce-success-response" style="display:none;"></div>
+                    </div>
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                        <input type="text" name="b_16b5b0bc247a7c690ef261d15_70ce1168dd" tabindex="-1" value="">
+                    </div>
+                    <button type="submit" class="btn btn-light">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="col text-center">
+            <p>&copy; {% now "Y" %} FastShoes. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
