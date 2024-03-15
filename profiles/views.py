@@ -1,11 +1,34 @@
-from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import UserProfile
 from products.models import Wishlist, Product, Review
-from .forms import UserProfileForm
+from .forms import UserProfileForm, ReviewForm
 from checkout.models import Order
+
+
+@login_required
+def add_review(request, id):
+    product = get_object_or_404(Product, id=id)
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            # Save the review
+            review = form.save(commit=False)
+            review.product = product
+            review.user = request.user
+            review.save()
+            # Redirect back to the product view page
+            return redirect(reverse('product_view', args=[product.id]))
+    else:
+        form = ReviewForm()
+
+    context = {
+        'form': form,
+        'product': product,
+    }
+    return render(request, 'profiles/add_review.html', context)
 
 
 def product_reviews(request):
@@ -40,7 +63,8 @@ def add_to_wishlist(request, id):
 
     if product in wishlist.products.all():
         wishlist.products.remove(product)
-        messages.success(request, f'Removed {product.name} from your wishlist.')
+        messages.success(
+            request, f'Removed {product.name} from your wishlist.')
     else:
         wishlist.products.add(product)
         messages.success(request, f'Added {product.name} to your wishlist.')

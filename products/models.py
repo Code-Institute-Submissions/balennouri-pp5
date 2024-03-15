@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 class Category(models.Model):
@@ -26,7 +27,9 @@ class Product(models.Model):
     sizes = models.BooleanField(default=False, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2, blank=False)
     rating = models.DecimalField(
-        max_digits=6, decimal_places=2, null=True, blank=True)
+        max_digits=6, decimal_places=2,
+        null=True, blank=True,
+        validators=[MinValueValidator(0), MaxValueValidator(5)],)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     is_sales = models.BooleanField(default=False)
@@ -57,8 +60,12 @@ class Review(models.Model):
         on_delete=models.CASCADE,
         related_name='reviews')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    rating = models.IntegerField()
-    comment = models.TextField()
+    rating = models.DecimalField(
+        max_digits=6,
+        decimal_places=2,
+        null=True, blank=False,
+        validators=[MinValueValidator(0), MaxValueValidator(5)],)
+    comment = models.TextField(blank=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

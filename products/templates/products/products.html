@@ -117,7 +117,7 @@
                                     <p class="small mt-1 mb-0">
                                         <a href="{% url 'products' %}?category={{ product.category.name }}"
                                             class="text-muted">
-                                            <i class="fas fa-tag mr-1">{{ product.category.web_name }}</i>
+                                            <i class="fas fa-tag mr-1"> {{ product.category.name }}</i>
                                         </a>
                                     </p>
 
@@ -125,7 +125,7 @@
 
                                     {% if product.rating %}
 
-                                    <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} /
+                                    <small class="text-muted"><i class="fas fa-star mr-1"></i> {{ product.rating }} /
                                         5</small>
 
                                     {% else %}
@@ -141,6 +141,13 @@
                                         <a href="{% url 'delete_product' product.id %}" class="text-danger">Delete</a>
                                     </small>
 
+                                    {% endif %}
+
+                                    {% if request.user.is_authenticated %}
+
+                                    <hr>
+                                    <a href="{% url 'add_review' product.id %}" class="btn btn-secondary btn-sm">Add Review</a>
+                    
                                     {% endif %}
 
                                 </div>
