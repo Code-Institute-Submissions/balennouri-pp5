@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import Product, Category
+from .models import Product, Category, Wishlist
 from .forms import ProductForm
 
 
@@ -62,11 +62,22 @@ def all_products(request):
 
 def product_view(request, product_id):
     """
-    View to return the product page for each one og the products
+    View to return the product page for each one of the products
     """
     product = get_object_or_404(Product, pk=product_id)
+    in_wishlist = False
+
+    if request.user.is_authenticated:
+        try:
+            wishlist = Wishlist.objects.get(user_wishlist=request.user)
+            if product in wishlist.products.all():
+                in_wishlist = True
+        except Wishlist.DoesNotExist:
+            pass
+
     context = {
         "product": product,
+        "in_wishlist": in_wishlist,
     }
 
     return render(request, "products/product_view.html", context)
