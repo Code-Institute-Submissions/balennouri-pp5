@@ -1,30 +1,25 @@
-<!--Footer File-->
 <footer class="footer text-white mt-3">
-    <div class="container-fluid mb-2 bg-dark">
-        <div class="row py-3">
+    <div class="container-fluid bg-dark py-4">
+        <div class="row">
             <!-- Social Links -->
-            <div class="col-md-4 mb-3">
+            <div class="col-md-4 mb-4">
                 <h2 class="h5">Contact/Social Media</h2>
                 <a href="" target="_blank" rel="noopener" class="text-white d-block mb-2">
                     <i class="fab fa-facebook"></i> Facebook
                 </a>
-                <a href="{% url 'contact_view' %}" class="text-white d-block mb-2"><i
-                        class="fa-solid fa-address-card"></i> Contact Us</a>
+                <a href="{% url 'contact_view' %}" class="text-white d-block mb-2"><i class="fa-solid fa-address-card"></i> Contact Us</a>
             </div>
             <!-- Additional Links -->
-            <div class="col-md-4 mb-3">
-                <h3 class="h5">More Information</h3>
-                <a href="https://www.termsfeed.com/live/02caf24e-83aa-47e0-9344-ea30d1c24f9c" target="_blank"
-                    class="text-white d-block mb-2"><i class="fa-solid fa-user-lock"></i> Our Privacy Policy</a>
+            <div class="col-md-4 mb-4">
+                <h2 class="h5">More Information</h2>
+                <a href="https://www.termsfeed.com/live/02caf24e-83aa-47e0-9344-ea30d1c24f9c" target="_blank" class="text-white d-block mb-2"><i class="fa-solid fa-user-lock"></i> Our Privacy Policy</a>
             </div>
             <!-- Newsletter Signup -->
             <div class="col-md-4 text-center">
-                <h3 class="h5">Subscribe to Our Newsletter</h3>
-                <form action="" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
-                    class="validate" target="_blank">
+                <h2 class="h5">Subscribe to Our Newsletter</h2>
+                <form action="" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
                     <div class="mc-field-group">
-                        <input type="email" name="EMAIL" class="required email form-control mb-2" id="mce-EMAIL"
-                            placeholder="Email Address">
+                        <input type="email" name="EMAIL" class="required email form-control mb-2" id="mce-EMAIL" placeholder="Email Address">
                     </div>
                     <div id="mce-responses" class="clear">
                         <div class="response" id="mce-error-response" style="display:none;"></div>
@@ -37,8 +32,8 @@
                 </form>
             </div>
         </div>
-        <div class="col text-center">
-            <p>&copy; {% now "Y" %} FastShoes. All Rights Reserved.</p>
-        </div>
+    </div>
+    <div class="container-fluid text-center py-2 bg-dark">
+        <p class="mb-0">&copy; {% now "Y" %} FastShoes. All Rights Reserved.</p>
     </div>
 </footer>
