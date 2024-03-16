@@ -32,12 +32,9 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     "https://8000-balennouri-pp5-5oy58itgibp.ws-eu108.gitpod.io",
-    "8000-balennouri-pp5-5oy58itgibp.ws-eu108.gitpod.io",
-    "8000-balennouri-pp5-5oy58itgibp.ws-eu109.gitpod.io",
-    "8000-balennouri-pp5-5oy58itgibp.ws-eu109.gitpod.io",
+    "8000-balennouri-pp5-5oy58itgibp.ws-eu110.gitpod.io",
+    "https://8000-balennouri-pp5-5oy58itgibp.*",
     ".herokuapp.com",
-    "8000-balennouri-pp5-5oy58itgibp.ws-us108.gitpod.io",
-    "8000-balennouri-pp5-5oy58itgibp.ws-us108.gitpod.io",
 ]
 
 
@@ -150,10 +147,8 @@ CSRF_TRUSTED_ORIGINS = [
     "http://*",
     "https://*",
     "https://*.herokuapp.com",
-    "https://8000-balennouri-pp5-5oy58itgibp.ws-eu108.gitpod.io",
-    "https://8000-balennouri-pp5-5oy58itgibp.ws-us108.gitpod.io",
-    "https://8000-balennouri-pp5-5oy58itgibp.ws-us108.gitpod.io",
-    "https://8000-balennouri-pp5-5oy58itgibp.ws-eu109.gitpod.io",
+    "https://8000-balennouri-pp5-5oy58itgibp.ws-eu110.gitpod.io",
+    "https://8000-balennouri-pp5-5oy58itgibp.*",
 ]
 
 
