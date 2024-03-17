@@ -165,20 +165,79 @@ SEO, Marketing, and Legal:
 
 ### Epics 
 
-During the planning for the project, I started and created 4 epics and then broke them down into 38 user stories.
+In the project planning phase, I started with six main epics and then broke them down into individual user stories. These user stories were labeled and prioritized using the MoSCoW technique (Must have, Should have, Could have, Won't have) to guide their development. This approach helped me concentrate on implementing the most essential features first, ensuring a focused development process. You can view all the user stories on the project board, the link to which is provided below. Additionally, the project board offers a glimpse into upcoming features and developments.
 
-The user stories that were broken down from the epics, I labeled them with different labels and I used the MoSCoW (must have, should have, could have and won't have) to develop them. I labeled them, so I could put energy on the important ones before I started with the non-important ones. You can se all of them on the project board [here.]() On the project board you will be able to see the future features as well.
+[Project Board For FastShoes](https://github.com/users/balennouri/projects/7)
 
-Below here is the completed user stories for this version of this project listed by epics:
+Below, you'll find the completed user stories for this version of the project, organized by epics:
 
 #### Epic: Initial Django Setup
 
+- As a developer I want to set up Django and install the initial supporting libraries needed so that I can begin development of the site.
+- As a developer I want to set up the environment to secure secret configuration variables so that I can ensure sensitive data is kept private.
+- As a developer I want to deploy the site to Heroku so that I can ensure the site works in a production environment and share the completed site publicly.
+
+#### Epic: The Website Features
+
+- As a user, I will have it easy to navigate on the page.
+
+- As a user, I will be able to categorize the brand of the products
+
+- As a user, I can filter and search on the website.
+
+- As a user, I can make a wishlist on the website.
+
+- As a user, I want the site to be accessible and user-friendly on mobile devices.
+
+- As a user, I want a seamless experience across different screen sizes.
+
+- As a user, I can write reviews for products.
+
+- As a user, I can contact the store through the contact page
+
 #### Epic: User Authentication and Account Management
 
-#### Epic: Product Management and Cart/Checkout
+- As a first time user, I can create an account
 
-#### Epic: The Webiste and Content:
+- As a user I can delete my account.
 
+- As a returning user I can login/logout of my account.
+
+- As returning user I can update my profile information.
+
+- As site user I can forget my password and get my account back if so.
+
+- As a user i can add/remove product to the wishlist
+
+- As site owner I can see all the detail information for the users in the admin panel.
+
+#### Epic: Order Management
+
+- As a customer, I want to view my order history.
+
+- As an admin, I want to process and manage customer orders.
+
+#### Epic: Security and Privacy
+
+- As a user, I want my personal and payment information to be secure.
+
+#### Epic: Store Management, Cart and Checkout
+
+- As a admin I can add/delete/update products on the admin panel and on the website.
+
+- As a admin I can add new categories on the admin panel.
+
+- As a user I can rate the product from 0 to 5 in the reviews
+
+- As a user I can add products to the cart.
+
+- As user I can pay directly on the website with my credit card.
+
+- As a user I can update the quantity of the product in the cart and delete the product from the cart.
+
+- As user I can place an order and checkout.
+
+- When a user place a order the cart becomes empty.
 
 [Back to top](#contents)
 
