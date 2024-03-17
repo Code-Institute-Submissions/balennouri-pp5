@@ -4,32 +4,46 @@
             <!-- Social Links -->
             <div class="col-md-4 mb-4">
                 <h2 class="h5">Contact/Social Media</h2>
-                <a href="https://www.facebook.com/profile.php?id=61557432720995" target="_blank" rel="noopener" class="text-white d-block mb-2">
+                <a href="https://www.facebook.com/profile.php?id=61557432720995" target="_blank" rel="noopener"
+                    class="text-white d-block mb-2">
                     <i class="fab fa-facebook"></i> Facebook
                 </a>
-                <a href="{% url 'contact_view' %}" class="text-white d-block mb-2"><i class="fa-solid fa-address-card"></i> Contact Us</a>
+                <a href="{% url 'contact_view' %}" class="text-white d-block mb-2"><i
+                        class="fa-solid fa-address-card"></i> Contact Us</a>
             </div>
             <!-- Additional Links -->
             <div class="col-md-4 mb-4">
                 <h2 class="h5">More Information</h2>
-                <a href="https://www.termsfeed.com/live/02caf24e-83aa-47e0-9344-ea30d1c24f9c" target="_blank" class="text-white d-block mb-2"><i class="fa-solid fa-user-lock"></i> Our Privacy Policy</a>
+                <a href="https://www.termsfeed.com/live/02caf24e-83aa-47e0-9344-ea30d1c24f9c" target="_blank"
+                    class="text-white d-block mb-2"><i class="fa-solid fa-user-lock"></i> Our Privacy Policy</a>
             </div>
-            <!-- Newsletter Signup -->
+            <!-- Newsletter Signup Mailchimp -->
             <div class="col-md-4 text-center">
                 <h2 class="h5">Subscribe to Our Newsletter</h2>
-                <form action="" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-                    <div class="mc-field-group">
-                        <input type="email" name="EMAIL" class="required email form-control mb-2" id="mce-EMAIL" placeholder="Email Address">
+                <div id="mc_embed_shell">
+                    <div id="mc_embed_signup">
+                        <form
+                            action="https://herokuapp.us22.list-manage.com/subscribe/post?u=dbf0533bd6e989469a2cebff2&amp;id=45dc1b3e6d&amp;f_id=007ac3e1f0"
+                            method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                            class="validate" target="_blank">
+                            <div id="mc_embed_signup_scroll">
+                                <div class="mc-field-group">
+                                    <input type="email" name="EMAIL" class="required email form-control mb-2"
+                                        id="mce-EMAIL" placeholder="Email Address" required="">
+                                </div>
+                                <div id="mce-responses" class="clear foot">
+                                    <div class="response" id="mce-error-response" style="display: none;"></div>
+                                    <div class="response" id="mce-success-response" style="display: none;"></div>
+                                </div>
+                                <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                                    <input type="text" name="b_dbf0533bd6e989469a2cebff2_45dc1b3e6d" tabindex="-1"
+                                        value="">
+                                </div>
+                                <button type="submit" class="btn btn-light">Subscribe</button>
+                            </div>
+                        </form>
                     </div>
-                    <div id="mce-responses" class="clear">
-                        <div class="response" id="mce-error-response" style="display:none;"></div>
-                        <div class="response" id="mce-success-response" style="display:none;"></div>
-                    </div>
-                    <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                        <input type="text" name="b_16b5b0bc247a7c690ef261d15_70ce1168dd" tabindex="-1" value="">
-                    </div>
-                    <button type="submit" class="btn btn-light">Subscribe</button>
-                </form>
+                </div>
             </div>
         </div>
     </div>

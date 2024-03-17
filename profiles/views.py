@@ -5,6 +5,7 @@ from .models import UserProfile
 from products.models import Wishlist, Product, Review
 from .forms import UserProfileForm, ReviewForm, ContactFormForm
 from checkout.models import Order
+from django.contrib.auth import logout
 
 
 def contact_view(request):
@@ -106,28 +107,42 @@ def add_to_wishlist(request, id):
 @login_required
 def profile(request):
     """
-    * Display the user's profile
+    Display the user's profile.
 
-    * Retrieves the user's profile from the UserProfile model
+    Retrieves the user's profile from the UserProfile model
     using get_object_or_404.
 
-    * For POST requests, it initializes the UserProfileForm with the
-    provided POST data and the user's profile instance.
+    For POST requests:
+    - If 'delete_account' is present in the request data,
+    deletes the user account.
+    - Otherwise, it initializes the UserProfileForm with the provided POST
+    data and the user's profile instance.
 
-    * Retrieves all orders associated with the user's profile.
+    Retrieves all orders associated with the user's profile.
     """
     profile = get_object_or_404(UserProfile, user=request.user)
 
     if request.method == 'POST':
-        form = UserProfileForm(request.POST, instance=profile)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Profile is updated!')
+        if 'delete_account' in request.POST:
+            # Delete user account
+            user = request.user
+            logout(request)
+            user.delete()
+            messages.success(
+                request, 'Your account has been deleted successfully.')
+            return redirect('home')
         else:
-            messages.error(
-                request, "Update failed. Please ensure the form is vaid!")
+            # Update profile information
+            form = UserProfileForm(request.POST, instance=profile)
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'Profile is updated!')
+            else:
+                messages.error(
+                    request, "Update failed. Please ensure the form is valid.")
     else:
         form = UserProfileForm(instance=profile)
+
     orders = profile.orders.all()
 
     template = 'profiles/profile.html'

@@ -19,7 +19,6 @@
 {% endblock %}
 
 {% block content %}
-
 <div class="overlay"></div>
 <div class="container mb-3">
     <div class="row">
@@ -38,8 +37,10 @@
 
                 {{ form|crispy }}
 
-                <button class="btn btn-black rounded-0 float-right mb-5">Update</button>
-
+                <button class="btn btn-black rounded-0 float-right mb-3">Update</button>
+                <!-- delete account button -->
+                <input type="hidden" name="delete_account" value="1">
+                <button type="submit" class="btn btn-danger rounded-0 float-right mb-3 mr-2">Delete Account</button>
             </form>
         </div>
         <div class="col-12 col-lg-6">
@@ -54,42 +55,28 @@
                             <th>Order Total</th>
                         </tr>
                     <tbody>
-
                         {% for order in orders %}
-
                         <tr>
                             <td>
                                 <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}">
-
                                     {{ order.order_number|truncatechars:6 }}
-
                                 </a>
                             </td>
                             <td>{{ order.date }}</td>
                             <td>
                                 <ul class="list-unstyled">
-
                                     {% for item in order.lineitems.all %}
-
                                     <li class="small">
-
                                         {% if item.product.sizes %}
-
                                         Size {{ item.product.size|upper }}
-
                                         {% endif %}{{ item.product.name }} x{{ item.quantity }}
-
                                     </li>
-
                                     {% endfor %}
-
                                 </ul>
                             </td>
                             <td>${{ order.grand_total }}</td>
                         </tr>
-
                         {% endfor %}
-
                     </tbody>
                     </thead>
                 </table>
@@ -97,7 +84,6 @@
         </div>
     </div>
 </div>
-
 {% endblock %}
 
 {% block postloadjs %}
