@@ -1,14 +1,22 @@
 # FastShoes
 
+Welcome to FastShoes, your premier online destination for high-quality football footwear designed for athletes. Our modern e-commerce platform features a curated selection of top-notch football shoes, meticulously chosen to enhance your performance on the field.
+
+In addition to our diverse range of shoes available for purchase, we offer convenient features such as the ability to create an account on our website. By creating an account, you can easily add products to your wishlist and write reviews for items you love.
+
+This business idea has always been close to my heart. As a former professional football player, I understand the importance of quality footwear in enhancing performance on the field. FastShoes is my passion project, allowing me to combine my love for football with my desire to learn more about Django and Python.
+
 The live site can be viewed [here](https://fastshoes-be1fd2fa0203.herokuapp.com/)
 
-![Am I responsive screenshot]()
+![Am I responsive screenshot](docs/readme/ami.responsive.png)
 
 ## Contents
 
 * [Project Goals](#project-goals)
 * [User Experience](#user-experience)
     * [User Stories](#user-stories)
+    * [Scope](#scope)
+    * [Structure](#structure)
     * [Epics](#epics)
     * [Site Structure](#site-structure)
         * [Wireframes](#wireframes)
@@ -63,7 +71,99 @@ The live site can be viewed [here](https://fastshoes-be1fd2fa0203.herokuapp.com/
 
 ### User Stories
 
-#### Epics 
+The aim of the project was to develop a user-centric website, prioritizing key user stories:
+
+* Store Owner Objectives:
+   
+   * Craft an engaging design to captivate users
+   * Establish a user-friendly front end for intuitive navigation
+   * Enable user account management and product management
+   * Enable order management
+
+* User Objectives:
+
+   * Enable users to create accounts and retain control over their personal information
+   * Deliver a responsive and intuitive design that operates seamlessly across all devices
+   * Provide functionality for adding, editing, removing, and updating products in the shopping cart
+   * Implement features allowing users to add and remove products from their wishlist, contingent upon user authentication
+   * Implement functionality that allows logged-in users to write reviews for products
+
+The objective of e-commerce is to prompt users to explore a variety of products and make purchases. The design is sleek and enables users to categorize and sort products according to their preferences.
+
+Every interaction on the site is meticulously crafted to elicit a positive emotional response from the user. This is achieved through thoughtfully designed information flow, color usage, clear navigation structures, and responsive user action feedback. The absence of intrusive automatic pop-ups ensures a seamless user experience. Users maintain full control over their actions, aided by progress indicators and feedback provided during financial transactions.
+
+### Scope 
+
+Once the structure was established, the focus shifted to the scope phase. This involved defining website requirements aligned with the goals outlined in the strategy phase. These requirements were categorized into two main groups: content and functionality.
+
+Content:
+
+* Privacy Policy has been instituted
+* An assortment of purchasable products
+* Rating and price of the products
+* Information text about each product
+* Links to FastShoes social media accounts
+
+Functionality:
+
+* Browse products on the website
+* Register and delete accounts as needed
+* Easily manage shopping cart items by adding, updating, or removing products
+* Save desired products to a personal wishlist for future reference
+* Share feedback by leaving reviews for products
+* Securely complete orders using Stripe, a trusted payment solution
+* Reach out to the store via the contact page for inquiries or assistance
+* Stay informed by signing up for the newsletter
+
+### Structure
+
+Navigation:
+
+* Ensure responsive navigation is consistent across all pages for seamless browsing.
+* Integrate cart functionality to display the total amount and quantity of products added.
+* Implement a search feature enabling customers to easily find products by name, category, or keywords.
+
+Registration and User Profiles:
+
+* Enable user registration and login capabilities for customers to establish and oversee their accounts.
+* Implement user authentication and access control mechanisms to guarantee secure and tailored interactions.
+* Provide users with the ability to modify their information through the user profile page.
+* Allow users to access and monitor their order history via the user profile page.
+
+Products and Sorting:
+
+* Showcase an extensive list of available products.
+* Enable users to filter products by category for easier navigation.
+* Present comprehensive product details, such as price, images, and ratings.
+* Enable users to select their preferred shoe size for the products they desire.
+
+Shopping Cart, Checkout, and Payment Process:
+
+* Users can conveniently add products to their cart and adjust quantities or remove items as needed.
+* Ensure a secure checkout process, collecting address and payment details for smooth transactions.
+* Integrate a reliable payment gateway, such as Stripe, to facilitate secure online payments.
+
+Admin Panel:
+
+* Develop an intuitive admin panel granting site administrators control over products, categories, wishlists, reviews, contact forms, orders, and user accounts.
+
+Responsive Design:
+
+* Craft a responsive website interface optimized for seamless user experiences across various devices and screen sizes.
+* Prioritize intuitive navigation and legible content presentation across desktops, tablets, and mobile devices
+
+Contact Us:
+
+* Integrate a user-friendly contact form or feature to facilitate communication between users and the business.
+
+SEO, Marketing, and Legal:
+
+* Implement a Privacy Policy to ensure compliance with legal regulations.
+* Configure robots.txt and sitemap.xml files to facilitate search engine indexing.
+* Enhance search engine visibility by optimizing meta descriptions and keywords.
+* Establish a Facebook page to promote the business and engage with customers.
+
+### Epics 
 
 During the planning for the project, I started and created 4 epics and then broke them down into 38 user stories.
 
@@ -71,13 +171,13 @@ The user stories that were broken down from the epics, I labeled them with diffe
 
 Below here is the completed user stories for this version of this project listed by epics:
 
-##### Epic: Initial Django Setup
+#### Epic: Initial Django Setup
 
-##### Epic: User Authentication and Account Management
+#### Epic: User Authentication and Account Management
 
-##### Epic: Product Management and Cart/Checkout
+#### Epic: Product Management and Cart/Checkout
 
-##### Epic: The Webiste and Content:
+#### Epic: The Webiste and Content:
 
 
 [Back to top](#contents)
