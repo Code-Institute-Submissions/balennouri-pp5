@@ -18,7 +18,7 @@ The live site can be viewed [here](https://fastshoes-be1fd2fa0203.herokuapp.com/
     * [Scope](#scope)
     * [Structure](#structure)
     * [Epics](#epics)
-    * [Site Structure](#site-structure)
+    * [Skeleton](#skeleton)
         * [Wireframes](#wireframes)
         * [Database Schema](#database-schema)
     * [Design Choices](#design-choices)
@@ -47,8 +47,8 @@ The live site can be viewed [here](https://fastshoes-be1fd2fa0203.herokuapp.com/
    * [Tools](#tools)
    * [Supporting Libraries and Packages](#supporting-libraries-and-packages)
 * [Testing](#testing)
-   * [Manual Testing](#manual-testing-for-fastball-website)
-   * [Summary Table of Manual Testings](#summary-table-of-manual-testings-for-fastball-website)
+   * [Manual Testing](#manual-testing-for-fastshoes-website)
+   * [Summary Table of Manual Testings](#summary-table-of-manual-testings-for-fastshoes-website)
    * [Other Tests](#other-tests)
    * [Validator Testing](#validator-testing)
 * [Bugs](#bugs)
@@ -113,7 +113,7 @@ Functionality:
 * Share feedback by leaving reviews for products
 * Securely complete orders using Stripe, a trusted payment solution
 * Reach out to the store via the contact page for inquiries or assistance
-* Stay informed by signing up for the newsletter
+* Stay up-to-date with the latest news, releases, and promotions by subscribing to FastShoes!
 
 ### Structure
 
@@ -241,23 +241,15 @@ Below, you'll find the completed user stories for this version of the project, o
 
 [Back to top](#contents)
 
-### Site Structure
+### Skeleton
 
 #### Wireframes
 
-I used Balsamiq to create my wireframes. I decided to make wireframes for larger screens and for mobile phones. I think wireframes are a good thing to do before starting with the project, so I can put my ideas on what I want the website to look like. Some pages are a little different from the wireframes, but it small details differ from page to page. The reason is because, during development, to make a website with good functionality.
+I utilized Balsamiq to design my wireframes, creating versions tailored for both larger screens and mobile devices. Wireframing was a crucial step for me to visualize and organize my ideas before diving into the project development. While some pages may deviate slightly from the wireframes, these differences are minor and were made to ensure optimal functionality and user experience during the development process.
 
 ##### Home page in wireframe
 
 ![wireframe home page]()
-
-##### Info page in wireframe
-
-![wireframe Info page]()
-
-##### Category page in wireframe
-
-![wireframe category page]()
 
 ##### Your Profile page in wireframe
 
@@ -291,15 +283,18 @@ I used Balsamiq to create my wireframes. I decided to make wireframes for larger
 
 #### Database Schema
 
-For this project, I utilized the built-in Django User Model for user accounts and created one model in the store app. In the store model, I built a customer model, order model, product model and category model.
+Below, you'll find the models used in this project. In the database schema displayed below, models with the same color belong to the same app.
+The database schema shown here was generated using [FigJam.](https://www.figma.com/)
 
-The database schema seen below was created using [Drawsql.app.](https://drawsql.app/) All the fields are not labeled correctly because of limitations in the "drawsql" app. One are the email field and the cloudinary field. However, the diagram still shows the general layout of the models in the store app.
+Colours for each apps:
 
-If you want to see the true field choices, head over to the models.py in the store app.
+Green: products App
+Yellow: checkout App
+Red: profiles App 
 
 The Database schema:
 
-![Database schema]()
+![Database schema](docs/readme/datebase.png)
 
 [Back to top](#contents)
 
@@ -309,7 +304,9 @@ The Database schema:
 
 #### Colour Palette
 
-![colour pallete]()
+For this website, I opted for darker colors with white used for the content sections. The darker colors complement the colorful nature of football shoes, as most of them feature vibrant colors. This choice ensures that the products stand out effectively when users view them on the website.
+
+![colour pallete](docs/readme/colours.png)
 
 The color palette image was generated from [coolers.](https://coolors.co/)
 
@@ -367,22 +364,20 @@ I used agile methodology throughout the development of this project utilizing Gi
    * Django was used as the python framework in the project.
 * [Bootstrap](https://getbootstrap.com/)
    * The CSS framework that was used for styling the website, saved me a lot of time when I learned to use it.
-* [Cloudinary](https://cloudinary.com/)
-   * Cloudinary was used to save my media. It's a cloud-based platform for saving and storing images.
-* [Start Bootstrap](https://startbootstrap.com/)
-   * Start bootstrap was used for the project's theme. Start boostrap creates open source themes, templates and snippets.
+* [AWS.Amazon](https://us-east-1.console.aws.amazon.com/)
+   * I utilized AWS to store both my media and static files for the project.
 
 ### Database
  [ElephantSQL](https://www.elephantsql.com/)
-   * ElphantSQL is used as a database for the FastBall project. ElphantSQL is a PostgresSQL database that saves and stores databases.
+   * ElephantSQL serves as the database for the FastShoes project. It is a PostgresSQL database solution that efficiently manages and stores databases.
 
 ### Tools
 * [Gitpod](https://www.gitpod.io/#get-started)
-   * An online integrated development environment (IDE) used for developing and testing the FastBall project. 
+   * An online integrated development environment (IDE) used for developing and testing the FastShoes project. 
 * [GitHub](https://github.com/)
    * A web-based hosting service for version control repositories, used for storing and managing the project's source code.
 * [Balsamiq](https://balsamiq.com/wireframes/)
-   * A wireframing tool used for creating mockups and prototypes of the FastBall website.
+   * A wireframing tool used for creating mockups and prototypes of the FastShoes website.
 * [Heroku](https://dashboard.heroku.com/)
    * Used for deploying the page and publish it. Heroku is a cloud platform that enables deployment and hosting of web applications.
 
@@ -393,11 +388,11 @@ I used agile methodology throughout the development of this project utilizing Gi
 
 ## Testing
 
-### Manual Testing for FastBall Website
+### Manual Testing for FastShoes Website
 
 #### Test Schedule Plan:
 
-### Summary Table of Manual Testings for FastBall Website
+### Summary Table of Manual Testings for FastShoes Website
 
 ### Other Tests
 
@@ -456,7 +451,7 @@ Once you are certain that everything is ready to deploy the repo, you can do so 
 1. Log in to Heroku or create an account if necessary.
 2. Click on the button labeled "New" from the dashboard in the top right corner and select the "Create new app" option in the drop-down menu.
 3. Enter a unique name for the application and select the region you are in.
-    * For this project, the unique name is "FastBall" and the region selected is Europe.
+    * For this project, the unique name is "FastShoes" and the region selected is Europe.
 4. Click on "create app".
 5. Navigate to the settings tab and click "Reveal config vars".
 6. Add the config vars necessary for the project.
