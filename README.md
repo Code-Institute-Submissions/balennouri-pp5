@@ -30,14 +30,6 @@ The live site can be viewed [here](https://fastshoes-be1fd2fa0203.herokuapp.com/
         * [All The Pages](#all-the-pages)
         * [The Navigation Bar](#the-navigation-bar)
         * [The Main Content](#the-main-content)
-            * [Admin/Staff](#adminstaff-product-management)
-            * [Home Page](#home-page)
-            * [Info Page](#info-page)
-            * [Category Page](#category-page)
-            * [Account Pages](#account-pages)
-            * [Cart Page](#cart-page)
-            * [Checkout Page](#checkout-page)
-            * [Comment Page](#comment-page)
         * [The Footer](#the-footer)
     * [Future Features](#future-features)
 * [Technologies Used](#technologies-used)
@@ -46,6 +38,7 @@ The live site can be viewed [here](https://fastshoes-be1fd2fa0203.herokuapp.com/
    * [Database](#database)
    * [Tools](#tools)
    * [Supporting Libraries and Packages](#supporting-libraries-and-packages)
+* [Marketing](#marketing)
 * [Testing](#testing)
    * [Manual Testing](#manual-testing-for-fastshoes-website)
    * [Summary Table of Manual Testings](#summary-table-of-manual-testings-for-fastshoes-website)
@@ -64,6 +57,22 @@ The live site can be viewed [here](https://fastshoes-be1fd2fa0203.herokuapp.com/
 * [Acknoledgements](#acknowledgements)
 
 ## Project Goals
+
+- I aimed to develop a website equipped with an admin panel for effortless product management and user account handling, seamlessly integrated with a database.
+
+- The objective was to empower admin/staff members to efficiently add, remove, and update products directly from the website while logged in.
+
+- Additionally, I sought to provide admin/staff with the capability to set products on sale to facilitate the clearance of older inventory.
+
+- Users were to be afforded the opportunity to create accounts and manage their account details at their convenience.
+
+- Enhancing user experience, I aimed to implement robust categorization, search, and filtering functionalities to assist users in locating their desired brands with ease.
+
+- To enrich user engagement, I aimed to enable users to curate their own wishlist by adding or removing products, provided they are logged in.
+
+- Furthermore, I aimed to foster user interaction by enabling them to leave reviews for products, enhancing the community aspect of the platform.
+
+- Lastly, I endeavored to provide users with a means to reach out to the FastShoes team through the contact page for any inquiries or assistance needed.
 
 [Back to top](#contents)
 
@@ -302,11 +311,13 @@ The Database schema:
 
 #### Typography
 
+For the website fonts, I opted to use Kode Mono for the header in the navigation section. For the remaining content, I utilized the Lato font. Additionally, I included a secondary font fallback as Sans-serif to ensure compatibility in case the user's browser does not support the primary fonts. 
+
 #### Colour Palette
 
-For this website, I opted for darker colors with white used for the content sections. The darker colors complement the colorful nature of football shoes, as most of them feature vibrant colors. This choice ensures that the products stand out effectively when users view them on the website.
-
 ![colour pallete](docs/readme/colours.png)
+
+For this website, I opted for darker colors with white used for the content sections. The darker colors complement the colorful nature of football shoes, as most of them feature vibrant colors. This choice ensures that the products stand out effectively when users view them on the website.
 
 The color palette image was generated from [coolers.](https://coolors.co/)
 
@@ -314,13 +325,21 @@ The color palette image was generated from [coolers.](https://coolors.co/)
 
 ### Project Management
 
-I used agile methodology throughout the development of this project utilizing GitHub projects and issues. You can read more about this in the AGILE.md file [here.](https://github.com/balennouri/pp5/blob/main/AGILE.md)
+I employed agile methodology throughout the project development, utilizing GitHub projects and issues for streamlined management. More detailed information about this approach can be found in the AGILE.md file.
+
+[AGILE.md](https://github.com/balennouri/pp5/blob/main/AGILE.md)
 
 [Back to top](#contents)
 
 ## Features
 
 ### Existing Features
+
+#### CRUD
+
+The authenticated Store Owner can manage all major product-related functions directly from the front-end of FastShoes. This includes adding new products, editing existing product details, and deleting products entirely, all accessible from either the Products page or the individual Product detail page.
+
+Authenticated users on FastShoes have control over several key functionalities directly from the front-end. They can add or remove products from their wishlist, manage their account by updating or deleting it, and write reviews for all products available on the platform.
 
 #### All The Pages
 
@@ -349,6 +368,11 @@ I used agile methodology throughout the development of this project utilizing Gi
 [Back to top](#contents)
 
 ### Future Features
+
+Below, you can find my future plans for the website:
+
+* As a user, i can read about the store (About Page)
+* As a user i can comment on products
 
 ## Technologies Used
 
@@ -380,11 +404,24 @@ I used agile methodology throughout the development of this project utilizing Gi
    * A wireframing tool used for creating mockups and prototypes of the FastShoes website.
 * [Heroku](https://dashboard.heroku.com/)
    * Used for deploying the page and publish it. Heroku is a cloud platform that enables deployment and hosting of web applications.
+* [Stripe](https://stripe.com/).
+   * Stripe is a widely used payment processing platform that allows businesses to accept online payments securely.
 
 ### Supporting Libraries and Packages
 
-
 [Back to top](#contents)
+
+## Marketing
+
+### Marketing Strategies
+
+Subscribing:
+
+* Allow users to subscribe to Fastshoes to receive notifications about new deals and product arrivals, ensuring they stay up-to-date with the latest offerings in the store. By subscribing, users gain exclusive access to promotions and updates, enhancing their shopping experience.
+
+Social Media Marketing - Facebook business page:
+
+* Given Facebook's extensive user base and diverse demographic reach, I've established a Facebook Business Page to leverage its marketing potential. Utilizing this platform, I can launch targeted ad campaigns tailored to specific geographic locations, cities, or age groups, maximizing the effectiveness of my marketing efforts. With its widespread popularity and robust advertising features, Facebook presents an ideal platform for promoting my business.
 
 ## Testing
 
