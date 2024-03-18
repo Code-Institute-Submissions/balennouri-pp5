@@ -423,6 +423,33 @@ Social Media Marketing - Facebook business page:
 
 * Given Facebook's extensive user base and diverse demographic reach, I've established a Facebook Business Page to leverage its marketing potential. Utilizing this platform, I can launch targeted ad campaigns tailored to specific geographic locations, cities, or age groups, maximizing the effectiveness of my marketing efforts. With its widespread popularity and robust advertising features, Facebook presents an ideal platform for promoting my business.
 
+#### SEO:
+
+SEO:
+
+* After incorporating meta tags into the <head> element to enhance my website's visibility and boost its performance on search engines, I proceeded to integrate keywords aimed at attracting both search engines and users. To select the most effective keywords, I utilized [XML-Sitemaps](https://online.seranking.com/login.html) to assess competition and ensure optimal keyword selection.
+
+* Furthermore, I employed XML-Sitemaps to generate an XML file. This XML file assists Google in comprehending the website's structure and the interlinking between pages, thereby enhancing the website's search engine optimization (SEO) efforts.
+
+#### Robots.txt and Sitemap.xml:
+
+Robots.txt:
+
+* The robots.txt file, located in the root directory, serves as a directive for search engines, indicating which areas of the application they are not permitted to access. In Bookworms, the robots.txt file includes the URLs of the admin, profiles, and checkout directories, instructing search engine spiders to refrain from crawling these sections.
+
+Sitemap.xml:
+
+* The sitemap.xml file, generated on [xml-sitemaps.com](https://www.xml-sitemaps.com/details-mym-bookworms-et-al-b7ea61e35a6e.herokuapp.com-49873d773.html), resides in the root directory and lists essential page URLs of the website. This file assists search engines in comprehending the structure of the website and ensures that all vital pages are crawled and indexed effectively.
+
+## Privacy Policy:
+
+Privacy Policy:
+
+* A Privacy Policy is a document necessary for any online presence that collects data from users. Its purpose is to be transparent and inform users about how their data is being collected and processed. 
+
+
+[Back To Top](#contents)
+
 ## Testing
 
 ### Manual Testing for FastShoes Website
@@ -465,9 +492,7 @@ Tested on the following devices:
 
 ### Known Bugs
 
-
 ### Fixed Bugs
-
 
 ## Deployment and Development
 
