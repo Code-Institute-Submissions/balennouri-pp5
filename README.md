@@ -373,6 +373,12 @@ Below, you can find my future plans for the website:
 
 * As a user, i can read about the store (About Page)
 * As a user i can comment on products
+* As a site user I can add profile image to my account
+* As site user I would get a welcome email when I sign up.
+* As a customer, I want to track the status of my order.
+* As a user I can update the products quantity on the checkout form.
+* As a user I can rate the product with stars.
+* As a admin/staff the stocks will automatically update when users place an order.
 
 ## Technologies Used
 
@@ -425,25 +431,17 @@ Social Media Marketing - Facebook business page:
 
 #### SEO:
 
-SEO:
-
 * After incorporating meta tags into the <head> element to enhance my website's visibility and boost its performance on search engines, I proceeded to integrate keywords aimed at attracting both search engines and users. To select the most effective keywords, I utilized [XML-Sitemaps](https://online.seranking.com/login.html) to assess competition and ensure optimal keyword selection.
 
 * Furthermore, I employed XML-Sitemaps to generate an XML file. This XML file assists Google in comprehending the website's structure and the interlinking between pages, thereby enhancing the website's search engine optimization (SEO) efforts.
 
 #### Robots.txt and Sitemap.xml:
 
-Robots.txt:
-
 * The robots.txt file, located in the root directory, serves as a directive for search engines, indicating which areas of the application they are not permitted to access. In Bookworms, the robots.txt file includes the URLs of the admin, profiles, and checkout directories, instructing search engine spiders to refrain from crawling these sections.
-
-Sitemap.xml:
 
 * The sitemap.xml file, generated on [xml-sitemaps.com](https://www.xml-sitemaps.com/details-mym-bookworms-et-al-b7ea61e35a6e.herokuapp.com-49873d773.html), resides in the root directory and lists essential page URLs of the website. This file assists search engines in comprehending the structure of the website and ensures that all vital pages are crawled and indexed effectively.
 
 ## Privacy Policy:
-
-Privacy Policy:
 
 * A Privacy Policy is a document necessary for any online presence that collects data from users. Its purpose is to be transparent and inform users about how their data is being collected and processed. 
 
@@ -497,7 +495,80 @@ Tested on the following devices:
 ## Deployment and Development
 
 * The project was developed using [Gitpod](https://www.gitpod.io/#get-started) to create the code and overall file structure.
+
 * The repository for this project is hosted on [GitHub](https://github.com/).
+
+### Setup and Deployment
+
+#### Creating the Workspace Project repository ###
+
+1. This project has been created by using the full Code Institute provided template which you can find here : [Gitpod Full Template - Code Institute.](https://github.com/Code-Institute-Org/gitpod-full-template)
+
+2. Click : Create New repository - using that template.
+
+3. Name : Name the repository/project.
+
+4. Launch : Launch the creation of the repository as it can take a few minutes to complete.
+
+#### Initial Workspace Installations
+
+Here are the steps to install the necessary frameworks/packages : 
+
+1. Installation of Django : 
+    
+        pip3 install django==3.2
+
+2. Installation of Gunicorn : 
+    
+         pip3 install gunicorn
+
+3. Installation of Libraries :
+
+         pip3 install dj_database_url
+        
+         pip3 install psycopg2-binary
+
+4. Create the requirements file with the installed libraries/packages :
+
+* (Note: You must rerun this command if you install any additional dependencies!)
+    
+        pip3 freeze --local > requirements.txt
+
+5. Now you create your project : 
+
+* You do this by running the command :
+    
+        django-admin startproject (PROJECT_NAME) . 
+        
+    * (Make sure to include the full stop at the end)
+
+6. Next you create your app :
+
+* You do this by running the command :
+    
+         python3 manage.py startapp (APP_NAME)
+    
+    * As soon as you created your app make sure to add the app into your settings.py under the section of INSTALLED_APPS. This is important.
+
+7. Here you run your migrations again :
+
+* Make your migartions by :
+    
+         python3 manage.py makemigrations
+
+    * also a good idea to run : python3 manage.py makemigrations --dry-run to have a pre-flight check before you make any changes.
+
+
+* Migrate your changes to the database : 
+
+        python3 manage.py migrate
+
+* You can test your website then locally by running : python3 manage.py runserver
+    * This is good to make sure everything is set up and working correctly. If everything is correct you will see the Django Default Page.
+
+8. Create your env.py file in the root directory.
+
+[Back to top](#contents)
 
 ### Deployment
 
@@ -506,22 +577,34 @@ The project was deployed using [Heroku](https://id.heroku.com/login).
 INFO - to ensure a successful deployment of the project in Heroku, you need to ensure that you create a Procfile and a requirements.txt file.
 
 * In the Procfile insert the following:
+
   * ``` web: gunicorn PROJECT_NAME.wsgi ```
 
 Once you are certain that everything is ready to deploy the repo, you can do so through the following steps.
 
 1. Log in to Heroku or create an account if necessary.
+
 2. Click on the button labeled "New" from the dashboard in the top right corner and select the "Create new app" option in the drop-down menu.
+
 3. Enter a unique name for the application and select the region you are in.
     * For this project, the unique name is "FastShoes" and the region selected is Europe.
+
 4. Click on "create app".
+
 5. Navigate to the settings tab and click "Reveal config vars".
+
 6. Add the config vars necessary for the project.
+
 7. Navigate to the "Deploy" section by clicking the "Deploy" tab in the navbar.
+
 8. Select "GitHub" as the deployment method and click "Connect to GitHub".
+
 9. Search for the GitHub repository that you wish to deploy.
+
 10. Click on "connect" to link the repository to Heroku.
+
 11. Scroll down and click on "Deploy Branch" to manually deploy.
+
 12. Once the app has deployed successfully, Heroku will notify you and provide a button to view the app.
 
 INFO - If you wish to rebuild the deployed app automatically every time you push to GitHub, you may click on "Enable Automatic Deploys" in Heroku.
@@ -531,6 +614,7 @@ INFO - If you wish to rebuild the deployed app automatically every time you push
 To create a copy of the repository for viewing and editing without affecting the original repository you can fork the repository through the following steps:
 
 1. In the "FastShoes" repository, click on the "fork" tab in the top right corner.
+
 2. Click on "create fork" to fork the repository in your own GitHub account.
 
 ### Cloning The Repository
@@ -538,11 +622,17 @@ To create a copy of the repository for viewing and editing without affecting the
 To clone the repository through GitHub, follow these steps:
 
 1. In the repository, select the "code" tab located just above the list of files and next to the gitpod button.
+
 2. Select "HTTPS" in the dropdown menu.
+
 3. Copy the URL under HTTPS.
+
 4. Open Git Bash in your IDE of choice.
+
 5. Change the working directory to the location where you want the cloned directory to be created.
+
 6. Type "git clone" and paste the URL that was copied from the repository.
+
 7. Press the "enter" key to create the clone.
 
 ### The ElephantSQL Database
@@ -562,8 +652,121 @@ To set up a database, follow these steps:
 9. Ensure that all details are correct and then click "Create instance".
 10. Once created, you can return to the dashboard and click on the instance created to view relevant details such as the database URL and password.
 
-### The Cloudinary API
-[Cloudinary](https://cloudinary.com/) is used in this project to store media assets. This is done due to the fact that Heroku does not store media files reliably.
+### Amazon Web Services ( AWS )
+
+To configure media/static storage for our project, we utilized [AWS]((https://aws.amazon.com/)). Follow these steps to set it up:
+
+#### Create an AWS Account :
+     
+* Head to the AWS website and sign up for an account if you haven't already.
+
+#### Set Up AWS S3 Bucket :
+
+To set up your S3 bucket for static website hosting, follow these steps :
+
+1. In the AWS Management Console, use the search bar to find and select "S3".
+2. Create a new bucket with a name preferably matching your Heroku project name, and choose your desired region.
+
+3. Uncheck the "Block all public access" option to allow public access to your bucket.
+
+4. Enable ACLs under "Object Ownership" and select "Bucket owner preferred" for enhanced control over object ownership.
+
+5. In the "Properties" tab of your bucket, activate static website hosting. Enter "index.html" for both the Index document and Error document fields.
+
+6. Under the "Permissions" tab, navigate to the CORS configuration and paste the following configuration:
+
+ * ```  [
+     {
+         "AllowedHeaders": ["Authorization"],
+         "AllowedMethods": ["GET"],
+         "AllowedOrigins": ["*"],
+         "ExposeHeaders": []
+     }
+   ]
+
+#### Configure Bucket Permissions :
+
+* Go to the "Bucket Policy" tab in your S3 bucket settings and select "Policy Generator".
+
+Configure the Policy Generator as follows :
+
+1. Set the "Policy Type" as "S3 Bucket Policy".
+
+2. Set the "Effect" as "Allow".
+
+3. Set the "Principal" as "*".
+
+4. Set the "Actions" as "GetObject".
+
+5. Paste your ARN (Amazon Resource Name) into the "Amazon Resource Name (ARN)" field.
+
+6. Generate the policy, copy it, and paste it into the Bucket Policy Editor
+
+ * ``` {
+     "Id": "Policy1234567890",
+     "Version": "2012-10-17",
+     "Statement": [
+         {
+             "Sid": "Stmt1234567890",
+             "Action": ["s3:GetObject"],
+             "Effect": "Allow",
+             "Resource": "arn:aws:s3:::your-bucket-name/*",
+             "Principal": "*"
+         }
+     ]
+   }
+
+7. After pasting the policy into the Bucket Policy Editor, append "/*" to the end of the "Resource" key before saving.
+
+8. In the ACL (Access Control List) section, enable "List" for Everyone to grant access to list objects in the bucket.
+
+#### Create user and User Group in IAM :
+
+1. Navigate to the IAM (Identity and Access Management) service.
+
+2. Create a new user group, naming it something like "group-your-app-name".
+
+3. Select the created group, go to the "Permissions" tab, click "Add Permissions", then "Attach Policies".
+
+4. Switch to the JSON tab, and click on the "Import Managed Policy" link. Search for "S3" and select the "AmazonS3FullAccess" policy, then click "Import". Finally, paste your ARN from the S3 Bucket into the "Resources" key.
+
+        {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                "Effect": "Allow",
+                "Action": "s3:*",
+                "Resource": [
+                    "arn:aws:s3:::your-bucket-name",
+                    "arn:aws:s3:::your-bucket-name/*"
+                ]
+                }
+            ]
+        }
+
+5. Review the policy and proceed to create it.
+
+6. Attach this policy to your group.
+
+7. When adding a new user to the group, select "Programmatic Access" as the AWS Access Type. Afterward, download the .csv file containing the user's Access Key ID and Secret Access Key.
+
+#### Create Media Folder
+
+1. Navigate to your S3 bucket and create a new folder called "media" where your image files will be stored.
+
+2. Upload all the necessary files for your project into this "media" folder.
+
+3. Ensure that the "Manage Public Permissions" setting is configured to "Grant Public Read Access to this object(s)" for the files in the "media" folder.
+
+#### Integrate AWS S3 with Django :
+
+1. Install the boto3 and django-storages packages in your Django project.
+
+2. Add 'storages' to the INSTALLED_APPS in your project's settings.py file.
+
+3. Add your AWS secret variables to the env.py file.
+
+By following these steps, you'll be able to set up AWS for media/static storage in your project.
 
 [Back to top](#contents)
 
