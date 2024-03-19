@@ -427,6 +427,8 @@ Subscribing:
 
 Social Media Marketing - Facebook business page:
 
+![Facebook screenshot](docs/readme/facebook.png)
+
 * Given Facebook's extensive user base and diverse demographic reach, I've established a Facebook Business Page to leverage its marketing potential. Utilizing this platform, I can launch targeted ad campaigns tailored to specific geographic locations, cities, or age groups, maximizing the effectiveness of my marketing efforts. With its widespread popularity and robust advertising features, Facebook presents an ideal platform for promoting my business.
 
 #### SEO:
@@ -437,7 +439,7 @@ Social Media Marketing - Facebook business page:
 
 #### Robots.txt and Sitemap.xml:
 
-* The robots.txt file, located in the root directory, serves as a directive for search engines, indicating which areas of the application they are not permitted to access. In Bookworms, the robots.txt file includes the URLs of the admin, profiles, and checkout directories, instructing search engine spiders to refrain from crawling these sections.
+* The robots.txt file, located in the root directory, serves as a directive for search engines, indicating which areas of the application they are not permitted to access. In Bookworms, the robots.txt file includes the URLs of the admin, profile, account, bag and checkout directories, instructing search engine spiders to refrain from crawling these sections.
 
 * The sitemap.xml file, generated on [xml-sitemaps.com](https://www.xml-sitemaps.com/details-mym-bookworms-et-al-b7ea61e35a6e.herokuapp.com-49873d773.html), resides in the root directory and lists essential page URLs of the website. This file assists search engines in comprehending the structure of the website and ensures that all vital pages are crawled and indexed effectively.
 
