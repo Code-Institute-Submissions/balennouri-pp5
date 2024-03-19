@@ -1,0 +1,7 @@
+user-agent: *
+Disallow: /accounts/
+Disallow: /admin/
+Disallow: /bag/
+Disallow: /checkout/
+Disallow: /profile/
+sitemap: https://fastshoes-be1fd2fa0203.herokuapp.com/sitemap.xml 
