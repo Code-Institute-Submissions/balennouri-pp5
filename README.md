@@ -570,71 +570,6 @@ Here are the steps to install the necessary frameworks/packages :
 
 [Back to top](#contents)
 
-### Deployment
-
-The project was deployed using [Heroku](https://id.heroku.com/login).
-
-INFO - to ensure a successful deployment of the project in Heroku, you need to ensure that you create a Procfile and a requirements.txt file.
-
-* In the Procfile insert the following:
-
-  * ``` web: gunicorn PROJECT_NAME.wsgi ```
-
-Once you are certain that everything is ready to deploy the repo, you can do so through the following steps.
-
-1. Log in to Heroku or create an account if necessary.
-
-2. Click on the button labeled "New" from the dashboard in the top right corner and select the "Create new app" option in the drop-down menu.
-
-3. Enter a unique name for the application and select the region you are in.
-    * For this project, the unique name is "FastShoes" and the region selected is Europe.
-
-4. Click on "create app".
-
-5. Navigate to the settings tab and click "Reveal config vars".
-
-6. Add the config vars necessary for the project.
-
-7. Navigate to the "Deploy" section by clicking the "Deploy" tab in the navbar.
-
-8. Select "GitHub" as the deployment method and click "Connect to GitHub".
-
-9. Search for the GitHub repository that you wish to deploy.
-
-10. Click on "connect" to link the repository to Heroku.
-
-11. Scroll down and click on "Deploy Branch" to manually deploy.
-
-12. Once the app has deployed successfully, Heroku will notify you and provide a button to view the app.
-
-INFO - If you wish to rebuild the deployed app automatically every time you push to GitHub, you may click on "Enable Automatic Deploys" in Heroku.
-
-### Forking the Repository
-
-To create a copy of the repository for viewing and editing without affecting the original repository you can fork the repository through the following steps:
-
-1. In the "FastShoes" repository, click on the "fork" tab in the top right corner.
-
-2. Click on "create fork" to fork the repository in your own GitHub account.
-
-### Cloning The Repository
-
-To clone the repository through GitHub, follow these steps:
-
-1. In the repository, select the "code" tab located just above the list of files and next to the gitpod button.
-
-2. Select "HTTPS" in the dropdown menu.
-
-3. Copy the URL under HTTPS.
-
-4. Open Git Bash in your IDE of choice.
-
-5. Change the working directory to the location where you want the cloned directory to be created.
-
-6. Type "git clone" and paste the URL that was copied from the repository.
-
-7. Press the "enter" key to create the clone.
-
 ### The ElephantSQL Database
 
 The [ElephantSQL](https://www.elephantsql.com/) PostgreSQL Database was used for this project.
@@ -768,7 +703,184 @@ Configure the Policy Generator as follows :
 
 By following these steps, you'll be able to set up AWS for media/static storage in your project.
 
-[Back to top](#contents)
+### Project Settings Adjustments
+
+Here, I'll outline all the settings that were added or adjusted in the settings.py file of the project folder. 
+
+1. Initial settings and imports at the top of the file include :
+
+        import os
+        from pathlib import Path
+        import dj_database_url
+
+        if os.path.isfile("env.py"):
+            import env
+
+2. Secret key settings, always keep these secret with caution, include :
+
+        SECRET_KEY = os.environ.get("SECRET_KEY")
+
+        DEBUG = "DEVELOPMENT" in os.environ 
+
+3. Database settings will include the secret URL that you have set in the Env.py file :
+        DATABASES = {
+            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        }
+
+4. Media and Static files : 
+
+        STATIC_URL = '/static/'
+        STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+        MEDIA_URL = '/media/'
+        MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+5. Add the following imports into your URLS.py in your project folder.
+
+        from django.conf import settings
+        from django.conf.urls.static import static
+
+        followed by the following command at the end of the urlpatterns: 
+
+        urlpatterns = [
+            path(your paths),
+        ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
+
+6. Template DIRS setting : 
+
+        TEMPLATES = [
+            {
+                'DIRS': [
+                    os.path.join(BASE_DIR, 'templates'),  *// ADD THIS // *
+                ]
+            } 
+        ] 
+
+7. AWS Setup :
+
+        if 'USE_AWS' in os.environ:
+
+            # Cache control
+            AWS_S3_OBJECT_PARAMETERS = {
+                'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+                'CacheControl': 'max-age=94608000',
+            }
+
+            # Bucket Config
+            AWS_STORAGE_BUCKET_NAME = 'your-storage-bucket-s3-name' // Your S3 name
+            AWS_S3_REGION_NAME = 'your-region-1' // Your Region
+            AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+            AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+            AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+            # Static and media files
+            STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+            STATICFILES_LOCATION = 'static'
+            DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+            MEDIAFILES_LOCATION = 'media'
+
+            # Override static and media URLs in production
+            STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+            MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+
+8. Create custom_storages.py file in root directory :
+
+        from django.conf import settings
+        from storages.backends.s3boto3 import S3Boto3Storage
+
+        class StaticStorage(S3Boto3Storage):
+            location = settings.STATICFILES_LOCATION
+
+        class MediaStorage(S3Boto3Storage):
+            location = settings.MEDIAFILES_LOCATION
+
+9. Create Procfile in the root directory :
+
+        Once you created the procfile add this command inside : 
+        web: gunicorn your_app_name.wsgi:application
+
+        * This file is essential for Heroku Deployment.*
+
+10. Change your allowed hosts at the top to the following : 
+
+        ALLOWED_HOSTS = [
+        "project_name.herokuapp.com", 
+        "localhost", "local_gitpod_workspace_url"]
+
+   * To run the app on the development side, once you run python3 manage.py runserver, you will need to copy your workspace URL and add it to your ALLOWED_HOSTS setting in the settings.py file. This usually looks like: https://8000.projectname.... depending on the port assigned
+        
+
+* At this stage you are ready to make your commit and push changes into your GitHub repository.
+With the following commands : 
+
+       1. git add .
+       2. git commit -m "Commit Message"
+       3. git push
+
+### Deployment Heroku
+
+The project was deployed using [Heroku](https://id.heroku.com/login).
+
+INFO - to ensure a successful deployment of the project in Heroku, you need to ensure that you create a Procfile and a requirements.txt file.
+
+* In the Procfile insert the following:
+
+  * ``` web: gunicorn PROJECT_NAME.wsgi ```
+
+Once you are certain that everything is ready to deploy the repo, you can do so through the following steps.
+
+1. Log in to Heroku or create an account if necessary.
+
+2. Click on the button labeled "New" from the dashboard in the top right corner and select the "Create new app" option in the drop-down menu.
+
+3. Enter a unique name for the application and select the region you are in.
+    * For this project, the unique name is "FastShoes" and the region selected is Europe.
+
+4. Click on "create app".
+
+5. Navigate to the settings tab and click "Reveal config vars".
+
+6. Add the config vars necessary for the project.
+
+7. Navigate to the "Deploy" section by clicking the "Deploy" tab in the navbar.
+
+8. Select "GitHub" as the deployment method and click "Connect to GitHub".
+
+9. Search for the GitHub repository that you wish to deploy.
+
+10. Click on "connect" to link the repository to Heroku.
+
+11. Scroll down and click on "Deploy Branch" to manually deploy.
+
+12. Once the app has deployed successfully, Heroku will notify you and provide a button to view the app.
+
+INFO - If you wish to rebuild the deployed app automatically every time you push to GitHub, you may click on "Enable Automatic Deploys" in Heroku.
+
+### Forking the Repository
+
+To create a copy of the repository for viewing and editing without affecting the original repository you can fork the repository through the following steps:
+
+1. In the "FastShoes" repository, click on the "fork" tab in the top right corner.
+
+2. Click on "create fork" to fork the repository in your own GitHub account.
+
+### Cloning The Repository
+
+To clone the repository through GitHub, follow these steps:
+
+1. In the repository, select the "code" tab located just above the list of files and next to the gitpod button.
+
+2. Select "HTTPS" in the dropdown menu.
+
+3. Copy the URL under HTTPS.
+
+4. Open Git Bash in your IDE of choice.
+
+5. Change the working directory to the location where you want the cloned directory to be created.
+
+6. Type "git clone" and paste the URL that was copied from the repository.
+
+7. Press the "enter" key to create the clone.
 
 ## Credits
 
