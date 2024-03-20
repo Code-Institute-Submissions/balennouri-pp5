@@ -39,6 +39,14 @@ body {
 
 /* Product view and product details */
 
+div.on-sale {
+    background-color: red;
+    border-radius: 5px;
+    width: fit-content;
+    text-align: center;
+    font-size: larger;
+}
+
 .rea {
     text-decoration: line-through;
 }

@@ -31,13 +31,13 @@ Product View
                 {% if product.image %}
 
                 <a href="{{ product.image.url }}" target="_blank">
-                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ item.product.name }}">
+                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                 </a>
 
                 {% else %}
 
                 <a href="">
-                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                 </a>
 
                 {% endif %}
@@ -50,13 +50,17 @@ Product View
 
                 {% if product.is_sales %}
 
-                <p class="font-weight-bold text-success mt-2">ON SALE!</p>
+                <div class="on-sale">
+                    <p class="font-weight-bold text-white mt-2"><strong>ON SALE!</strong></p>
+                </div>
                 <p class="rea lead mb-0 text-left">${{ product.price }}</p>
-                <p class="lead mb-0 text-left font-weight-bold text-success">
+                <div class="on-sale">
+                    <p class="lead mb-0 text-left font-weight-bold text-white">
 
-                    ${{ product.sales_price }}
+                        ${{ product.sales_price }}
 
-                </p>
+                    </p>
+                </div>
 
                 {% else %}
 
@@ -112,7 +116,8 @@ Product View
                 {% else %}
 
                 <hr>
-                <p><a href="{% url 'account_signup' %}">Sign up</a> or <a href="{% url 'account_login' %}">login</a> to
+                <p><ins><a href="{% url 'account_signup' %}" class="font-weight-bold text-black">Sign up</a></ins> or
+                    <ins><a href="{% url 'account_signup' %}" class="font-weight-bold text-black">login</a></ins> to
                     add products to your wishlist</p>
                 <hr>
 
@@ -152,18 +157,19 @@ Product View
                                     <div class="input-group-prepend">
                                         <button
                                             class="decrement-qty btn btn-danger rounded-0 decrement-qty_{{ product.id }}"
-                                            data-item_id="{{ product.id }}">
+                                            data-item_id="{{ product.id }}" aria-label="Decrease Quantity">
                                             <span class="icon">
                                                 <i class="fas fa-minus"></i>
                                             </span>
                                         </button>
                                     </div>
                                     <input class="form-control qty_input id_qty_{{ product.id }}" type="number"
-                                        name="quantity" value="1" min="1" max="5" data-item_id="{{ product.id }}">
+                                        name="quantity" value="1" min="1" max="5" data-item_id="{{ product.id }}"
+                                        id="quantity" aria-label="Quantity">
                                     <div class="input-group-append">
                                         <button
                                             class="increment-qty btn btn-success rounded-0 increment-qty_{{ product.id }}"
-                                            data-item_id="{{ product.id }}">
+                                            data-item_id="{{ product.id }}" aria-label="Increase Quantity">
                                             <span class="icon">
                                                 <i class="fas fa-plus"></i>
                                             </span>

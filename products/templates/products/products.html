@@ -104,13 +104,17 @@ Products
 
                                     {% if product.is_sales %}
 
-                                    <p class="font-weight-bold text-success mt-2">ON SALE!</p>
+                                    <div class="on-sale">
+                                        <p class="font-weight-bold text-white mt-2"><strong>ON SALE!</strong></p>
+                                    </div>
                                     <p class="rea lead mb-0 text-left">${{ product.price }}</p>
-                                    <p class="lead mb-0 text-left font-weight-bold text-success">
+                                    <div class="on-sale">
+                                        <p class="lead mb-0 text-left font-weight-bold text-white">
 
-                                        ${{ product.sales_price }}
+                                            ${{ product.sales_price }}
 
-                                    </p>
+                                        </p>
+                                    </div>
 
                                     {% else %}
 
@@ -152,8 +156,9 @@ Products
                                     {% if request.user.is_authenticated %}
 
                                     <hr>
-                                    <a href="{% url 'add_review' product.id %}" class="btn btn-secondary btn-sm">Add Review</a>
-                    
+                                    <a href="{% url 'add_review' product.id %}" class="btn btn-secondary btn-sm">Add
+                                        Review</a>
+
                                     {% endif %}
 
                                 </div>
