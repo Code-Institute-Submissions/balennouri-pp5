@@ -260,35 +260,43 @@ I utilized Balsamiq to design my wireframes, creating versions tailored for both
 
 ##### Home page in wireframe
 
-![wireframe home page]()
+![wireframe home page](docs/wireframes/home-page-wf.png)
 
 ##### Your Profile page in wireframe
 
-![wireframe update profile page]()
+![wireframe update profile page](docs/wireframes/my-profile-wf.png)
 
 ##### Sign Up page in wireframe
 
-![wireframe sign up page]()
+![wireframe sign up page](docs/wireframes/signup-page-wf.png)
 
 ##### Login page in wireframe
 
-![wireframe Login page]()
+![wireframe Login page](docs/wireframes/signin-page-wf.png)
 
-##### Product Management page in wireframe
+##### Products page in wireframe
 
-![wireframe product management page]()
+![wireframe products page](docs/wireframes/products-page-wf.png)
 
-##### Add Product page in wireframe
+##### Product view page in wireframe
 
-![wireframe add product page]()
+![wireframe product view page](docs/wireframes/view-product-wf.png)
 
-##### Update Product page in wireframe
+##### Reviews page in wireframe
 
-![wireframe update product page]()
+![wireframe reviews page](docs/wireframes/reviews-page-wf.png)
+
+##### Wishlist page in wireframe
+
+![wireframe wishlist page](docs/wireframes/wishlist-page-wf.png)
 
 ##### Shopping cart page in wireframe
 
-![wireframe shopping cart page]()
+![wireframe shopping cart page](docs/wireframes/shopping-cart-wf.png)
+
+##### Place order page in wireframe
+
+![wireframe place order page](docs/wireframes/place-order-wf.png)
 
 [Back to top](#contents)
 
