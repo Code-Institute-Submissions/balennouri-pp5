@@ -28,6 +28,7 @@
                             class="validate" target="_blank">
                             <div id="mc_embed_signup_scroll">
                                 <div class="mc-field-group">
+                                    <label for="mce-EMAIL">Email Address:</label>
                                     <input type="email" name="EMAIL" class="required email form-control mb-2"
                                         id="mce-EMAIL" placeholder="Email Address" required="">
                                 </div>
@@ -35,11 +36,13 @@
                                     <div class="response" id="mce-error-response" style="display: none;"></div>
                                     <div class="response" id="mce-success-response" style="display: none;"></div>
                                 </div>
-                                <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                                <div style="display: none;">
+                                    <label for="hiddenField" aria-hidden="true">Hidden Field:</label>
                                     <input type="text" name="b_dbf0533bd6e989469a2cebff2_45dc1b3e6d" tabindex="-1"
-                                        value="">
+                                        value="" id="hiddenField" aria-hidden="true">
                                 </div>
-                                <button type="submit" class="btn btn-light">Subscribe</button>
+                                <button type="submit" class="btn btn-light"
+                                    aria-label="Subscribe to our newsletter">Subscribe</button>
                             </div>
                         </form>
                     </div>

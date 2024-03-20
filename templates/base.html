@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <!--Mailchimp CSS-->
     <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
-    
+
     {% endblock %}
 
     {% block extra_css %}
@@ -83,13 +83,15 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <form method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
-                        <input class="form-control border border-white rounded-0" type="text" name="q"
+                        <label for="searchInput" class="sr-only">Search for Shoes</label>
+                        <input id="searchInput" class="form-control border border-white rounded-0" type="text" name="q"
                             placeholder="Search For Shoes">
                         <div class="input-group-append">
                             <button class="form-control btn btn-dark border border-white rounded-0" type="submit">
                                 <span class="icon">
                                     <i class="fas fa-search"></i>
                                 </span>
+                                Search
                             </button>
                         </div>
                     </div>

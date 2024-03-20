@@ -97,4 +97,11 @@ In the sixth sprint, the focus was on further enhancing the post-purchase experi
 
 ### Sprint 7 notes:
 
-My seventh sprint
+During the seventh sprint, my main emphasis was on accomplishing the following critical user stories and tasks:
+
+* User Story: Contact Us Page
+* User Story: Facebook Page
+* User Story: Reviews
+* User Story: Footer
+* User Story: Setup AWS for static files
+* User Story: Wishlist
