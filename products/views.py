@@ -1,3 +1,4 @@
+from django.views.generic import ListView, DetailView
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -7,105 +8,65 @@ from .models import Product, Category, Wishlist
 from .forms import ProductForm
 
 
-def all_products(request):
-    """
-    View to return all the products, including sorting on the page
-    and searching.
+class AllProductsView(ListView):
+    model = Product
+    template_name = 'products/products.html'
+    context_object_name = 'products'
 
-    Retrieves all products from the database and performs sorting and
-    filtering based on user input.
-    Sorting can be done by product name, category, or in ascending/descending
-    order. Filtering can be done by category and search query.
-    """
-    products = Product.objects.all()
-    query = None
-    categories = None
-    sort = None
-    direction = None
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        query = self.request.GET.get('q')
+        sort_key = self.request.GET.get('sort')
+        direction = self.request.GET.get('direction')
+        category = self.request.GET.get('category')
 
-    if request.GET:
-        if "sort" in request.GET:
-            sortkey = request.GET["sort"]
-            sort = sortkey
-            if sortkey == "name":
-                sortkey = "lower_name"
-                products = products.annotate(lower_name=Lower("name"))
-            if sortkey == "category":
-                sortkey = "category__name"
-            if "direction" in request.GET:
-                direction = request.GET["direction"]
-                if direction == "desc":
-                    sortkey = f"-{sortkey}"
-            products = products.order_by(sortkey)
+        if query:
+            queryset = queryset.filter(
+                Q(name__icontains=query) | Q(description__icontains=query))
+        if sort_key:
+            if sort_key == 'name':
+                sort_key = 'lower_name'
+                queryset = queryset.annotate(lower_name=Lower('name'))
+            if direction == 'desc':
+                sort_key = f'-{sort_key}'
+            queryset = queryset.order_by(sort_key)
+        if category:
+            queryset = queryset.filter(category__name__in=category.split(','))
 
-        if "category" in request.GET:
-            categories = request.GET["category"].split(",")
-            products = products.filter(category__name__in=categories)
-            categories = Category.objects.filter(name__in=categories)
-        if "q" in request.GET:
-            query = request.GET["q"]
-            if not query:
-                messages.error(
-                    request, "You didn't enter any search criteria!")
-                return redirect(reverse("products"))
+        return queryset
 
-            queries = Q(name__icontains=query) | Q(
-                description__icontains=query)
-            products = products.filter(queries)
-
-    curr_sorting = f"{sort}_{direction}"
-
-    context = {
-        "products": products,
-        "search": query,
-        "current_categories": categories,
-        "curr_sorting": curr_sorting,
-    }
-
-    return render(request, "products/products.html", context)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['search'] = self.request.GET.get('q')
+        current_categories = self.request.GET.get('category', '').split(',')
+        context['current_categories'] = Category.objects.filter(
+            name__in=current_categories)
+        context['curr_sorting'] = (
+            f"{self.request.GET.get('sort')}_{self.request.GET.get('direction')}"
+            )
+        return context
 
 
-def product_view(request, product_id):
-    """
-    View to return the product page for each one of the products
-    - If the product exists, renders the product view page with details about
-    the product
-    - If the product does not exist, returns a 404 error page
+class ProductDetailView(DetailView):
+    model = Product
+    template_name = 'products/product_view.html'
+    context_object_name = 'product'
 
-    If the user is authenticated, checks if the product is in the user's
-    wishlist and sets a flag accordingly. Passes the product and wishlist flag
-    to the template context.
-    """
-    product = get_object_or_404(Product, pk=product_id)
-    in_wishlist = False
-
-    if request.user.is_authenticated:
-        try:
-            wishlist = Wishlist.objects.get(user_wishlist=request.user)
-            if product in wishlist.products.all():
-                in_wishlist = True
-        except Wishlist.DoesNotExist:
-            pass
-
-    context = {
-        "product": product,
-        "in_wishlist": in_wishlist,
-    }
-
-    return render(request, "products/product_view.html", context)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['in_wishlist'] = False
+        if self.request.user.is_authenticated:
+            try:
+                wishlist = Wishlist.objects.get(
+                    user_wishlist=self.request.user)
+                context['in_wishlist'] = self.object in wishlist.products.all()
+            except Wishlist.DoesNotExist:
+                pass
+        return context
 
 
 @login_required
 def add_product(request):
-    """
-    Add a product to the store thorug the product management
-    - request: HttpRequest object containing metadata about the request
-    - If the request method is POST and the form is valid, redirects to the
-    product view page after adding the product
-    - If the request method is POST and the form is invalid, displays an error
-    message and renders the add product form again
-    - If the request method is GET, renders the add product form
-    """
     if not request.user.is_superuser:
         messages.error(
             request, "Only admin can add products"
@@ -135,17 +96,6 @@ def add_product(request):
 
 @login_required
 def update_product(request, product_id):
-    """
-    Update a product in the store page
-    - request: HttpRequest object containing metadata about the request
-    - product_id: The ID of the product to be updated
-    - If the request method is POST and the form is valid, redirects to the
-    product view page after updating the product
-    - If the request method is POST and the form is invalid, displays an error
-    message and renders the update form again
-    - If the request method is GET, renders the update form with the current
-    product data
-    """
     if not request.user.is_superuser:
         messages.error(
             request, "Only admin can update products"
@@ -178,12 +128,6 @@ def update_product(request, product_id):
 
 @login_required
 def delete_product(request, product_id):
-    """
-    Delete a product from the store page.
-    - request: HttpRequest object containing metadata about the request
-    - product_id: The ID of the product to be deleted
-    - Redirects to the store page after deleting the product
-    """
     if not request.user.is_superuser:
         messages.error(
             request, "Only admin can delete products"
