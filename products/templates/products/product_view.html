@@ -91,10 +91,9 @@ Product View
                 {% if request.user.is_superuser %}
 
                 <hr>
-                <small class="ml-3">
-                    <a href="{% url 'update_product' product.id %}" class="btn btn-sm btn-primary">Edit</a>
-                    <a href="{% url 'delete_product' product.id %}" class="btn btn-sm btn-danger">Delete</a>
-                </small>
+                <a href="{% url 'update_product' product.id %}" class="font-weight-bold btn btn-black">Update</a>
+                <a href="{% url 'delete_product' product.id %}" class="font-weight-bold btn btn-danger">Delete</a>
+
                 <hr>
                 <a href="{% url 'add_to_wishlist' product.id %}"
                     class="btn btn-sm ml-2 {% if in_wishlist %}btn-danger{% else %}btn-success{% endif %}">
