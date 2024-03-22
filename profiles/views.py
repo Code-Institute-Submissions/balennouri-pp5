@@ -36,6 +36,47 @@ def contact_view(request):
 
 
 @login_required
+def delete_review(request, review_id):
+    review = get_object_or_404(Review, id=review_id)
+
+    if request.user == review.user:
+        review.delete()
+        messages.success(request, 'Review deleted successfully!')
+    else:
+        messages.error(request, "You are not allowed to delete this review.")
+
+    return redirect(reverse('product_reviews'))
+
+
+@login_required
+def update_review(request, review_id):
+    review = get_object_or_404(Review, id=review_id)
+
+    if request.user != review.user:
+        messages.error(request, "You are not allowed to update this review.")
+        return redirect(reverse('product_reviews'))
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Review updated successfully!')
+            return redirect(reverse('product_reviews'))
+        else:
+            messages.error(request, 'Please correct the errors below.')
+    else:
+        form = ReviewForm(instance=review)
+
+    template = 'profiles/update_review.html'
+    context = {
+        'form': form,
+        'review': review,
+        'product': review.product,
+    }
+    return render(request, template, context)
+
+
+@login_required
 def add_review(request, id):
     product = get_object_or_404(Product, id=id)
 

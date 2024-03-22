@@ -61,6 +61,15 @@ Product Reviews
                     <p class="card-text"><i class="fas fa-star mr-1"></i> {{ review.rating }} / 5.00</p>
                     <hr>
                     <h2 class="card-title h3 text-muted"><small>- {{ review.user }}</small></h2>
+
+                    {% if request.user == review.user %}
+
+                    <hr>
+                    <a href="{% url 'update_review' review.id %}" class="btn btn-outline-black">Edit</a>
+                    <a href="{% url 'delete_review' review.id %}" class="btn btn-danger">Remove</a>
+
+                    {% endif %}
+                    
                 </div>
             </div>
         </div>
