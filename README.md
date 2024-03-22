@@ -97,7 +97,7 @@ The aim of the project was to develop a user-centric website, prioritizing key u
    * Deliver a responsive and intuitive design that operates seamlessly across all devices
    * Provide functionality for adding, editing, removing, and updating products in the shopping cart
    * Implement features allowing users to add and remove products from their wishlist, contingent upon user authentication
-   * Implement functionality that allows logged-in users to write reviews for products
+   * Enable logged-in users to write reviews for products, as well as update or delete their existing reviews as needed.
 
 The objective of e-commerce is to prompt users to explore a variety of products and make purchases. The design is sleek and enables users to categorize and sort products according to their preferences.
 

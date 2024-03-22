@@ -9,6 +9,18 @@ from django.contrib.auth import logout
 
 
 def contact_view(request):
+    """
+    Display a contact form for users to send messages.
+
+    If the request method is POST:
+    * Validate the form data.
+    * If the form is valid, save the message and display a success message.
+    * If the form is invalid, display error messages.
+
+    If the request method is GET:
+    * Initialize the contact form with initial data
+    if the user is authenticated.
+    """
     if request.method == 'POST':
         form = ContactFormForm(request.POST)
         if form.is_valid():
@@ -37,6 +49,16 @@ def contact_view(request):
 
 @login_required
 def delete_review(request, review_id):
+    """
+    Allow users to delete their reviews if they are the owners.
+
+    * Retrieve the review object based on the provided review_id.
+
+    * Check if the current user is the owner of the review;
+    if yes, delete the review.
+
+    * Display success or error messages accordingly.
+    """
     review = get_object_or_404(Review, id=review_id)
 
     if request.user == review.user:
@@ -50,6 +72,21 @@ def delete_review(request, review_id):
 
 @login_required
 def update_review(request, review_id):
+    """
+    Allow users to update their reviews if they are the owners.
+
+    * Retrieve the review object based on the provided review_id.
+
+    * Check if the current user is the owner of the review;
+    if not, display an error message.
+
+    * If the request method is POST, validate the form and
+    update the review if valid.
+
+    * Display success or error messages accordingly.
+
+    * Otherwise, initialize the form with the review instance for editing.
+    """
     review = get_object_or_404(Review, id=review_id)
 
     if request.user != review.user:
@@ -78,6 +115,23 @@ def update_review(request, review_id):
 
 @login_required
 def add_review(request, id):
+    """
+    Allow logged-in users to add reviews for products.
+
+    * Retrieves the product object based on the provided id or returns a 404
+    error if not found.
+
+    * If the request method is POST, validates the submitted form data.
+
+    * If the form data is valid, creates a new review associated
+    with the product and the logged-in user.
+
+    * Redirects the user to the product view page after
+    successfully adding the review.
+
+    * If the request method is GET, renders the add_review
+    template with an empty form.
+    """
     product = get_object_or_404(Product, id=id)
 
     if request.method == 'POST':
@@ -100,6 +154,12 @@ def add_review(request, id):
 
 
 def product_reviews(request):
+    """
+    Render the page displaying all product reviews.
+
+    Retrieves all reviews from the database.
+    Renders the 'product_reviews.html' template with the list of reviews.
+    """
     all_reviews = Review.objects.all()
     template = 'profiles/product_reviews.html'
     context = {
@@ -110,6 +170,17 @@ def product_reviews(request):
 
 @login_required
 def wishlist(request):
+    """
+    Retrieve the user's wishlist if it exists, otherwise, return None.
+
+    * Retrieves the user's wishlist from the database based
+    on the logged-in user.
+
+    * If the wishlist exists, it is passed to the template context.
+
+    * If the wishlist does not exist, None is returned and
+    no wishlist is displayed.
+    """
     try:
         user_wishlist = Wishlist.objects.get(user_wishlist=request.user)
     except Wishlist.DoesNotExist:
@@ -124,6 +195,12 @@ def wishlist(request):
 
 @login_required
 def add_to_wishlist(request, id):
+    """
+    * Retrieve the product object or return a 404 error if not found
+    * Get or create the user's wishlist
+    * Check if the product is already in the wishlist
+    * If the product is not in the wishlist, add it
+    """
     product = get_object_or_404(Product, id=id)
     wishlist, created = Wishlist.objects.get_or_create(
         user_wishlist=request.user)
@@ -165,7 +242,6 @@ def profile(request):
 
     if request.method == 'POST':
         if 'delete_account' in request.POST:
-            # Delete user account
             user = request.user
             logout(request)
             user.delete()
@@ -173,7 +249,6 @@ def profile(request):
                 request, 'Your account has been deleted successfully.')
             return redirect('home')
         else:
-            # Update profile information
             form = UserProfileForm(request.POST, instance=profile)
             if form.is_valid():
                 form.save()
