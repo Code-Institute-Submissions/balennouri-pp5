@@ -305,12 +305,6 @@ I utilized Balsamiq to design my wireframes, creating versions tailored for both
 Below, you'll find the models used in this project. In the database schema displayed below, models with the same color belong to the same app.
 The database schema shown here was generated using [FigJam.](https://www.figma.com/)
 
-Colours for each apps:
-
-Green: products App
-Yellow: checkout App
-Red: profiles App 
-
 The Database schema:
 
 ![Database schema](docs/readme/datebase.png)
@@ -349,7 +343,7 @@ I employed agile methodology throughout the project development, utilizing GitHu
 
 The authenticated Store Owner can manage all major product-related functions directly from the front-end of FastShoes. This includes adding new products, editing existing product details, and deleting products entirely, all accessible from either the Products page or the individual Product detail page.
 
-Authenticated users on FastShoes have control over several key functionalities directly from the front-end. They can add or remove products from their wishlist, manage their account by updating or deleting it, and write reviews for all products available on the platform.
+Authenticated users on FastShoes possess significant control over various key functionalities accessible directly from the front-end. They can effortlessly add or remove products from their wishlist, seamlessly manage their account by updating or deleting it, and contribute reviews for all available products on the platform. Furthermore, they retain the ability to edit or delete the reviews they have authored, ensuring a dynamic and personalized user experience.
 
 #### All The Pages
 
@@ -363,13 +357,9 @@ Authenticated users on FastShoes have control over several key functionalities d
 
 ###### View Product page
 
-###### Info page
-
-###### Category page
-
 ###### Account pages
 
-###### Cart page
+###### Shopping Cart page
 
 ###### Checkout page
 
@@ -382,7 +372,6 @@ Authenticated users on FastShoes have control over several key functionalities d
 Below, you can find my future plans for the website:
 
 * As a user, i can read about the store (About Page)
-* As a user i can comment on products
 * As a site user I can add profile image to my account
 * As site user I would get a welcome email when I sign up.
 * As a customer, I want to track the status of my order.
@@ -528,7 +517,7 @@ Here are the steps to install the necessary frameworks/packages :
 
 1. Installation of Django : 
     
-        pip3 install django==3.2
+        pip3 install django
 
 2. Installation of Gunicorn : 
     
@@ -544,7 +533,7 @@ Here are the steps to install the necessary frameworks/packages :
 
 * (Note: You must rerun this command if you install any additional dependencies!)
     
-        pip3 freeze --local > requirements.txt
+        pip3 freeze local > requirements.txt
 
 5. Now you create your project : 
 
@@ -916,6 +905,10 @@ Youtube videos that helped me alot:
 - [Django Ecommerce Website](https://www.youtube.com/playlist?list=PL-51WBLyFTg0omnamUjL1TCVov7yDTRng)
 - [E-commerce FullStack Website using Django](https://www.youtube.com/playlist?list=PL_KegS2ON4s53FNSqgXFdictTzUbGjoO-)
 - [Django Tutorials](https://www.youtube.com/playlist?list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p)
+
+Boutique Ado helped me alot:
+
+The Boutique Ado project was a significant part of my learning journey, and I drew a lot of inspiration from it. Many aspects of my project were influenced by Boutique Ado, and those who are familiar with it will likely recognize similarities.
 
 ## Acknowledgements
 
