@@ -21,7 +21,7 @@ To prioritize tasks within each epic, I employed the MoSCoW method (Must, Should
 
 On the Kanban board, I maintained three pivotal columns: "To Do," "In Progress," and "Done." This setup proved invaluable, providing a clear overview of pending tasks and facilitating effective progress tracking.
 
-During the website development phase, I introduced three additional columns to the Kanban board: "Epics," "Future," and "Known Bugs and Fixed Bugs." The "Epics" column housed overarching stories, while "Future" encompassed user stories yet to be incorporated before the deadline. The "Known Bugs and Fixed Bugs" column served as a repository for documenting bugs and known issues, offering valuable insights for future reference in the readme.
+Throughout the website development phase, I implemented two new columns within the Kanban board: "Epics" and "Future." The "Epics" column was designated for overarching stories, while the "Future" column contained user stories slated for integration after the project deadline. These additions provided significant insights for future reference and were documented in the readme for comprehensive understanding.
 
 [The Project Board Can Be Seen Here](https://github.com/users/balennouri/projects/7)
 
