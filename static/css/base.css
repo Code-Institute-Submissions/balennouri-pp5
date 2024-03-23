@@ -1,13 +1,16 @@
-html {
-    height: 100%;
-}
-
+/* General settings */
 body {
     background: url('/media/home.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 164px);
     color: black;
     font-family: 'Lato';
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-section {
+    flex: 1;
 }
 
 .navbar-light .navbar-toggler {
@@ -31,7 +34,12 @@ body {
     color: #fff;
 }
 
-/* Footer Mailchimp */
+/* Footer */
+
+footer {
+    width: 100%;
+    text-align: center;
+}
 
 #mc_embed_signup form {
     padding: 0;
