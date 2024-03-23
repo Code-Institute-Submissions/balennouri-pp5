@@ -9,11 +9,22 @@ from .forms import ProductForm
 
 
 class AllProductsView(ListView):
+    """
+    View class for displaying all products.
+
+    This class-based view displays a list of all products.
+    It allows filtering and sorting
+    of products based on various criteria such as
+    search query, category, and sorting options.
+    """
     model = Product
     template_name = 'products/products.html'
     context_object_name = 'products'
 
     def get_queryset(self):
+        """
+        Return the queryset of products based on filter and sorting options.
+        """
         queryset = super().get_queryset()
         query = self.request.GET.get('q')
         sort_key = self.request.GET.get('sort')
@@ -36,6 +47,9 @@ class AllProductsView(ListView):
         return queryset
 
     def get_context_data(self, **kwargs):
+        """
+        Return the context data for rendering the view.
+        """
         context = super().get_context_data(**kwargs)
         context['search'] = self.request.GET.get('q')
         current_categories = self.request.GET.get('category', '').split(',')
@@ -48,11 +62,19 @@ class AllProductsView(ListView):
 
 
 class ProductDetailView(DetailView):
+    """
+    View class for displaying product details.
+
+    This class-based view displays the details of a specific product.
+    """
     model = Product
     template_name = 'products/product_view.html'
     context_object_name = 'product'
 
     def get_context_data(self, **kwargs):
+        """
+        Return the context data for rendering the view.
+        """
         context = super().get_context_data(**kwargs)
         context['in_wishlist'] = False
         if self.request.user.is_authenticated:
@@ -67,6 +89,17 @@ class ProductDetailView(DetailView):
 
 @login_required
 def add_product(request):
+    """
+    Add a new product.
+
+    This function-based view allows an admin user to add a new product.
+
+    Args:
+        request: The HTTP request object.
+
+    Returns:
+        HttpResponse: The HTTP response after adding the product.
+    """
     if not request.user.is_superuser:
         messages.error(
             request, "Only admin can add products"
@@ -96,6 +129,19 @@ def add_product(request):
 
 @login_required
 def update_product(request, product_id):
+    """
+    Update an existing product.
+
+    This function-based view allows an admin user to
+    update an existing product.
+
+    Args:
+        request: The HTTP request object.
+        product_id: The ID of the product to be updated.
+
+    Returns:
+        HttpResponse: The HTTP response after updating the product.
+    """
     if not request.user.is_superuser:
         messages.error(
             request, "Only admin can update products"
@@ -128,6 +174,22 @@ def update_product(request, product_id):
 
 @login_required
 def delete_product(request, product_id):
+    """
+    Delete a product.
+
+    This view function deletes a product with the given product_id if
+    the user is a superuser.
+    If the user is not a superuser, an error message is displayed and the user
+    is redirected to the home page.
+
+    Args:
+        request: The HTTP request.
+        product_id (int): The ID of the product to be deleted.
+
+    Returns:
+        HttpResponseRedirect: Redirects to the 'products'
+        page after successful deletion.
+    """
     if not request.user.is_superuser:
         messages.error(
             request, "Only admin can delete products"

@@ -3,7 +3,19 @@ from .models import Order
 
 
 class OrderForm(forms.ModelForm):
+    """
+    Form for handling order data.
+
+    This form is used to collect and process order information from users.
+    """
     class Meta:
+        """
+        Metadata options for the OrderForm.
+
+        Attributes:
+            model: The model associated with the form.
+            fields: The fields of the model to include in the form.
+        """
         model = Order
         fields = (
             "full_name",

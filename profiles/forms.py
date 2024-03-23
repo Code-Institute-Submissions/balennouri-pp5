@@ -6,6 +6,9 @@ from crispy_forms.layout import Submit
 
 
 class UserProfileForm(forms.ModelForm):
+    """
+    Form for updating user profile information.
+    """
     class Meta:
         model = UserProfile
         exclude = ('user',)
@@ -40,6 +43,9 @@ class UserProfileForm(forms.ModelForm):
 
 
 class ReviewForm(forms.ModelForm):
+    """
+    Form for adding a product review.
+    """
     class Meta:
         model = Review
         fields = ['rating', 'comment']
@@ -59,6 +65,9 @@ class ReviewForm(forms.ModelForm):
 
 
 class ContactFormForm(forms.ModelForm):
+    """
+    Form for submitting a contact form.
+    """
     class Meta:
         model = ContactForm
         fields = ['name', 'email', 'subject', 'message']

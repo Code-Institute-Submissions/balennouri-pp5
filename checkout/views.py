@@ -17,6 +17,22 @@ import json
 
 @require_POST
 def cache_checkout_data(request):
+    """
+    Cache checkout data.
+
+    This function is responsible for caching checkout data
+    to be used in payment processing.
+
+    Args:
+        request: HttpRequest object containing the HTTP request data.
+
+    Returns:
+        HttpResponse: HTTP response indicating the success or
+        failure of the operation.
+
+    Raises:
+        None
+    """
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY

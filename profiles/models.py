@@ -55,6 +55,9 @@ class UserProfile(models.Model):
 
 
 class ContactForm(models.Model):
+    """
+    Model representing a contact form submitted by a user.
+    """
     user = models.ForeignKey(
         User, on_delete=models.SET_NULL, null=True, blank=True)
     name = models.CharField(max_length=100, blank=False)

@@ -3,6 +3,9 @@ from .models import ContactForm
 
 
 class ContactFormAdmin(admin.ModelAdmin):
+    """
+    Admin interface configuration for ContactForm model.
+    """
     list_display = (
         "name",
         "user",
