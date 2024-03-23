@@ -55,9 +55,10 @@ class AllProductsView(ListView):
         current_categories = self.request.GET.get('category', '').split(',')
         context['current_categories'] = Category.objects.filter(
             name__in=current_categories)
-        context['curr_sorting'] = (
-            f"{self.request.GET.get('sort')}_{self.request.GET.get('direction')}"
-            )
+        sort_key = self.request.GET.get('sort')
+        direction = self.request.GET.get('direction')
+        curr_sorting = f"{sort_key}_{direction}"
+        context['curr_sorting'] = curr_sorting
         return context
 
 
