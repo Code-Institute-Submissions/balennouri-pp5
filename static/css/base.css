@@ -17,10 +17,20 @@ body {
     border-color: rgb(255, 255, 255);
 }
 
-/* Search input styles */
-.search-input::placeholder,
-.search-input:-ms-input-placeholder,
+/* Apply the styles to the input and button specifically */
+.search-input::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff;
+    opacity: 1;
+}
+
+.search-input:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #fff;
+}
+
 .search-input::-ms-input-placeholder {
+    /* Microsoft Edge */
     color: #fff;
 }
 
@@ -30,7 +40,11 @@ footer {
     text-align: center;
 }
 
-/* Product styles */
+#mc_embed_signup form {
+    padding: 0;
+}
+
+/* Product view and product details */
 div.on-sale {
     background-color: red;
     border-radius: 5px;
@@ -43,26 +57,7 @@ div.on-sale {
     text-decoration: line-through;
 }
 
-/* Navbar styles */
-.icon {
-    align-items: center;
-    display: inline-flex;
-    justify-content: center;
-    height: 1.5rem;
-    width: 1.5rem;
-}
-
-.logo-font {
-    text-transform: uppercase;
-}
-
-.main-logo-link {
-    width: fit-content;
-    font-family: "Kode Mono", monospace;
-}
-
 /* Review */
-
 .review-box {
     height: 100%;
     color: white;
@@ -85,17 +80,107 @@ div.on-sale {
     border: 5px solid #6c757d;
 }
 
-/* Button styles */
-.shop-now-button,
-.btn-black {
+/* Checkout */
+.StripeElement,
+.stripe-style-input {
+  box-sizing: border-box;
+  height: 40px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 0px;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus,
+.stripe-style-input:focus,
+.stripe-style-input:active {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+.stripe-style-input::placeholder {
+  color: #aab7c4;
+}
+
+.fieldset-label {
+  position: relative;
+  right: .5rem;
+}
+
+#payment-form .form-control,
+#card-element {
+  color: #000;
+  border: 1px solid #000;
+}
+
+/* Country field*/
+select, select option {
+  color: black;
+}
+
+select:invalid,
+select option[value=""] {
+  color: #aab7c4 !important;
+}
+
+#loading-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(53, 64, 65, 0.384);
+  z-index: 9999;
+}
+
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 100%;
+}
+
+/* from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.logo-font {
+    text-transform: uppercase;
+}
+
+.main-logo-link {
+    width: fit-content;
+    font-family: "Kode Mono", monospace;
+}
+
+.shop-now-button {
     background: black;
     color: white;
     min-width: 260px;
 }
 
+.btn-black {
+    background: black;
+    color: white;
+}
+
 .btn-outline-black {
     background: white;
     color: black !important;
+    /* use important to override link colors for <a> elements */
     border: 1px solid black;
 }
 
@@ -142,13 +227,16 @@ div.on-sale {
     right: 10px;
 }
 
-/* Form input styles */
-input[name='q']::placeholder,
-.stripe-style-input::placeholder {
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
+input[name='q']::placeholder {
     color: #aab7c4;
 }
 
-/* Bootstrap toasts */
+/* bootstrap toasts */
 .message-container {
     position: fixed;
     top: 72px;
@@ -156,18 +244,162 @@ input[name='q']::placeholder,
     z-index: 99999999999;
 }
 
-/* Contact form */
-.contact-form {
-    padding: 0;
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
+/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 10px solid black;
+    position: absolute;
+    top: -10px;
+    right: 36px;
+}
+
+/* Convenience classes - colors copied from Bootstrap */
+.arrow-primary {
+    border-bottom-color: #007bff !important;
+}
+
+.arrow-secondary {
+    border-bottom-color: #6c757d !important;
+}
+
+.arrow-success {
+    border-bottom-color: #28a745 !important;
+}
+
+.arrow-danger {
+    border-bottom-color: #dc3545 !important;
+}
+
+.arrow-warning {
+    border-bottom-color: #ffc107 !important;
+}
+
+.arrow-info {
+    border-bottom-color: #17a2b8 !important;
+}
+
+.arrow-light {
+    border-bottom-color: #f8f9fa !important;
+}
+
+.arrow-dark {
+    border-bottom-color: #343a40 !important;
+}
+
+.bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Product Form */
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-checkbox .custom-control-label::before {
+    border-radius: 0;
+    border-color: #000000;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #000000;
+    border-color: #000000;
+    border-radius: 0;
+}
+
+/* Account Pages */
+.card-body.account-box {
+    background-color: white;
+    border-radius: 10px;
+    margin: 5px 0px;
+    padding: 10px 30px;
+    box-shadow: 0rem 0rem 20px 16px #5a5e63 !important;
+}
+
+/* Allauth form formatting */
+.allauth-form-inner-content p {
+    margin-top: 1.5rem;
+    /* mt-4 */
+    color: #6c757d;
+    /* text-secondary */
+}
+
+.allauth-form-inner-content input {
+    border-color: #000;
+    border-radius: 0;
+}
+
+.allauth-form-inner-content input::placeholder {
+    color: #aab7c4;
+}
+
+.allauth-form-inner-content button,
+.allauth-form-inner-content input[type='submit'] {
+    /* btn */
+    display: inline-block;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #000;
+    border: 1px solid #000;
+    font-size: 1rem;
+    padding: .375rem .75rem;
+    line-height: 1.5;
+    border-radius: 0;
+
+    /* standard bootstrap btn transitions */
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.allauth-form-inner-content button:hover,
+.allauth-form-inner-content input[type='submit']:hover {
+    color: #fff;
+    background-color: #222;
+    border-color: #222;
+}
+
+.allauth-form-inner-content a {
+    color: #000000;
+    /* text-info */
 }
 
 /* Media Queries */
+/* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
     .container {
         max-width: 80%;
     }
 }
 
+/* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
         position: fixed;
@@ -182,6 +414,7 @@ input[name='q']::placeholder,
     }
 }
 
+/* pad the top a bit when navbar is collapsed on mobile */
 @media (max-width: 991px) {
     .header-container {
         padding-top: 116px;
@@ -225,10 +458,12 @@ input[name='q']::placeholder,
     }
 }
 
+/* Button fix on smaller screen */
 @media (max-width: 336px) {
 
     .btn.btn-outline-black.rounded-0.product-btn,
     .btn.btn-secondary.rounded-0.product-btn {
         padding: .150rem .124rem;
     }
+
 }

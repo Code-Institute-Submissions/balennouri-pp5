@@ -91,7 +91,7 @@ Product View
                 {% if request.user.is_superuser %}
 
                 <hr>
-                <a href="{% url 'update_product' product.id %}" class="font-weight-bold btn btn-black">Update</a>
+                <a href="{% url 'update_product' product.id %}" class="font-weight-bold btn btn-outline-black">Update</a>
                 <a href="{% url 'delete_product' product.id %}" class="font-weight-bold btn btn-danger">Delete</a>
 
                 <hr>
