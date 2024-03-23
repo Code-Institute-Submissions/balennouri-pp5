@@ -432,7 +432,39 @@ Social Media Marketing - Facebook business page:
 
 #### SEO:
 
-* After incorporating meta tags into the <head> element to enhance my website's visibility and boost its performance on search engines, I proceeded to integrate keywords aimed at attracting both search engines and users. To select the most effective keywords, I utilized [XML-Sitemaps](https://online.seranking.com/login.html) to assess competition and ensure optimal keyword selection.
+* After incorporating meta tags into the <head> element to enhance my website's visibility and boost its performance on search engines, I proceeded to integrate keywords aimed at attracting both search engines and users. To select the most effective keywords, I utilized [XML-Sitemaps](https://online.seranking.com/login.html) to assess competition and ensure optimal keyword selection. Below, you can find both short-tail and long-tail keywords that were chosen for this purpose.
+
+| Short-Tail | Long-Tail |
+|------------|-----------|
+| Football Shoes | High-Performance Football Boots for Professional Players
+Soccer Cleats | Top Quality Soccer Footwear for Elite Athletes
+High-Performance Football Boots | Comfortable Football Boots with Advanced Technology
+Top Quality Soccer Footwear | Nike Soccer Cleats for Speed and Agility on the Field
+Professional Soccer Cleats | Adidas Soccer Cleats for Precision and Control
+Comfortable Football Boots | Puma Soccer Cleats for Dynamic Performance
+Nike Soccer Cleats | Professional Soccer Cleats for Serious Players
+Adidas Soccer Cleats | Nike Football Boots Engineered for Performance
+Puma Soccer Cleats | Adidas Football Boots Designed for Power and Accuracy
+Adidas Football Boots | Puma Football Boots for Enhanced Mobility and Comfort
+Nike Football Boots | Stylish Nike Soccer Shoes for Athletes
+Puma Football Boots | Adidas Soccer Shoes with Cutting-Edge Features
+Puma Soccer Shoes | Puma Soccer Shoes for Style and Performance
+Nike Soccer Shoes | High-Quality Soccer Cleats for Competitive Matches
+Adidas Soccer Shoes | Durable Football Boots for All Playing Conditions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 * Furthermore, I employed XML-Sitemaps to generate an XML file. This XML file assists Google in comprehending the website's structure and the interlinking between pages, thereby enhancing the website's search engine optimization (SEO) efforts.
 
