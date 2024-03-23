@@ -1,3 +1,11 @@
+"""
+The models draw inspiration from:
+- Boutique Ado project
+
+Referenced websites:
+- https://realpython.com/django-models-databases/
+
+"""
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save

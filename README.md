@@ -452,20 +452,6 @@ Puma Soccer Shoes | Puma Soccer Shoes for Style and Performance
 Nike Soccer Shoes | High-Quality Soccer Cleats for Competitive Matches
 Adidas Soccer Shoes | Durable Football Boots for All Playing Conditions
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 * Furthermore, I employed XML-Sitemaps to generate an XML file. This XML file assists Google in comprehending the website's structure and the interlinking between pages, thereby enhancing the website's search engine optimization (SEO) efforts.
 
 #### Robots.txt and Sitemap.xml:
@@ -931,12 +917,21 @@ To write the code for this project:
 - [Coding 4 You](http://www.coding4you.at/inf_tag/beginners_python_cheat_sheet.pdf)
 - [Docs.Djangoproject](https://docs.djangoproject.com/en/5.0/topics/forms/)
 - [Docs.Djangoproject](https://docs.djangoproject.com/en/5.0/topics/auth/default/)
+- [Django Models Documentation](https://docs.djangoproject.com/en/stable/topics/db/models/)
+- [Django Views Documentation](https://docs.djangoproject.com/en/stable/topics/http/views/)
+- [Real Python - Django Models and Databases](https://realpython.com/django-models-databases/)
+- [Real Python - Django Views and URLconfs](https://realpython.com/django-views-urlconfs/)
+- [DjangoGirls Tutorial](https://tutorial.djangogirls.org/en/)
+- [Simple is Better Than Complex - Django Tutorials](https://simpleisbetterthancomplex.com/tutorial/)
+- [Medium Django Articles](https://medium.com/tag/django)
 
 Youtube videos that helped me alot:
 
 - [Django Ecommerce Website](https://www.youtube.com/playlist?list=PL-51WBLyFTg0omnamUjL1TCVov7yDTRng)
 - [E-commerce FullStack Website using Django](https://www.youtube.com/playlist?list=PL_KegS2ON4s53FNSqgXFdictTzUbGjoO-)
 - [Django Tutorials](https://www.youtube.com/playlist?list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p)
+- [YouTube - Django Tutorial for Beginners by Corey Schafer](https://www.youtube.com/watch?v=F5mRW0jo-U4)
+- [YouTube - Django Crash Course by Tech With Tim](https://www.youtube.com/watch?v=UmljXZIypDc)
 
 Boutique Ado helped me alot:
 

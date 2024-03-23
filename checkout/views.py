@@ -1,3 +1,11 @@
+"""
+The models draw inspiration from:
+- Boutique Ado project
+
+Referenced websites:
+https://github.com/dj-stripe/dj-stripe
+
+"""
 from django.shortcuts import (
     render, redirect, reverse, get_object_or_404, HttpResponse)
 from django.views.decorators.http import require_POST

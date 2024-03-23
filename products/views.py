@@ -1,3 +1,11 @@
+"""
+The views draw inspiration from:
+- Boutique Ado project
+
+Referenced websites:
+- https://realpython.com/django-views-urlconfs/
+
+"""
 from django.views.generic import ListView, DetailView
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
