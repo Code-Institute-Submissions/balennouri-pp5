@@ -36,7 +36,7 @@ Product Reviews
 
     {% for review in reviews %}
 
-    <div class="card mb-3 mb-3 border-dark ">
+    <div class="card mb-3 mb-3 frame-review">
         <div class="row g-0">
             <div class="col-md-4">
 
@@ -54,22 +54,26 @@ Product Reviews
 
             </div>
             <div class="col-md-8">
-                <div class="card-body">
-                    <p class="card-text"> {{ review.product }}</p>
-                    <hr>
-                    <p class="card-text mb-2"><small>Comment:</small> {{ review.comment }}</p>
-                    <p class="card-text"><i class="fas fa-star mr-1"></i> {{ review.rating }} / 5.00</p>
-                    <hr>
-                    <h2 class="card-title h3 text-muted"><small>- {{ review.user }}</small></h2>
+                <div class="card-body review-box bg-dark">
+                    <h2 class="card-title h3 font-weight-bold">- {{ review.user }}</h2>
+                    <hr class="review-line-hr">
+                    <div class="comment-box">
+                        <p class="card-text"><i class="fa-solid fa-bolt fa-lg pr-2"></i>{{ review.product }}</p>
+                        <p class="card-text mb-2"><i class="fa-regular fa-message fa-lg pr-2"></i>{{ review.comment }}
+                        </p>
+                        <p class="card-text"><i class="fa-regular fa-star fa-lg pr-2"></i>{{ review.rating }} / 5.00</p>
+                        <p><i class="fa-regular fa-calendar-days fa-lg pr-2"></i><small>{{ review.created_at }}</small>
+                        </p>
+                    </div>
 
                     {% if request.user == review.user %}
 
-                    <hr>
-                    <a href="{% url 'update_review' review.id %}" class="btn btn-outline-black">Edit</a>
+                    <hr class="review-line-hr">
+                    <a href="{% url 'update_review' review.id %}" class="btn btn-light">Edit</a>
                     <a href="{% url 'delete_review' review.id %}" class="btn btn-danger">Remove</a>
 
                     {% endif %}
-                    
+
                 </div>
             </div>
         </div>
