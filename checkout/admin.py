@@ -6,7 +6,8 @@ class OrderLineItemAdminInline(admin.TabularInline):
     """
     Admin inline class for OrderLineItem.
 
-    This inline class allows OrderLineItem objects to be edited inline within the OrderAdmin interface.
+    This inline class allows OrderLineItem objects to be edited inline within
+    the OrderAdmin interface.
 
     Attributes:
         model: The model associated with the inline.

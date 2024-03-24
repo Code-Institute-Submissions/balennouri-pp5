@@ -1,3 +1,9 @@
+/* eslint-disable esversion: 6 */
+
+if (typeof Stripe === 'undefined') {
+    var Stripe = {}; // Declare Stripe variable if it's not already defined
+}
+
 /*  
 Inspired from Boutiqe Ado
 
@@ -117,5 +123,5 @@ form.addEventListener('submit', function(ev) {
     }).fail(function () {
         // just reload the page, the error will be in django messages
         location.reload();
-    })
+    });
 });
