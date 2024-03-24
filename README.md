@@ -381,6 +381,10 @@ Below, you can find my future plans for the website:
 
 ## Technologies Used
 
+<details>
+
+<summary>Click To Expand</summary>
+
 ### Languages
 * [HTML5](https://html.spec.whatwg.org/)
 * [CSS](https://www.w3.org/Style/CSS/Overview.en.html)
@@ -415,6 +419,8 @@ Below, you can find my future plans for the website:
 ### Supporting Libraries and Packages
 
 [Back to top](#contents)
+
+</details>
 
 ## Marketing
 
@@ -469,6 +475,10 @@ Adidas Soccer Shoes | Durable Football Boots for All Playing Conditions
 
 ## Testing
 
+<details>
+
+<summary>Click To Expand</summary>
+
 ### Manual Testing for FastShoes Website
 
 #### Test Schedule Plan:
@@ -505,11 +515,19 @@ Tested on the following devices:
 
 #### JSHint for Javascript
 
+</details>
+
 ## Bugs
+
+<details>
+
+<summary>Click To Expand</summary>
 
 ### Known Bugs
 
 ### Fixed Bugs
+
+</details>
 
 ## Deployment and Development
 
@@ -903,13 +921,18 @@ To clone the repository through GitHub, follow these steps:
 
 ## Credits
 
-To style the page and the content to Read me:
+To style the page and the content to Read me : 
 
 - The screenshot at the top of the ReadMe was built from [Ami Responsive.](https://ui.dev/amiresponsive)
-- The database schema for the ReadMe was built from [drawSQL.](https://drawsql.app/)
+- The database schema for the ReadMe was built from [FigJam.](https://www.figma.com/)
 - The color palette image was generated from [coolers.](https://coolors.co/)
 
-To write the code for this project:
+Insparation Websites :
+
+- [Unisport](https://www.unisportstore.se/)
+- [Sportsdirect](https://www.sportsdirect.com/)
+
+To write the code for this project :
 
 - [Code institute LMS](https://learn.codeinstitute.net/dashboard)
 - [W3Schools](https://www.w3schools.com/)
@@ -925,7 +948,7 @@ To write the code for this project:
 - [Simple is Better Than Complex - Django Tutorials](https://simpleisbetterthancomplex.com/tutorial/)
 - [Medium Django Articles](https://medium.com/tag/django)
 
-Youtube videos that helped me alot:
+Youtube videos that helped me alot :
 
 - [Django Ecommerce Website](https://www.youtube.com/playlist?list=PL-51WBLyFTg0omnamUjL1TCVov7yDTRng)
 - [E-commerce FullStack Website using Django](https://www.youtube.com/playlist?list=PL_KegS2ON4s53FNSqgXFdictTzUbGjoO-)
@@ -933,12 +956,24 @@ Youtube videos that helped me alot:
 - [YouTube - Django Tutorial for Beginners by Corey Schafer](https://www.youtube.com/watch?v=F5mRW0jo-U4)
 - [YouTube - Django Crash Course by Tech With Tim](https://www.youtube.com/watch?v=UmljXZIypDc)
 
-Boutique Ado helped me alot:
+Alternate Projects :
 
-The Boutique Ado project was a significant part of my learning journey, and I drew a lot of inspiration from it. Many aspects of my project were influenced by Boutique Ado, and those who are familiar with it will likely recognize similarities.
+[David Bowers Vape-Store](https://github.com/dnlbowers/Vape-Store)
+
+* For David Bowers' Vape-Store project, I found immense inspiration in its styling, README, and code structure. Utilizing this project as a reference, I benefited from its clean design and usability. Additionally, having David as my mentor allowed me to seek guidance whenever I encountered challenges during development.
+
+[Boutique Ado](https://github.com/mkthewlis/boutique-ado)
+
+* The Boutique Ado project played a pivotal role in my learning journey, offering invaluable inspiration and guidance. I drew extensively from its concepts and methodologies, shaping many aspects of my own project. Those acquainted with Boutique Ado may notice parallels in my work, reflecting its profound impact on my development.
+
+[Back to top](#contents)
 
 ## Acknowledgements
 
-This site was developed as my Fifth portfolio project for the Code Institute course in Full Stack Software Development. I would like to thank my mentor David Bowers, the slack community and the Code Institute team.
+* This website serves as my Fifth portfolio project for the Code Institute course in Full Stack Software Development.
+
+* I express my deepest gratitude to my mentor, David Bowers, whose expertise and unwavering support have been instrumental in my journey. His insightful feedback and dedication to improvement have been invaluable.
+
+* I also want to extend my appreciation to the supportive Slack community and the Code Institute team for their guidance and assistance throughout this endeavor.
 
 [Back to top](#contents)
