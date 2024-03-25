@@ -481,9 +481,46 @@ Adidas Soccer Shoes | Durable Football Boots for All Playing Conditions
 
 ### Manual Testing for FastShoes Website
 
-#### Test Schedule Plan:
+#### Test Case Fow Website Functions :
 
-### Summary Table of Manual Testings for FastShoes Website
+| Test Case | Description | Status |
+|-----------|-------------|--------|
+| TC-1-WF      | Verify homepage loads correctly | Pass |
+| TC-2-WF      | Verify navigation bar functionality | Pass |
+| TC-3-WF      | Verify user registration | Pass |
+| TC-4-WF      | Verify user login | Pass |
+| TC-5-WF      | Verify user logout | Pass |
+| TC-6-WF      | Verify product list view | Pass |
+| TC-7-WF      | Verify product details view | Pass |
+| TC-8-WF      | Verify adding product to cart | Pass |
+| TC-9-WF      | Verify viewing shopping cart | Pass |
+| TC-10-WF     | Verify updating product quantity in cart | Pass |
+| TC-11-WF     | Verify removing product from cart | Pass |
+| TC-12-WF     | Verify checkout process | Pass |
+| TC-13-WF     | Verify search functionality | Pass |
+| TC-14-WF     | Verify payment processing | Pass |
+| TC-15-WF     | Verify responsive design on mobile | Pass |
+| TC-16-WF     | Verify responsive design on tablet | Pass |
+| TC-17-WF     | Verify filtering products by category | Pass |
+| TC-18-WF     | Verify all users can use contact form | Pass |
+
+#### Test Case For Users Functions :
+
+| Test Case | Description | Status |
+|-----------|-------------|--------|
+| TS 1 UF   | Verify that a new user can successfully create an account with valid credentials. |  |
+| TS 2 UF   | Verify that the system displays appropriate error messages when invalid credentials are used for account creation. |  |
+| TS 3 UF   | Verify that the system prevents the creation of duplicate accounts with the same email address. |  |
+| TS 4 UF   | Verify that a logged-in user can update their profile information successfully. |  |
+| TS 5 UF   | Verify that the system displays appropriate error messages when invalid data is provided for profile updates. |  |
+| TS 6 UF   | Verify that a user can successfully delete their account and associated data. |  |
+| TS 7 UF   | Verify that the system prompts for confirmation before deleting the account. |  |
+| TS 8 UF   | Verify that a logged-in user can add products to their wishlist. |  |
+| TS 9 UF   | Verify that a logged-in user can delete products from their wishlist. |  |
+| TS 10 UF  | Verify that the system handles errors gracefully when adding or deleting products from the wishlist. |  |
+| TS 11 UF  | Verify that a logged-in user can submit a review for a product. |  |
+| TS 12 UF  | Verify that a logged-in user can update their existing review for a product. |  |
+| TS 13 UF  | Verify that a logged-in user can delete their review for a product. |  |
 
 ### Other Tests
 
