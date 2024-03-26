@@ -506,19 +506,19 @@ Adidas Soccer Shoes | Durable Football Boots for All Playing Conditions
 
 | Test Case | Description | Status |
 |-----------|-------------|--------|
-| TC-1-UF   | Verify that a new user can successfully create an account with valid credentials. |  |
-| TC-2-UF   | Verify that the system displays appropriate error messages when invalid credentials are used for account creation. |  |
-| TC-3-UF   | Verify that the system prevents the creation of duplicate accounts with the same email address. |  |
-| TC-4-UF   | Verify that a logged-in user can update their profile information successfully. |  |
-| TC-5-UF   | Verify that the system displays appropriate error messages when invalid data is provided for profile updates. |  |
-| TC-6-UF   | Verify that a user can successfully delete their account and associated data. |  |
-| TC-7-UF   | Verify that the system prompts for confirmation before deleting the account. |  |
-| TC-8-UF   | Verify that a logged-in user can add products to their wishlist. |  |
-| TC-9-UF   | Verify that a logged-in user can delete products from their wishlist. |  |
-| TC-10-UF  | Verify that the system handles errors gracefully when adding or deleting products from the wishlist. |  |
-| TC-11-UF  | Verify that a logged-in user can submit a review for a product. |  |
-| TC-12-UF  | Verify that a logged-in user can update their existing review for a product. |  |
-| TC-13-UF  | Verify that a logged-in user can delete their review for a product. |  |
+| TC-1-UF   | Verify that a new user can successfully create an account with valid credentials. | Pass |
+| TC-2-UF   | Verify that the system displays appropriate error messages when invalid credentials are used for account creation. | Pass |
+| TC-3-UF   | Verify that the system prevents the creation of duplicate accounts with the same email address. | Pass |
+| TC-4-UF   | Verify that a logged-in user can update their profile information successfully. | Pass |
+| TC-5-UF   | Verify that the system displays appropriate error messages when invalid data is provided for profile updates. | Pass |
+| TC-6-UF   | Verify that a user can successfully delete their account and associated data. | Pass |
+| TC-7-UF   | Verify that the system prompts for confirmation before deleting the account. | Pass |
+| TC-8-UF   | Verify that a logged-in user can add products to their wishlist. | Pass |
+| TC-9-UF   | Verify that a logged-in user can delete products from their wishlist. | Pass |
+| TC-10-UF  | Verify that the system handles errors gracefully when adding or deleting products from the wishlist. | Pass |
+| TC-11-UF  | Verify that a logged-in user can submit a review for a product. | Pass |
+| TC-12-UF  | Verify that a logged-in user can update their existing review for a product. | Pass |
+| TC-13-UF  | Verify that a logged-in user can delete their review for a product. | Pass |
 
 ### Other Tests
 
