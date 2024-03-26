@@ -238,45 +238,53 @@ def profile(request):
     Retrieves the user's profile from the UserProfile model
     using get_object_or_404.
 
-    For POST requests:
-    - If 'delete_account' is present in the request data,
-    deletes the user account.
-    - Otherwise, it initializes the UserProfileForm with the provided POST
-    data and the user's profile instance.
-
     Retrieves all orders associated with the user's profile.
     """
     profile = get_object_or_404(UserProfile, user=request.user)
 
     if request.method == 'POST':
-        if 'delete_account' in request.POST:
-            user = request.user
-            logout(request)
-            user.delete()
-            messages.success(
-                request, 'Your account has been deleted successfully.')
-            return redirect('home')
+        form = UserProfileForm(request.POST, instance=profile)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Profile updated successfully')
         else:
-            form = UserProfileForm(request.POST, instance=profile)
-            if form.is_valid():
-                form.save()
-                messages.success(request, 'Profile is updated!')
-            else:
-                messages.error(
-                    request, "Update failed. Please ensure the form is valid.")
+            messages.erro(
+                request, 'Update failed. Please ensure the form is valid.')
     else:
         form = UserProfileForm(instance=profile)
-
     orders = profile.orders.all()
 
     template = 'profiles/profile.html'
     context = {
-        "form": form,
-        "orders": orders,
-        "on_profile_page": True
+        'form': form,
+        'orders': orders,
+        'on_profile_page': True,
     }
 
     return render(request, template, context)
+
+
+@login_required
+def delete_account(request):
+    """
+    Delete the user's account.
+
+    If the request method is POST:
+    * Delete the user account and log out the user.
+    * Display a success message and redirect to the home page.
+
+    If the request method is GET:
+    * Render the confirmation template for deleting the account.
+    """
+    if request.method == 'POST':
+        user = request.user
+        logout(request)
+        user.delete()
+        messages.success(
+            request, 'Your account has been deleted successfully.')
+        return redirect('home')
+    else:
+        return render(request, 'profiles/delete_account_confirmation.html')
 
 
 @login_required

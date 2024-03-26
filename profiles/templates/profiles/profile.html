@@ -46,9 +46,8 @@ Profile
                 {{ form|crispy }}
 
                 <button class="btn btn-black rounded-0 float-right mb-3">Update</button>
-                <!-- delete account button -->
-                <input type="hidden" name="delete_account" value="1">
-                <button type="submit" class="btn btn-danger rounded-0 float-right mb-3 mr-2">Delete Account</button>
+                <a href="{% url 'delete_account' %}" class="btn btn-danger rounded-0 float-right mr-2">Delete
+                    Profile</a>
             </form>
         </div>
         <div class="col-12 col-lg-6">

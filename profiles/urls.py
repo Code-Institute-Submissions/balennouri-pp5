@@ -5,6 +5,7 @@ urlpatterns = [
 
     # Profile
     path('', views.profile, name='profile'),
+    path('delete_account/', views.delete_account, name='delete_account'),
     path(
         'order_history/<order_number>',
         views.order_history, name='order_history'),
