@@ -96,7 +96,7 @@ Product View
 
                 <hr>
                 <a href="{% url 'add_to_wishlist' product.id %}"
-                    class="btn btn-sm ml-2 {% if in_wishlist %}btn-danger{% else %}btn-success{% endif %}">
+                    class="btn btn-sm ml-2 {% if in_wishlist %}btn-danger{% else %}text-good{% endif %}">
                     <i class="fa-solid {% if in_wishlist %}fa-minus{% else %}fa-plus{% endif %}"></i>
                     {% if in_wishlist %}Remove from Wishlist{% else %}Add to Wishlist{% endif %}
                 </a>

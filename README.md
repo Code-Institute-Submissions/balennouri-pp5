@@ -521,34 +521,64 @@ Adidas Soccer Shoes | Durable Football Boots for All Playing Conditions
 
 #### Test Case For Admin Functions :
 
-| Task                      | Test Case | Description                                                            | Status |
-|---------------------------|-----------|------------------------------------------------------------------------|-----------------|
-| Adding a Product          | TC-ADM-01 | Verify that the admin can access the "Add Product" page.               | Pass            |
-|                           | TC-ADM-02 | Verify that all required fields are displayed on the form.             | Pass            |
-|                           | TC-ADM-03 | Verify that the admin can successfully add a new product.              | Pass            |
-|                           | TC-ADM-04 | Verify that appropriate error messages are displayed if the form is not filled correctly. | Pass |
-| Updating a Product        | TC-ADM-05 | Verify that the admin can access the "Update Product" page.            | Pass            |
-|                           | TC-ADM-06 | Verify that the existing product details are pre-filled in the form.   | Pass            |
-|                           | TC-ADM-07 | Verify that the admin can successfully update a product.               | Pass            |
-|                           | TC-ADM-08 | Verify that appropriate error messages are displayed if the form is not filled correctly. | Pass |
-| Deleting a Product        | TC-ADM-09 | Verify that the admin can delete a product.                            | Pass            |
-|                           | TC-ADM-10 | Verify that a confirmation prompt is displayed before deleting a product. | Pass          |
-|                           | TC-ADM-11 | Verify that the product is successfully deleted upon confirmation.     | Pass            |
-| Managing Orders           | TC-ADM-12 | Verify that the admin can access the orders section.                   | Pass            |
-|                           | TC-ADM-13 | Verify that the admin can view all orders.                             | Pass            |
-|                           | TC-ADM-14 | Verify that the admin can change the status of an order.               | Pass            |
-|                           | TC-ADM-15 | Verify that the admin can delete an order.                             | Pass            |
-| Managing Users            | TC-ADM-16 | Verify that the admin can access the users section.                    | Pass            |
-|                           | TC-ADM-17 | Verify that the admin can view all users.                              | Pass            |
-|                           | TC-ADM-18 | Verify that the admin can edit user details.                            | Pass            |
-|                           | TC-ADM-19 | Verify that the admin can delete a user.                               | Pass            |
-| Managing Contact Mails   | TC-ADM-20 | Verify that the admin can access the contact mails section.            | Pass            |
-|                           | TC-ADM-21 | Verify that the admin can view all contact mails.                      | Pass            |
-|                           | TC-ADM-22 | Verify that the admin can respond to contact mails.                    | Pass            |
-|                           | TC-ADM-23 | Verify that the admin can delete contact mails.                        | Pass            |
-| Managing Reviews         | TC-ADM-24 | Verify that the admin can access the reviews section.                  | Pass            |
-|                           | TC-ADM-25 | Verify that the admin can view all reviews.                            | Pass            |
-|                           | TC-ADM-26 | Verify that the admin can delete a review.                             | Pass            |
+##### Adding a Product (FRONT-END)
+
+| Test Case | Description                                             | Status |
+|-----------|---------------------------------------------------------|--------|
+| TC-ADM-01 | Verify that the admin can access the "Add Product" page. | Pass   |
+| TC-ADM-02 | Verify that all required fields are displayed on the form. | Pass   |
+| TC-ADM-03 | Verify that the admin can successfully add a new product. | Pass   |
+| TC-ADM-04 | Verify that appropriate error messages are displayed if the form is not filled correctly. | Pass |
+
+##### Updating a Product (FRONT-END)
+
+| Test Case | Description                                             | Status |
+|-----------|---------------------------------------------------------|--------|
+| TC-ADM-05 | Verify that the admin can access the "Update Product" page. | Pass   |
+| TC-ADM-06 | Verify that the existing product details are pre-filled in the form. | Pass   |
+| TC-ADM-07 | Verify that the admin can successfully update a product. | Pass   |
+| TC-ADM-08 | Verify that appropriate error messages are displayed if the form is not filled correctly. | Pass |
+
+##### Deleting a Product (FRONT-END)
+
+| Test Case | Description                                             | Status |
+|-----------|---------------------------------------------------------|--------|
+| TC-ADM-09 | Verify that the admin can delete a product.             | Pass   |
+| TC-ADM-10 | Verify that the product is successfully deleted when the delete button is clicked. | Pass |
+
+
+##### Managing Orders (ADMIN-PANEL)
+
+| Test Case | Description                                             | Status |
+|-----------|---------------------------------------------------------|--------|
+| TC-ADM-12 | Verify that the admin can access the orders section.   | Pass   |
+| TC-ADM-13 | Verify that the admin can view all orders.             | Pass   |
+| TC-ADM-15 | Verify that the admin can delete an order.             | Pass   |
+
+##### Managing Users (ADMIN-PANEL)
+
+| Test Case | Description                                             | Status |
+|-----------|---------------------------------------------------------|--------|
+| TC-ADM-16 | Verify that the admin can access the users section.    | Pass   |
+| TC-ADM-17 | Verify that the admin can view all users.              | Pass   |
+| TC-ADM-18 | Verify that the admin can edit user details.           | Pass   |
+| TC-ADM-19 | Verify that the admin can delete a user.               | Pass   |
+
+##### Managing Contact Mails (ADMIN-PANEL)
+
+| Test Case | Description                                             | Status |
+|-----------|---------------------------------------------------------|--------|
+| TC-ADM-20 | Verify that the admin can access the contact mails section. | Pass |
+| TC-ADM-21 | Verify that the admin can view all contact mails.      | Pass   |
+| TC-ADM-23 | Verify that the admin can delete contact mails.        | Pass   |
+
+##### Managing Reviews (ADMIN-PANEL)
+
+| Test Case | Description                                             | Status |
+|-----------|---------------------------------------------------------|--------|
+| TC-ADM-24 | Verify that the admin can access the reviews section.  | Pass   |
+| TC-ADM-25 | Verify that the admin can view all reviews.            | Pass   |
+| TC-ADM-26 | Verify that the admin can delete a review.             | Pass   |
 
 ### Other Tests
 
