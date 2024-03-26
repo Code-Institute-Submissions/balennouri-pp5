@@ -1,3 +1,4 @@
+/* Profile Page CSS */
 .order-history {
     max-height: 416px;
     /* height of profile form + submit button */
@@ -19,4 +20,12 @@
 
 #id_default_country option:first-child {
     color: #aab7c4;
+}
+
+.mark-profil {
+    background-color: #6c757d;
+    color: white;
+    padding: 2px 10px;
+    width: fit-content;
+    border-radius: 5px;
 }

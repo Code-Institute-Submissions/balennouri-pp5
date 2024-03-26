@@ -340,6 +340,14 @@ input[name='q']::placeholder {
     box-shadow: 0rem 0rem 20px 16px #5a5e63 !important;
 }
 
+/* My Custom Colours */
+
+.text-good {
+    color: #fff;
+    background-color: #1e7e34;
+    border-color: #1e7e34;
+}
+
 /* Allauth form formatting */
 .allauth-form-inner-content p {
     margin-top: 1.5rem;
