@@ -8,6 +8,9 @@ Referenced websites:
 """
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
+from django.utils.decorators import method_decorator
+from django.views import View
+from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from .models import UserProfile
 from products.models import Wishlist, Product, Review
@@ -230,38 +233,37 @@ def add_to_wishlist(request, id):
     return render(request, template, context)
 
 
-@login_required
-def profile(request):
+@method_decorator(login_required, name='dispatch')
+class ProfileView(View):
     """
-    Display the user's profile.
-
-    Retrieves the user's profile from the UserProfile model
-    using get_object_or_404.
-
-    Retrieves all orders associated with the user's profile.
+    Class-based view for displaying and updating user profiles.
+    Requires the user to be logged in (via login_required decorator).
     """
-    profile = get_object_or_404(UserProfile, user=request.user)
+    template_name = 'profiles/profile.html'
+    form_class = UserProfileForm
 
-    if request.method == 'POST':
-        form = UserProfileForm(request.POST, instance=profile)
+    def get(self, request):
+        profile = get_object_or_404(UserProfile, user=request.user)
+        form = self.form_class(instance=profile)
+        orders = profile.orders.all()
+        context = {
+            'form': form,
+            'orders': orders,
+            'on_profile_page': True,
+        }
+        return render(request, self.template_name, context)
+
+    def post(self, request):
+        profile = get_object_or_404(UserProfile, user=request.user)
+        form = self.form_class(request.POST, instance=profile)
         if form.is_valid():
             form.save()
             messages.success(request, 'Profile updated successfully')
+            return HttpResponseRedirect(reverse('profile'))
         else:
-            messages.erro(
+            messages.error(
                 request, 'Update failed. Please ensure the form is valid.')
-    else:
-        form = UserProfileForm(instance=profile)
-    orders = profile.orders.all()
-
-    template = 'profiles/profile.html'
-    context = {
-        'form': form,
-        'orders': orders,
-        'on_profile_page': True,
-    }
-
-    return render(request, template, context)
+            return render(request, self.template_name, {'form': form})
 
 
 @login_required
