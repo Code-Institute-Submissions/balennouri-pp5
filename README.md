@@ -40,13 +40,6 @@ The live site can be viewed [here](https://fastshoes-be1fd2fa0203.herokuapp.com/
    * [Supporting Libraries and Packages](#supporting-libraries-and-packages)
 * [Marketing](#marketing)
 * [Testing](#testing)
-   * [Manual Testing](#manual-testing-for-fastshoes-website)
-   * [Summary Table of Manual Testings](#summary-table-of-manual-testings-for-fastshoes-website)
-   * [Other Tests](#other-tests)
-   * [Validator Testing](#validator-testing)
-* [Bugs](#bugs)
-    * [Known Bugs](#known-bugs)
-    * [Fixed Bugs](#fixed-bugs)
 * [Deployment and Development](#deployment-and-development)
     * [Setup and Deployment](#setup-and-deployment)
     * [The ElephantSQL Database](#the-elephantsql-database)
@@ -327,7 +320,7 @@ The color palette image was generated from [coolers.](https://coolors.co/)
 
 [Back to top](#contents)
 
-### Project Management
+## Project Management
 
 I employed agile methodology throughout the project development, utilizing GitHub projects and issues for streamlined management. More detailed information about this approach can be found in the AGILE.md file.
 
@@ -436,7 +429,7 @@ Social Media Marketing - Facebook business page:
 
 * Given Facebook's extensive user base and diverse demographic reach, I've established a Facebook Business Page to leverage its marketing potential. Utilizing this platform, I can launch targeted ad campaigns tailored to specific geographic locations, cities, or age groups, maximizing the effectiveness of my marketing efforts. With its widespread popularity and robust advertising features, Facebook presents an ideal platform for promoting my business.
 
-#### SEO:
+#### SEO
 
 * After incorporating meta tags into the <head> element to enhance my website's visibility and boost its performance on search engines, I proceeded to integrate keywords aimed at attracting both search engines and users. To select the most effective keywords, I utilized [XML-Sitemaps](https://online.seranking.com/login.html) to assess competition and ensure optimal keyword selection. Below, you can find both short-tail and long-tail keywords that were chosen for this purpose.
 
@@ -460,13 +453,13 @@ Adidas Soccer Shoes | Durable Football Boots for All Playing Conditions
 
 * Furthermore, I employed XML-Sitemaps to generate an XML file. This XML file assists Google in comprehending the website's structure and the interlinking between pages, thereby enhancing the website's search engine optimization (SEO) efforts.
 
-#### Robots.txt and Sitemap.xml:
+#### Robots.txt and Sitemap.xml
 
 * The robots.txt file, located in the root directory, serves as a directive for search engines, indicating which areas of the application they are not permitted to access. In Bookworms, the robots.txt file includes the URLs of the admin, profile, account, bag and checkout directories, instructing search engine spiders to refrain from crawling these sections.
 
 * The sitemap.xml file, generated on [xml-sitemaps.com](https://www.xml-sitemaps.com/details-mym-bookworms-et-al-b7ea61e35a6e.herokuapp.com-49873d773.html), resides in the root directory and lists essential page URLs of the website. This file assists search engines in comprehending the structure of the website and ensures that all vital pages are crawled and indexed effectively.
 
-## Privacy Policy:
+#### Privacy Policy
 
 * A Privacy Policy is a document necessary for any online presence that collects data from users. Its purpose is to be transparent and inform users about how their data is being collected and processed. 
 
@@ -475,148 +468,16 @@ Adidas Soccer Shoes | Durable Football Boots for All Playing Conditions
 
 ## Testing
 
-<details>
+For the testing part, I conducted manual testing for the entire project. Testing details during and post-development are included in a separate document called [TESTING.md](), providing comprehensive insights into the testing process and outcomes. 
 
-<summary>Click To Expand</summary>
+Additionally, the document includes :
 
-### Manual Testing for FastShoes Website
+- Details about manual testing procedures
+- Validator test results
+- Test results for WAVE, Lighthouse, and various browsers and devices
+- Documentation of known bugs and their resolutions
 
-#### Test Case For Website Functions :
-
-| Test Case | Description                             | Status |
-|-----------|-----------------------------------------|--------|
-| TC-1-WF   | Verify homepage loads correctly         | Pass   |
-| TC-2-WF   | Verify navigation bar functionality     | Pass   |
-| TC-3-WF   | Verify product list view                | Pass   |
-| TC-4-WF   | Verify product details view             | Pass   |
-| TC-5-WF   | Verify adding product to cart           | Pass   |
-| TC-6-WF   | Verify viewing shopping cart            | Pass   |
-| TC-7-WF   | Verify updating product quantity in cart| Pass   |
-| TC-8-WF   | Verify removing product from cart       | Pass   |
-| TC-9-WF   | Verify checkout process                 | Pass   |
-| TC-10-WF  | Verify search functionality             | Pass   |
-| TC-11-WF  | Verify payment processing               | Pass   |
-| TC-12-WF  | Verify responsive design on mobile      | Pass   |
-| TC-13-WF  | Verify responsive design on tablet      | Pass   |
-| TC-14-WF  | Verify filtering products by category   | Pass   |
-| TC-15-WF  | Verify all users can use contact form   | Pass   |
-
-#### Test Case For Users Functions :
-
-| Test Case | Description | Status |
-|-----------|-------------|--------|
-| TC-1-UF   | Verify that a new user can successfully create an account with valid credentials. | Pass |
-| TC-2-UF   | Verify that the system displays appropriate error messages when invalid credentials are used for account creation. | Pass |
-| TC-3-UF   | Verify that the system prevents the creation of duplicate accounts with the same email address. | Pass |
-| TC-4-UF   | Verify that a logged-in user can update their profile information successfully. | Pass |
-| TC-5-UF   | Verify that the system displays appropriate error messages when invalid data is provided for profile updates. | Pass |
-| TC-6-UF   | Verify that a user can successfully delete their account and associated data. | Pass |
-| TC-7-UF   | Verify that the system prompts for confirmation before deleting the account. | Pass |
-| TC-8-UF   | Verify that a logged-in user can add products to their wishlist. | Pass |
-| TC-9-UF   | Verify that a logged-in user can delete products from their wishlist. | Pass |
-| TC-10-UF  | Verify that the system handles errors gracefully when adding or deleting products from the wishlist. | Pass |
-| TC-11-UF  | Verify that a logged-in user can submit a review for a product. | Pass |
-| TC-12-UF  | Verify that a logged-in user can update their existing review for a product. | Pass |
-| TC-13-UF  | Verify that a logged-in user can delete their review for a product. | Pass |
-
-#### Test Case For Admin Functions :
-
-##### Adding a Product (FRONT-END)
-
-| Test Case | Description                                             | Status |
-|-----------|---------------------------------------------------------|--------|
-| TC-ADM-01 | Verify that the admin can access the "Add Product" page. | Pass   |
-| TC-ADM-02 | Verify that all required fields are displayed on the form. | Pass   |
-| TC-ADM-03 | Verify that the admin can successfully add a new product. | Pass   |
-| TC-ADM-04 | Verify that appropriate error messages are displayed if the form is not filled correctly. | Pass |
-
-##### Updating a Product (FRONT-END)
-
-| Test Case | Description                                             | Status |
-|-----------|---------------------------------------------------------|--------|
-| TC-ADM-05 | Verify that the admin can access the "Update Product" page. | Pass   |
-| TC-ADM-06 | Verify that the existing product details are pre-filled in the form. | Pass   |
-| TC-ADM-07 | Verify that the admin can successfully update a product. | Pass   |
-| TC-ADM-08 | Verify that appropriate error messages are displayed if the form is not filled correctly. | Pass |
-
-##### Deleting a Product (FRONT-END)
-
-| Test Case | Description                                             | Status |
-|-----------|---------------------------------------------------------|--------|
-| TC-ADM-09 | Verify that the admin can delete a product.             | Pass   |
-| TC-ADM-10 | Verify that the product is successfully deleted when the delete button is clicked. | Pass |
-
-
-##### Managing Orders (ADMIN-PANEL)
-
-| Test Case | Description                                             | Status |
-|-----------|---------------------------------------------------------|--------|
-| TC-ADM-12 | Verify that the admin can access the orders section.   | Pass   |
-| TC-ADM-13 | Verify that the admin can view all orders.             | Pass   |
-| TC-ADM-15 | Verify that the admin can delete an order.             | Pass   |
-
-##### Managing Users (ADMIN-PANEL)
-
-| Test Case | Description                                             | Status |
-|-----------|---------------------------------------------------------|--------|
-| TC-ADM-16 | Verify that the admin can access the users section.    | Pass   |
-| TC-ADM-17 | Verify that the admin can view all users.              | Pass   |
-| TC-ADM-18 | Verify that the admin can edit user details.           | Pass   |
-| TC-ADM-19 | Verify that the admin can delete a user.               | Pass   |
-
-##### Managing Contact Mails (ADMIN-PANEL)
-
-| Test Case | Description                                             | Status |
-|-----------|---------------------------------------------------------|--------|
-| TC-ADM-20 | Verify that the admin can access the contact mails section. | Pass |
-| TC-ADM-21 | Verify that the admin can view all contact mails.      | Pass   |
-| TC-ADM-23 | Verify that the admin can delete contact mails.        | Pass   |
-
-##### Managing Reviews (ADMIN-PANEL)
-
-| Test Case | Description                                             | Status |
-|-----------|---------------------------------------------------------|--------|
-| TC-ADM-24 | Verify that the admin can access the reviews section.  | Pass   |
-| TC-ADM-25 | Verify that the admin can view all reviews.            | Pass   |
-| TC-ADM-26 | Verify that the admin can delete a review.             | Pass   |
-
-### Other Tests
-
-#### Lighthouse Test
-
-#### WAVE
-
-#### Browsers And Devices
-
-Tested on the following browsers:
-
-* Google Chrome
-* Safari
-* Firefox
-
-Tested on the following devices:
-
-* Ipad Air
-* Iphone 12, 13 and 14
-* Samsung Galaxy
-
-### Validator Testing
-
-#### CSS
-
-#### HTML
-
-#### Python Linter
-
-#### JSHint for Javascript
-
-</details>
-
-## Bugs
-
-### Known Bugs
-
-### Fixed Bugs
+[Testing document link.]()
 
 ## Deployment and Development
 
