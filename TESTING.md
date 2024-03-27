@@ -6,6 +6,9 @@
     * [Test Case: Website Functions](#test-case-for-website-functions)
     * [Test Case: Users Functions](#test-case-for-users-functions)
     * [Test Case: Admin Functions](#test-case-for-admin-functions)
+    * [Website Testing](#website-testing)
+    * [Security](#security)
+    * [Performance](#performance)
 * [Other Tests](#other-tests)
     * [Lighthouse Test](#lighthouse-test)
     * [Wave Test](#wave)
@@ -61,7 +64,7 @@
 
 ### Test Case For Admin Functions :
 
-#### Adding a Product (FRONT-END)
+#### Adding a Product (FRONT-END and ADMIN-PANEL)
 
 | Test Case | Description                                             | Status |
 |-----------|---------------------------------------------------------|--------|
@@ -70,7 +73,7 @@
 | TC-ADM-03 | Verify that the admin can successfully add a new product. | Pass   |
 | TC-ADM-04 | Verify that appropriate error messages are displayed if the form is not filled correctly. | Pass |
 
-#### Updating a Product (FRONT-END)
+#### Updating a Product (FRONT-END and ADMIN-PANEL)
 
 | Test Case | Description                                             | Status |
 |-----------|---------------------------------------------------------|--------|
@@ -79,7 +82,7 @@
 | TC-ADM-07 | Verify that the admin can successfully update a product. | Pass   |
 | TC-ADM-08 | Verify that appropriate error messages are displayed if the form is not filled correctly. | Pass |
 
-#### Deleting a Product (FRONT-END)
+#### Deleting a Product (FRONT-END and ADMIN-PANEL)
 
 | Test Case | Description                                             | Status |
 |-----------|---------------------------------------------------------|--------|
@@ -119,6 +122,40 @@
 | TC-ADM-24 | Verify that the admin can access the reviews section.  | Pass   |
 | TC-ADM-25 | Verify that the admin can view all reviews.            | Pass   |
 | TC-ADM-26 | Verify that the admin can delete a review.             | Pass   |
+
+### Website Testing
+
+#### Section: Responsiveness
+
+| Test Case | Objective | Steps to Reproduce | Expected Outcome |
+|-----------|-----------|--------------------|------------------|
+| Mobile Device Compatibility | Verify proper display and functionality of the website on mobile devices. | Access the website using a mobile device or enable mobile view in a web browser. | The website content should adapt seamlessly to smaller screens, ensuring all features are accessible and usable. |
+| Tablet Device Compatibility | Confirm the website's responsiveness on tablet devices. | Access the website using a tablet device or simulate a tablet view in a web browser. | The website content should adjust correctly to the tablet screen size, with all functionalities working as intended. |
+
+#### Section: Security
+
+| Test Case | Objective | Steps to Reproduce | Expected Outcome |
+|-----------|-----------|--------------------|------------------|
+| SSL Certificate Validation | Ensure the website is served over HTTPS and the SSL certificate is valid. | Check that the website URL begins with "https://" and verify the browser's security icon. | The website should use HTTPS, and the browser should indicate a secure connection. |
+| Input Validation and Sanitization | Validate input fields to prevent common web vulnerabilities like SQL injection and XSS. | Attempt to enter malicious code snippets into form inputs and URLs. | The application should reject or sanitize input to prevent execution of malicious code. |
+
+#### Section: Performance
+
+| Test Case | Objective | Steps to Reproduce | Expected Outcome |
+|-----------|-----------|--------------------|------------------|
+| Page Load Speed | Evaluate the loading speed of website pages. | Use tools like Google PageSpeed Insights to analyze load times. | Pages should load within an acceptable time frame according to web performance best practices. |
+| Stress Testing | Assess website performance under heavy load. | Employ load testing tools to simulate concurrent user access. | The website should maintain responsiveness and functionality under simulated stress conditions. |
+
+This manual testing guide is designed to comprehensively assess the essential functionalities of the FastShoes website, guaranteeing a smooth and secure user experience. Testers are urged to document any deviations encountered from the anticipated results, as outlined in the reporting section. Continuous testing and refinement play a vital role in upholding the quality and dependability of the FastShoes online platform.
+
+Below is the list of all tests that have been covered:
+
+- Test Case: Website Functions
+- Test Case: Users Functions
+- Test Case: Admin Functions
+- Website Testing
+- Security
+- Performance
 
 ## Other Tests
 
