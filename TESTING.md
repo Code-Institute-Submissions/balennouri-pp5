@@ -181,7 +181,15 @@ Tested on the following devices:
 
 ### CSS
 
+![CSS-TEST](docs/readme/css-test.png)
+
+The CSS code underwent a comprehensive examination for adherence to standards and validation for errors using the W3C CSS Validation Service. Additional details about this validation service can be accessed at [W3C CSS Validator](https://jigsaw.w3.org/css-validator/). Subsequently, no errors were detected within my CSS files through direct input validation for each CSS file
+
 ### HTML
+
+The HTML code for the project was validated using the [W3C HTML Validator.](https://validator.w3.org/nu/) All pages passed without errors except for the shopping cart page. The issue arose with the remove product link, which resulted in a duplicated ID error. This occurred because the ID changes dynamically based on the product ID, making it challenging to fix before the deadline.
+
+![Error-html](docs/readme/html-error.png)
 
 ### Python Linter
 
