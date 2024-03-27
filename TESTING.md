@@ -193,7 +193,21 @@ The HTML code for the project was validated using the [W3C HTML Validator.](http
 
 ### Python Linter
 
+![Python Test](docs/readme/python-test.png)
+
+During the Code Institute Python Linter test, I received no errors from any of my Python files.
+
+[Python Linter](https://pep8ci.herokuapp.com/)
+
 ### JSHint for Javascript
+
+In the "base.html" file, a script tag for MailChimp triggered warnings due to the usage of the MailChimp API. Although I attempted to remove it completely, this caused other site features to malfunction. Consequently, I reverted the script tag to its original state. While the warnings identified by JSHint are non-critical, no changes were made to the file. You can see the warnings below.
+
+![MailChimp](docs/readme/mailchimp-js.png)
+
+In the checkout app's static folder, there exists a JavaScript file named "stripe_elements.js" that exhibited some warnings, as illustrated below. These warnings are non-critical, and as a result, no changes were implemented.
+
+![Stripe Elements](docs/readme/stripe-js.png)
 
 ## Bugs
 
