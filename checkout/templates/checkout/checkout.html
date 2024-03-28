@@ -119,11 +119,11 @@ Checkout Page
                     {{ order_form.street_address1 | as_crispy_field }}
 
                     {{ order_form.street_address2 | as_crispy_field }}
-                    
-                    {{ order_form.town_or_city | as_crispy_field }} 
-                    
+
+                    {{ order_form.town_or_city | as_crispy_field }}
+
                     {{ order_form.county | as_crispy_field }}
-                    
+
                     {{ order_form.postcode | as_crispy_field }}
 
                     {{ order_form.country | as_crispy_field }}
@@ -140,8 +140,10 @@ Checkout Page
                         {% else %}
 
                         <label class="form-check-label">
-                            <ins><a class="text-black" href="{% url 'account_signup' %}">Register An Account</a></ins> or
-                            <ins><a class="text-black" href="{% url 'account_login' %}">Sign In</a></ins> to save this information
+                            <ins><a class="text-black" href="{% url 'account_signup' %}">Register An Account</a></ins>
+                            or
+                            <ins><a class="text-black" href="{% url 'account_login' %}">Sign In</a></ins> to save this
+                            information
                         </label>
 
                         {% endif %}
@@ -159,7 +161,7 @@ Checkout Page
 
                     <!-- Pass the client secret to the view so we can get the payment intent id -->
                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
-                    
+
                 </fieldset>
 
                 <div class="submit-button text-right mt-5 mb-2">
@@ -190,7 +192,7 @@ Checkout Page
     <h1 class="text-light logo-font loading-spinner">
         <span class="icon">
             <i class="fas fa-3x fa-sync-alt fa-spin pr-3"></i>
-               Loading
+            Loading
         </span>
     </h1>
 </div>
