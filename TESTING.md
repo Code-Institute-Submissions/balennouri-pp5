@@ -157,6 +157,8 @@ Below is the list of all tests that have been covered:
 - Security
 - Performance
 
+[Back to top](#contents)
+
 ## Other Tests
 
 ### Lighthouse Test
@@ -198,6 +200,8 @@ Tested on the following devices:
 * Iphone 12, 13 and 14
 * Samsung Galaxy
 
+[Back to top](#contents)
+
 ## Validator Testing
 
 ### CSS
@@ -232,8 +236,12 @@ In the checkout app's static folder, there exists a JavaScript file named "strip
 
 ![Stripe Elements](docs/readme/stripe-js.png)
 
+[Back to top](#contents)
+
 ## Bugs
 
 ### Known Bugs
 
 ### Fixed Bugs
+
+[Back to top](#contents)
