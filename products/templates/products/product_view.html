@@ -91,6 +91,9 @@
                     {% if in_wishlist %}Remove from Wishlist{% else %}Add to Wishlist{% endif %}
                 </a>
 
+                <a href="{% url 'add_review' product.id %}" class="btn btn-secondary btn-sm">Add
+                    Review</a>
+
                 {% else %}
 
                 {% if request.user.is_authenticated %}
@@ -153,7 +156,7 @@
                                         </button>
                                     </div>
                                     <input class="form-control qty_input id_qty_{{ product.id }}" type="number"
-                                        name="quantity" value="1" min="1" max="5" data-item_id="{{ product.id }}"
+                                        name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}"
                                         id="quantity" aria-label="Quantity">
                                     <div class="input-group-append">
                                         <button
