@@ -220,7 +220,7 @@ The HTML code for the project was validated using the [W3C HTML Validator.](http
 
 ![Python Test](docs/readme/python-test.png)
 
-During the Code Institute Python Linter test, I received no errors from any of my Python files.
+During the Code Institute Python Linter test, I encountered no errors in any of my Python files. However, I noticed that some of Django's built-in Python files included lines longer than 80 characters. Despite this, I chose not to modify them, as Django recommends against shortening these lines.
 
 [Python Linter](https://pep8ci.herokuapp.com/)
 

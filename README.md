@@ -342,7 +342,9 @@ Authenticated users on FastShoes possess significant control over various key fu
 
 ##### Product pages
 
-![](docs/readme/features/)
+![All Products](docs/readme/features/all-products-page.png)
+
+![Product View](docs/readme/features/product-view-page.png)
 
 ##### User pages
 
