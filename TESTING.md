@@ -182,9 +182,9 @@ Furthermore, it became apparent that pages excluded by the robots.txt file exhib
 
 ![Wave-Test](docs/readme/wave-test.png)
 
-I utilized the WAVE tool to assess the accessibility of my web content, and I'm pleased with the outcome. Across most pages, I encountered only one contrast error, excluding the checkout page, where I encountered two. Specifically, the contrast error on the checkout page pertains to the country input field and the label for the search functionality. This latter error is consistent across all pages due to the presence of the search label on the navbar.
+I used the WAVE tool to evaluate the accessibility of my web content, and I'm satisfied with the results. On most pages, I only encountered one contrast error, except for the checkout page, where I found two. The contrast error on the checkout page is associated with the country input field and the label for the search functionality. This issue persists across all pages due to the presence of the search label in the navbar. The contrast error for the label is due to the use of the "sr-only" class, which is intended for screen readers.
 
-On mobile and other devices, there's a singular contrast error, also related to the country input field on the checkout page.
+On mobile and other devices, there is a single contrast error, also related to the country input field on the checkout page.
 
 ### Browsers And Devices
 

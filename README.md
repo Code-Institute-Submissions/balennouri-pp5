@@ -358,6 +358,8 @@ Authenticated users on FastShoes possess significant control over various key fu
 
 ![Wishlist Page](docs/readme/features/wishlist-page.png)
 
+![Review Page](docs/readme/features/reviews-page.png)
+
 ##### Shopping Cart/Checkout pages
 
 ![Shopping Cart Page](docs/readme/features/shopping-cart.png)
