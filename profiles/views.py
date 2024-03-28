@@ -207,30 +207,35 @@ def wishlist(request):
 @login_required
 def add_to_wishlist(request, id):
     """
-    * Retrieve the product object or return a 404 error if not found
-    * Get or create the user's wishlist
-    * Check if the product is already in the wishlist
-    * If the product is not in the wishlist, add it
+    Add or remove a product to/from the user's wishlist.
+
+    # Retrieve the product object or return a 404 error if not found
+    # Get or create the user's wishlist
+    # Check if the product is already in the wishlist
+    # If the product is already in the wishlist, remove it
+    # If the product is not in the wishlist, add it
+    # Save the changes to the wishlist in the database
+    # Display a success message
+    # Redirect the user back to the product view page
     """
     product = get_object_or_404(Product, id=id)
-    wishlist, created = Wishlist.objects.get_or_create(
-        user_wishlist=request.user)
+
+    wishlist, created = (
+        Wishlist.objects.get_or_create(user_wishlist=request.user))
 
     if product in wishlist.products.all():
         wishlist.products.remove(product)
-        messages.success(
-            request, f'Removed {product.name} from your wishlist.')
+        action = 'removed'
     else:
         wishlist.products.add(product)
-        messages.success(request, f'Added {product.name} to your wishlist.')
+        action = 'added'
 
-    template = 'products/product_view.html'
-    context = {
-        'product': product,
-        'in_wishlist': product in wishlist.products.all(),
-    }
+    wishlist.save()
 
-    return render(request, template, context)
+    messages.success(
+        request, f'{action.capitalize()} {product.name} from your wishlist.')
+
+    return redirect('product_view', pk=id)
 
 
 @method_decorator(login_required, name='dispatch')
