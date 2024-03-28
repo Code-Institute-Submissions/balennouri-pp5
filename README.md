@@ -425,6 +425,35 @@ Below, you can find my future plans for the website:
 
 ### Supporting Libraries and Packages
 
+- asgiref==3.7.2
+- black==24.2.0
+- boto3==1.34.59
+- botocore==1.34.59
+- click==8.1.7
+- cloudinary==1.39.0
+- crispy-bootstrap4==2024.1
+- dj-database-url==2.1.0
+- Django==4.2.10
+- django-allauth==0.61.1
+- django-cors-headers==4.3.1
+- django-countries==7.5.1
+- django-crispy-forms==2.1
+- django-storages==1.14.2
+- gunicorn==21.2.0
+- jmespath==1.0.1
+- oauthlib==3.2.2
+- pathspec==0.12.1
+- pillow==10.2.0
+- psycopg2==2.9.9
+- PyJWT==2.8.0
+- python3-openid==3.2.0
+- requests-oauthlib==1.3.1
+- s3transfer==0.10.0
+- sqlparse==0.4.4
+- stripe==8.5.0
+- urllib3==1.26.18
+- whitenoise==6.6.0
+
 [Back to top](#contents)
 
 </details>
@@ -497,7 +526,7 @@ Additionally, the document includes :
 
 ## Deployment and Development
 
-You can access the final deployed site [here](https://fastshoes-be1fd2fa0203.herokuapp.com/). For details about my initial deployment process, please refer to the document named [DEPLOYMENT.md]() included with this repository.
+You can access the final deployed site [here](https://fastshoes-be1fd2fa0203.herokuapp.com/). For details about my initial deployment process, please refer to the document named [DEPLOYMENT.md](https://github.com/balennouri/pp5/blob/main/DEPLOYMENT.md) included with this repository.
 
 The document covers :
 
