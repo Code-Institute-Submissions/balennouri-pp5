@@ -161,6 +161,21 @@ Below is the list of all tests that have been covered:
 
 ### Lighthouse Test
 
+Upon reviewing the Lighthouse scores, we observed a slightly lower performance score on mobile devices compared to desktop. Nevertheless, thorough testing across various mobile devices revealed that the site remained responsive and performed satisfactorily.
+Furthermore, it became apparent that pages excluded by the robots.txt file exhibited a decline in SEO score. The robots.txt file was pinpointed as a contributing factor to this decline. For detailed results from some of the pages tested using Lighthouse, please refer below.
+
+#### Home Page
+
+#### Product Page
+
+#### Product View Page
+
+#### Shopping Cart Page
+
+#### Checkout Page
+
+#### Profile Page
+
 ### WAVE
 
 ![Wave-Test](docs/readme/wave-test.png)

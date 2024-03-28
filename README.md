@@ -342,21 +342,51 @@ Authenticated users on FastShoes possess significant control over various key fu
 
 ##### The Navigation Bar
 
-##### The Main Content
+![Navbar](docs/readme/features/navbar.png)
 
-###### Admin/Staff: Product Management
+##### Admin/Staff: Product Management
 
-###### Home page
+![Add Product](docs/readme/features/add-product.png)
 
-###### View Product page
+![Update Product](docs/readme/features/update-product-page.png)
 
-###### Account pages
+![Alert Message](docs/readme/features/alert-message-update.png)
 
-###### Shopping Cart page
+##### Home page
 
-###### Checkout page
+![Home Page](docs/readme/features/home-page.png)
+
+##### Product pages
+
+![](docs/readme/features/)
+
+##### User pages
+
+![Contact Us Page](docs/readme/features/contact-us-page.png)
+
+![Sign Up Page](docs/readme/features/sign-up-page.png)
+
+![Login Page](docs/readme/features/login-page.png)
+
+![Profile Page](docs/readme/features/profile-page.png)
+
+![Wishlist Page](docs/readme/features/wishlist-page.png)
+
+##### Shopping Cart/Checkout pages
+
+![Shopping Cart Page](docs/readme/features/shopping-cart.png)
+
+![Checkout Page](docs/readme/features/checkout-page.png)
+
+![Loading Page](docs/readme/features/loading-page.png)
+
+![Order Confirmation](docs/readme/features/order-confirmation-page.png)
+
+![Order message](docs/readme/features/order-success-message.png)
 
 ##### The Footer
+
+![Footer](docs/readme/features/footer.png)
 
 [Back to top](#contents)
 
