@@ -7,8 +7,9 @@
     * [Test Case: Users Functions](#test-case-for-users-functions)
     * [Test Case: Admin Functions](#test-case-for-admin-functions)
     * [Website Testing](#website-testing)
-    * [Security](#security)
-    * [Performance](#performance)
+    * [Security](#section-security)
+    * [Performance](#section-performance)
+    * [Login Required](#section-login-required)
 * [Other Tests](#other-tests)
     * [Lighthouse Test](#lighthouse-test)
     * [Wave Test](#wave)
@@ -148,6 +149,23 @@
 
 This manual testing guide is designed to comprehensively assess the essential functionalities of the FastShoes website, guaranteeing a smooth and secure user experience. Testers are urged to document any deviations encountered from the anticipated results, as outlined in the reporting section. Continuous testing and refinement play a vital role in upholding the quality and dependability of the FastShoes online platform.
 
+#### Section: Login Required
+
+This test was crucial to ensuring that only authenticated users could access certain pages, such as the wishlist and profile pages.
+
+**How I tested this:**
+
+Example of how I conducted the test:
+
+- Employed two distinct browsers: one authenticated and one unauthenticated.
+- Retrieved the URL links for the wishlist and profile pages from the authenticated browser session.
+- Transferred the URLs to the browser where I was not authenticated.
+- Confirmed that accessing these pages without authentication redirected me to the login page, effectively preventing unauthorized access to user-specific content.
+
+I did this test on all user-based links.
+
+#### Covered Tests
+
 Below is the list of all tests that have been covered:
 
 - Test Case: Website Functions
@@ -156,6 +174,7 @@ Below is the list of all tests that have been covered:
 - Website Testing
 - Security
 - Performance
+- Login Required
 
 [Back to top](#contents)
 

@@ -44,6 +44,25 @@ footer {
     padding: 0;
 }
 
+#mc_embed_signup .mc-field-group {
+    padding-bottom: 0;
+}
+
+#mce-success-response {
+    background-color: #ffffff;
+    padding: 3px;
+    margin-bottom: 10px;
+    text-align: center;
+    border-radius: 3px;
+}
+
+#mc_embed_signup div#mce-responses {
+    overflow: hidden;
+    clear: both;
+    display: flex;
+    flex-direction: column;
+}
+
 /* Product view and product details */
 div.on-sale {
     background-color: red;
