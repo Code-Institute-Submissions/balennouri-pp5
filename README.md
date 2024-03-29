@@ -159,7 +159,9 @@ SEO, Marketing, and Legal:
 
 ### Epics 
 
-In the project planning phase, I started with six main epics and then broke them down into individual user stories. These user stories were labeled and prioritized using the MoSCoW technique (Must have, Should have, Could have, Won't have) to guide their development. This approach helped me concentrate on implementing the most essential features first, ensuring a focused development process. You can view all the user stories on the project board, the link to which is provided below. Additionally, the project board offers a glimpse into upcoming features and developments.
+During the project planning phase, I began with six primary epics, which were subsequently dissected into individual user stories, template tasks, and documentation tasks. These tasks were categorized and prioritized using the MoSCoW technique (Must have, Should have, Could have, Won't have) to steer their development. This methodology enabled me to prioritize the implementation of the most crucial features, ensuring a streamlined development process. You can find all the user stories listed on the project board, accessible through the provided link. Furthermore, the project board offers insight into upcoming features and advancements.
+
+The "User Story" tasks encompass the primary functions of the website, focusing on its core features and functionalities. On the other hand, the "Template" tasks pertain to auxiliary tasks related to website functions, such as navigation or other HTML files. Lastly, the "Doc" tasks involve documentation-related tasks for the website, including tasks associated with the creation and maintenance of documentation such as the README file.
 
 [Project Board For FastShoes](https://github.com/users/balennouri/projects/7)
 
@@ -168,70 +170,72 @@ Below, you'll find the completed user stories for this version of the project, o
 #### Epic: Initial Django Setup
 
 - As a developer I want to set up Django and install the initial supporting libraries needed so that I can begin development of the site.
+
 - As a developer I want to set up the environment to secure secret configuration variables so that I can ensure sensitive data is kept private.
+
 - As a developer I want to deploy the site to Heroku so that I can ensure the site works in a production environment and share the completed site publicly.
 
 #### Epic: The Website Features
 
-- As a user, I will have it easy to navigate on the page.
+-  As a user, I will have it easy to navigate on the page so that I can move around the website effortlessly.
 
-- As a user, I will be able to categorize the brand of the products
+- As a user, I will be able to categorize the brand of the products so that I can quickly find items from my preferred brands.
 
-- As a user, I can filter and search on the website.
+- As a user, I can filter and search on the website so that I can locate specific products efficiently.
 
-- As a user, I can make a wishlist on the website.
+- As a user, I can make a wishlist on the website so that I can save items for future reference or purchase.
 
-- As a user, I want the site to be accessible and user-friendly on mobile devices.
+- As a user, I want the site to be accessible and user-friendly on mobile devices so that I can browse conveniently on my smartphone or tablet.
 
-- As a user, I want a seamless experience across different screen sizes.
+- As a user, I want a seamless experience across different screen sizes so that I can access the website comfortably regardless of the device I'm using.
 
-- As a user, I can write reviews for products.
+- As a user, I can write reviews for products so that I can share my feedback and experiences with other users.
 
-- As a user, I can contact the store through the contact page
+- As a user, I can contact the store through the contact page so that I can reach out for assistance or inquiries easily.
 
 #### Epic: User Authentication and Account Management
 
-- As a first time user, I can create an account
+- As a first time user, I can create an account so that I can access personalized features and make purchases.
 
-- As a user I can delete my account.
+- As a user, I can delete my account so that I can permanently remove my personal information from the platform.
 
-- As a returning user I can login/logout of my account.
+- As a returning user, I can login/logout of my account so that I can access or secure my account as needed.
 
-- As returning user I can update my profile information.
+- As a returning user, I can update my profile information so that I can keep my account details accurate and up-to-date.
 
-- As site user I can forget my password and get my account back if so.
+- As a site user, I can reset my password if needed so that I can regain access to my account in case I forget my password.
 
-- As a user i can add/remove product to the wishlist
+- As a site owner, I can access detailed information for users in the admin panel so that I can manage user accounts and provide support as needed.
 
-- As site owner I can see all the detail information for the users in the admin panel.
+- As a user, I can add/remove products to/from the wishlist so that I can keep track of items I'm interested in and easily access them later.
 
 #### Epic: Order Management
 
-- As a customer, I want to view my order history.
+- As a customer, I want to view my order history so that I can track my past purchases and review details of previous orders.
 
-- As an admin, I want to process and manage customer orders.
+- As an admin, I want to process and manage customer orders so that I can fulfill customer requests efficiently and maintain accurate order records.
 
 #### Epic: Security and Privacy
 
-- As a user, I want my personal and payment information to be secure.
+- As a user, I want my personal and payment information to be secure so that I can trust the website with my sensitive data and make transactions confidently.
 
 #### Epic: Store Management, Cart and Checkout
 
-- As a admin I can add/delete/update products on the admin panel and on the website.
+- As an admin, I can add/delete/update products on the admin panel and on the website so that I can manage the product inventory effectively and keep the website updated with new offerings.
 
-- As a admin I can add new categories on the admin panel.
+- As an admin, I can add new categories on the admin panel so that I can organize products into relevant groups for easier navigation and browsing.
 
-- As a user I can rate the product from 0 to 5 in the reviews
+- As a user, I can rate the product from 0 to 5 in the reviews so that I can provide detailed feedback on the product's attributes and overall experience.
 
-- As a user I can add products to the cart.
+- As a user, I can add products to the cart so that I can conveniently collect items for purchase before proceeding to checkout.
 
-- As user I can pay directly on the website with my credit card.
+- As a user, I can pay directly on the website with my credit card so that I can complete transactions securely and conveniently without additional steps..
 
-- As a user I can update the quantity of the product in the cart and delete the product from the cart.
+- As a user, I can update the quantity of the product in the cart and delete the product from the cart so that I can manage my shopping cart contents according to my preferences and needs.
 
-- As user I can place an order and checkout.
+- As a user, I can place an order and checkout so that I can successfully complete my purchase and receive the desired products.
 
-- When a user place a order the cart becomes empty.
+- When a user places an order, the cart becomes empty so that I can start fresh with new items for my next purchase without any confusion.
 
 ### Skeleton
 

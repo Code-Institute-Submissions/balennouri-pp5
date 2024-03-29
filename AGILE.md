@@ -10,6 +10,7 @@
     * [Sprint 5 notes:](#sprint-5-notes)
     * [Sprint 6 notes:](#sprint-6-notes)
     * [Sprint 7 notes:](#sprint-7-notes)
+    * [Sprint 8 notes:](#sprint-8-notes)
     
 ## Overview
 
@@ -105,3 +106,16 @@ During the seventh sprint, my main emphasis was on accomplishing the following c
 * User Story: Footer
 * User Story: Setup AWS for static files
 * User Story: Wishlist
+
+### Sprint 8 notes:
+
+Sprint 8 concluded the project as the final sprint. Throughout this phase, my main priority was to conduct thorough testing of all website functionalities and to finalize the majority of the documentation for the Markdown (MD) files.
+
+During Sprint 8, my primary objective was to accomplish the following critical user stories and tasks:
+
+* Doc: Read Me Text and Decription
+* Doc: Read Me images
+* Doc: Read Me Testing and Deploying Content
+* Doc: AGILE.md
+
+Sprint 8 marked the final sprint of the project. During this sprint, I primarily focused on comprehensive testing of all website functions and completed the majority of the documentation for the Markdown (MD) files.
