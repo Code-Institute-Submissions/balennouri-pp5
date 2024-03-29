@@ -1,10 +1,10 @@
-<h4 class="h6">
+<h2 class="h6">
     <strong>Bag Total: ${{ total|floatformat:2 }}</strong>
-</h4>
-<h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
-<h4 class="mt-4">
+</h2>
+<h2 class="h6">Delivery: ${{ delivery|floatformat:2 }}</h2>
+<h2 class="mt-4 h4">
     <strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong>
-</h4>
+</h2>
 
 {% if free_delivery_delta > 0 %}
 
