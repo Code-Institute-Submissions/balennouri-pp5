@@ -187,11 +187,11 @@ Moreover, it became evident that pages restricted by the robots.txt file experie
 
 **Desktop**
 
-![LH-Desktop-Test-](docs/readme/lh-home.jpg)
+![LH-Desktop-Test-](docs/readme/lh-home.png)
 
 **Mobile**
 
-![LH-Mobile-Test-](docs/readme/lh-home-phone.jpg)
+![LH-Mobile-Test-](docs/readme/lh-home-mobile.png)
 
 #### Product Page
 
@@ -207,11 +207,11 @@ Moreover, it became evident that pages restricted by the robots.txt file experie
 
 **Desktop**
 
-![LH-Desktop-Test-](docs/readme/lh-product-view.png)
+![LH-Desktop-Test-](docs/readme/lh-products-view.png)
 
 **Mobile**
 
-![LH-Mobile-Test-](docs/readme/lh-product-view-mobile.png)
+![LH-Mobile-Test-](docs/readme/lh-products-view-mobile.png)
 
 ### WAVE
 
