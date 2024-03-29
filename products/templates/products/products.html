@@ -125,8 +125,9 @@ Products
 
                                     <p class="small mt-1 mb-0">
                                         <a href="{% url 'products' %}?category={{ product.category.name }}"
+                                            aria-label="Look at more {{ product.category.web_name }}"
                                             class="text-muted">
-                                            <i class="fas fa-tag mr-1"> {{ product.category.name }}</i>
+                                            <i class="fas fa-tag mr-1"> {{ product.category.web_name }}</i>
                                         </a>
                                     </p>
 
