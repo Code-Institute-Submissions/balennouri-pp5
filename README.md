@@ -470,15 +470,21 @@ Below, you can find my future plans for the website:
 
 ### Marketing Strategies
 
-Subscribing:
+**Subscribing :**
 
-* Allow users to subscribe to Fastshoes to receive notifications about new deals and product arrivals, ensuring they stay up-to-date with the latest offerings in the store. By subscribing, users gain exclusive access to promotions and updates, enhancing their shopping experience.
+* Allow users to subscribe to Fastshoes to receive notifications about new deals and product arrivals, ensuring they stay up-to-date with the latest offerings in the store. By subscribing, users gain exclusive access to promotions and updates, enhancing their shopping experience. I used Mailchimp to manage the subscribers and email campaigns, enabling seamless communication with subscribers and efficient management of subscription lists.
 
-Social Media Marketing - Facebook business page:
+[Link To Mailchimp](https://mailchimp.com)
+
+Below is an example of how it can look in Mailchimp :
+
+![Mailchimp management](docs/readme/mailchimp.png)
+
+**Social Media Marketing - Facebook business page :**
+
+* Leveraging Facebook's extensive user base and diverse demographic reach, I've set up a Facebook Business Page to capitalize on its marketing potential. Through this platform, I can initiate targeted ad campaigns customized for specific geographic locations, cities, or age groups, thereby optimizing the impact of my marketing endeavors. With its widespread popularity and robust advertising features, Facebook serves as an ideal platform for promoting my business. Below is a screenshot of the Facebook page:
 
 ![Facebook screenshot](docs/readme/facebook.png)
-
-* Given Facebook's extensive user base and diverse demographic reach, I've established a Facebook Business Page to leverage its marketing potential. Utilizing this platform, I can launch targeted ad campaigns tailored to specific geographic locations, cities, or age groups, maximizing the effectiveness of my marketing efforts. With its widespread popularity and robust advertising features, Facebook presents an ideal platform for promoting my business.
 
 #### SEO
 
