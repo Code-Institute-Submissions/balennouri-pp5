@@ -182,20 +182,38 @@ Below is the list of all tests that have been covered:
 
 ### Lighthouse Test
 
-Upon reviewing the Lighthouse scores, we observed a slightly lower performance score on mobile devices compared to desktop. Nevertheless, thorough testing across various mobile devices revealed that the site remained responsive and performed satisfactorily.
-Furthermore, it became apparent that pages excluded by the robots.txt file exhibited a decline in SEO score. The robots.txt file was pinpointed as a contributing factor to this decline. For detailed results from some of the pages tested using Lighthouse, please refer below.
+After examining the Lighthouse scores, we noted a slightly lower performance score on mobile devices in comparison to desktop. However, extensive testing across multiple mobile devices demonstrated that the site remained responsive and functioned effectively.
+Moreover, it became evident that pages restricted by the robots.txt file experienced a decrease in SEO score. The robots.txt file was identified as a significant factor contributing to this decline. For detailed results from some of the pages tested using Lighthouse, please refer below for selected Lighthouse tests.
 
 #### Home Page
 
+**Desktop**
+
+![LH-Desktop-Test-](docs/readme/lh-home.jpg)
+
+**Mobile**
+
+![LH-Mobile-Test-](docs/readme/lh-home-phone.jpg)
+
 #### Product Page
+
+**Desktop**
+
+![LH-Desktop-Test-](docs/readme/lh-products.png)
+
+**Mobile**
+
+![LH-Mobile-Test-](docs/readme/lh-products-mobile.png)
 
 #### Product View Page
 
-#### Shopping Cart Page
+**Desktop**
 
-#### Checkout Page
+![LH-Desktop-Test-](docs/readme/lh-product-view.png)
 
-#### Profile Page
+**Mobile**
+
+![LH-Mobile-Test-](docs/readme/lh-product-view-mobile.png)
 
 ### WAVE
 
