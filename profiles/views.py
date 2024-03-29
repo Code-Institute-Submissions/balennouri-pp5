@@ -152,7 +152,11 @@ def add_review(request, id):
             review.product = product
             review.user = request.user
             review.save()
+            messages.success(request, 'Review added successfully.')
             return redirect(reverse('product_view', args=[product.id]))
+        else:
+            messages.error(
+                request, 'Failed to add review. Please check the form.')
     else:
         form = ReviewForm()
 
@@ -225,15 +229,15 @@ def add_to_wishlist(request, id):
 
     if product in wishlist.products.all():
         wishlist.products.remove(product)
-        action = 'removed'
+        action = 'removed from'
     else:
         wishlist.products.add(product)
-        action = 'added'
+        action = 'added to'
 
     wishlist.save()
 
     messages.success(
-        request, f'{action.capitalize()} {product.name} from your wishlist.')
+        request, f'{product.name} {action} your wishlist.')
 
     return redirect('product_view', pk=id)
 
