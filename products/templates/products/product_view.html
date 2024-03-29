@@ -106,6 +106,9 @@
                     {% if in_wishlist %}Remove from Wishlist{% else %}Add to Wishlist{% endif %}
                 </a>
 
+                <a href="{% url 'add_review' product.id %}" class="btn btn-secondary btn-sm">Add
+                    Review</a>
+
                 {% else %}
 
                 <hr>
