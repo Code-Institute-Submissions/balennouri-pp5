@@ -19,9 +19,7 @@
     * [HTML](#html)
     * [Python Linter](#python-linter)
     * [JShint](#jshint-for-javascript)
-* [Bugs](#bugs)
-    * [Known Bugs](#known-bugs)
-    * [Fixed Bugs](#fixed-bugs)
+* [Bugs Fixes and Resolutions](#bug-fixes-and-resolutions)
 
 ## Manual Testing for FastShoes Website
 
@@ -275,10 +273,42 @@ In the checkout app's static folder, there exists a JavaScript file named "strip
 
 [Back to top](#contents)
 
-## Bugs
+## Bug Fixes and Resolutions
 
-### Known Bugs
+### Key Development Issues and Resolutions:
 
-### Fixed Bugs
+During development, I encountered several bugs that required resolution. Below are the issues I identified along with their respective solutions :
+
+**Bug 1: Wishlist Item Removal on Page Refresh**
+
+- **Issue:** When a user added a product to the wishlist and refreshed the page, the product was removed from the wishlist due to the return routing directing back to the add/remove product action.
+
+- **Cause:** The problem arose from the return routing logic, which redirected users back to the action of adding or removing the product from the wishlist upon page refresh.
+
+- **Solution:** Redirect the user to the product view page for the respective product after adding or removing it from the wishlist.
+
+**Bug 2: Mailchimp Subscription Form Submission Issue**
+
+- **Issue:** Users were unable to submit the subscription form in the footer. 
+
+- **Cause:** The issue stemmed from changing the name of the id from `mce-success` to `mce-light` to alter the color of the success message. Although this change worked in the browser's developer tools, it did not function correctly on the deployed site.
+
+- **Solution:** Reverted the id name back to its original value, `mce-success`, which resolved the bug and allowed users to successfully submit the subscription form.
+
+**Bug 3: Recreate Database ElephantSQL**
+
+- **Issue:** I encountered difficulties running `python3 manage.py migrate`, which hindered the development progress of the website.
+
+- **Cause:** The exact cause of this bug was unclear. After researching online, I found suggestions indicating that excessive use of the `makemigrations` and `migrate` commands could potentially lead to database crashes.
+
+- **Solution:** To resolve the issue, I opted to delete the existing database from ElephantSQL and create a new one. While there may have been alternative solutions available, I chose this approach due to its simplicity and the time constraints I faced when encountering this bug.
+
+**Bug 4: Missing Confirmation Message When Adding Products to Shopping Cart**
+
+- **Issue:** The confirmation message indicating that a product has been successfully added to the shopping cart did not appear after users added products.
+
+- **Cause:** The issue may have been caused by conflicts with the functionality of the "Add to Wishlist" button. When users accessed the product view page, the routing for adding the product to the wishlist may have interfered with the functionality of the "Add to Cart" button.
+
+- **Solution:** Resolving the first bug, which involved correcting the routing logic for adding products to the wishlist, also resolved this issue. Once the routing issue was fixed, the confirmation message started appearing as expected when users added products to the shopping cart.
 
 [Back to top](#contents)

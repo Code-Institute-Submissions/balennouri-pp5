@@ -526,7 +526,7 @@ Additionally, the document includes :
 - Details about manual testing procedures
 - Validator test results
 - Test results for WAVE, Lighthouse, and various browsers and devices
-- Documentation of known bugs and their resolutions
+- Documentation for bug fixes and resolutions
 
 [Testing document link.](https://github.com/balennouri/pp5/blob/main/TESTING.md)
 
