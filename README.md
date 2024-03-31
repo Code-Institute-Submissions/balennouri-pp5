@@ -396,11 +396,13 @@ Below, you can see the footer for the website. It remains visible at the bottom 
 
 ![Footer](docs/readme/features/footer.png)
 
-##### Success, Error and Alert Messages
+##### Success, Error, Alert Messages and 404 page
 
-Below, you can find some messages that users may encounter while using the website.
+Below, you'll find various messages that users may encounter while navigating the website, along with the 404 page.
 
 ![Messages](docs/readme/success-messages.png)
+
+![404 page](docs/readme/features/404.png)
 
 ### Future Features
 
