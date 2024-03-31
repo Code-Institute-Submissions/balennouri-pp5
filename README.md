@@ -94,7 +94,7 @@ Content:
 
 * Privacy Policy has been instituted
 * An assortment of purchasable products
-* Rating and price of the products
+* Price of the products
 * Information text about each product
 * Links to FastShoes social media accounts
 
@@ -330,9 +330,15 @@ Authenticated users on FastShoes possess significant control over various key fu
 
 ##### The Navigation Bar
 
+The navigation bar serves as the primary means of navigation throughout the site. While there are slight variations between the mobile and desktop versions, both contain identical components.
+
 ![Navbar](docs/readme/features/navbar.png)
 
+![Navbar Menu](docs/readme/features/rolldown-navbar.png)
+
 ##### Admin/Staff: Product Management
+
+Access to the Admin/Staff pages is restricted to superusers only. Below, you can preview how these pages are structured and displayed.
 
 ![Add Product](docs/readme/features/add-product.png)
 
@@ -342,15 +348,21 @@ Authenticated users on FastShoes possess significant control over various key fu
 
 ##### Home page
 
+The landing page is designed with simplicity in mind, featuring a single button to enter the shop. An image backdrop with clouds and a grey color scheme complements the overall style of the website.
+
 ![Home Page](docs/readme/features/home-page.png)
 
 ##### Product pages
+
+Below, you can see the design layout for the product pages.
 
 ![All Products](docs/readme/features/all-products-page.png)
 
 ![Product View](docs/readme/features/product-view-page.png)
 
 ##### User pages
+
+Below, you can find a comprehensive list of pages accessible to users on the website, including the contact page, profile page, and more.
 
 ![Contact Us Page](docs/readme/features/contact-us-page.png)
 
@@ -366,6 +378,8 @@ Authenticated users on FastShoes possess significant control over various key fu
 
 ##### Shopping Cart/Checkout pages
 
+Below, you can view the pages for the shopping cart and the checkout process
+
 ![Shopping Cart Page](docs/readme/features/shopping-cart.png)
 
 ![Checkout Page](docs/readme/features/checkout-page.png)
@@ -378,7 +392,15 @@ Authenticated users on FastShoes possess significant control over various key fu
 
 ##### The Footer
 
+Below, you can see the footer for the website. It remains visible at the bottom of the page on all pages.
+
 ![Footer](docs/readme/features/footer.png)
+
+##### Success, Error and Alert Messages
+
+Below, you can find some messages that users may encounter while using the website.
+
+![Messages](docs/readme/success-messages.png)
 
 ### Future Features
 
